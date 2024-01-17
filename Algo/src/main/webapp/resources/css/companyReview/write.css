@@ -1,0 +1,155 @@
+/* 별점 */
+
+.star_rating {
+    width: 100%; 
+    box-sizing: border-box; 
+    display: inline-flex; 
+    float: left;
+    flex-direction: row; 
+    justify-content: flex-start;
+}
+#starRate1 .star {
+    width: 45px; 
+    height: 45px; 
+    margin: 15px 5px 0 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+#starRate1 .star.on {
+    width: 45px; 
+    height: 45px;
+    margin: 15px 5px 0 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+
+
+.star_rating .star {
+    width: 35px; 
+    height: 35px; 
+    margin: 10px 5px 10px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+.star_rating .star.on {
+    width: 35px; 
+    height: 35px;
+    margin: 10px 5px 10px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+
+
+
+/*fieldset css */
+fieldset{
+    border: 1px solid #D6D6D6;
+    width: 1100px;
+    height: 860px;
+    margin: 40px auto;
+}
+
+.com-ti-wr {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 40px 50px;
+}
+
+.com-rate{
+    margin: 35px 0 0 92px;
+    font-size: 20px;
+    font-weight: 500;
+    height: 90px;
+}
+
+.com-rate span{
+    color: #C0C0C0;
+    font-size: 15px;
+    margin-left:10px;
+}
+
+.com-rate-box{
+    margin: 50px 0 80px 92px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.com-rate-box>p{
+    margin:10px 0;
+}
+
+.com-rate-box div{
+    display: flex;
+}
+
+.com-rate-box>div>p{
+    width: 170px;
+    vertical-align: middle;
+    font-size: 17px;
+    padding: 5px 0;
+    margin:10px 0;
+}
+
+.com-rate-write{
+    margin-left:92px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 910px;
+}
+
+#comWrite{
+    font-size: 15px;
+    padding: 10px;
+    margin-top:15px;
+    width: 910px;
+    height: 160px;
+    border: 1px solid #D6D6D6;
+    resize: none;
+}
+
+#comWrite:focus{
+    outline: 1px solid #004591;
+}
+
+.com-rate-write>p{
+    font-size: 12px;
+    float: right;
+}
+
+.com-rate-write>p>span{
+    color: #7A7A7A;
+}
+
+.com-button{
+    clear: both;
+    width: 224px;
+    margin: 40px auto;
+}
+
+.com-button input{
+    width: 104px;
+    height: 35px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.com-wr-btn01{
+    background-color: #004591;
+    color:#fff;
+    border: none;
+}
+
+.com-wr-btn02{
+    margin-left: 12px;
+    background-color: #fff;
+    color: #004591;
+    border: 1px solid #004591;
+}

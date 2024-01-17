@@ -1,0 +1,203 @@
+/* 2. 메인 평점 */
+#co-section-2{
+    width: 1025px;
+    margin:0 auto;
+}
+.co-main-box{
+    margin: 40px 0 20px 0;
+}
+
+.co-main-box h3{
+    float: left;
+    line-height: 35px;
+    font-weight: 600;
+}
+
+.co-main-box button{
+    float: right;
+    width: 112px;
+    height: 35px;
+    margin-bottom:20px;
+    background: #004591;
+    color:#fff;
+    border: none;
+}
+
+.co-main-re-box{
+    height: 376px;
+    border: 1px solid #D6D6D6;
+    box-sizing: border-box;
+    padding: 40px 56px;
+    clear: both;
+}
+
+.co-main-re-1{
+    float: left;
+    width: 50%;
+    border-right: 1px solid #D6D6D6;
+}
+
+.co-main-re-1-txt{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.star_point{
+    color: #004591;
+    font-size: 35px;
+    margin: 10px 20px;
+    float: left;
+    width: 70px;
+}
+
+.co-main-re-2{
+    float:right;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 6%;
+    border-spacing: 10px;
+    margin-top:-15px;
+}
+
+.co-main-re-2 th{
+    text-align: left;
+}
+
+.co-main-re-3{
+    clear: both;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top:40px;
+}
+
+.review-word-box{
+    font-size: 18px;
+    width: 914px;
+    height: 106px;
+    background: #F5F8FB;
+    box-sizing: border-box;
+    padding: 25px 40px;
+    margin-top:13px;
+    font-weight: 400;
+}
+
+
+/* 2의 별점 */
+#starRate1 {
+    width: 50%; 
+    box-sizing: border-box; 
+    display: inline-flex; 
+    float: left;
+    flex-direction: row; 
+    justify-content: flex-start;
+}
+
+#starRate1 .star {
+    width: 35px; 
+    height: 35px; 
+    margin: 20px 5px 20px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+#starRate1 .star.on {
+    width: 35px; 
+    height: 35px;
+    margin: 20px 5px 20px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+
+
+/* 3. 디테일 평점 */
+.co-main-re-box2{
+    width: 1025px;
+    margin:30px auto;
+    height: 880px;
+    border: 1px solid #D6D6D6;
+    box-sizing: border-box;
+    padding: 40px 56px;
+    clear: both;
+    font-size: 20px;
+}
+
+.co-sub-re-1{
+    font-weight: 600;
+}
+
+.sub-rate{
+    width: 914px;
+    height: 58px;
+    border: 1px solid #D6D6D6;
+    clear: both;
+    margin: 10px 0;
+}
+
+.sub-rate-txt{
+    font-size: 18px;
+    font-weight: 400;
+    float: left;
+    width: 57%;
+    text-align: center;
+    box-sizing: border-box;
+    padding:15px 0;
+}
+
+.co-sub-re-2{
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+.pagging {
+    padding:26px 0;
+    font-size: 13px;
+}
+
+.com-re-de-bu{
+    width: 104px;
+    height: 35px;
+    color: #004591;
+    border: 1px solid #004591;
+    background: #FFF;
+    margin: 0 auto;
+}
+
+
+/* 3의 별점 */
+.star_rating {
+    width: 40%; 
+    box-sizing: border-box; 
+    display: inline-flex; 
+    float: left;
+    flex-direction: row; 
+    justify-content: flex-start;
+}
+
+.star_rating .star {
+    width: 30px; 
+    height: 30px; 
+    margin: 12px 5px 12px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+.star_rating .star.on {
+    width: 30px; 
+    height: 30px;
+    margin: 12px 5px 12px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+
+.sub_star_point{
+    font-size: 15px;
+    font-weight: 400;
+    color: #003566;
+    padding: 18px 10px;
+}

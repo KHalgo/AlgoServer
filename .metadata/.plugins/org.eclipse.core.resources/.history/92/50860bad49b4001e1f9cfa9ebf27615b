@@ -1,0 +1,79 @@
+/* 2. 검색 */
+.Review_CoSh{
+    margin-top: 40px;
+    width: 1100px;
+    height: 40px;
+}
+
+#ReviewSh{
+    float:left;
+    width: 441px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #C0C0C0;
+    background-color: #fff;
+}
+
+#ReviewSh:focus{
+    outline: none;
+}
+
+#ReviewSb{
+    float: left;
+    margin-left: 10px;
+    width: 93px;
+    height: 40px;
+    text-align: center;
+    background-color: #004591;
+    border: none;
+    color: #fff;
+}
+
+select {
+    -webkit-appearance:none; /* for chrome */
+    -moz-appearance:none; /*for firefox*/
+    appearance:none;
+}
+
+#ReviewLi{
+    float: right;
+    border: 1px solid #C0C0C0;
+    width: 132px;
+    height: 40px;
+    padding:0 10px;
+    color: #949494;
+    position: relative;
+    background:url('https://i.ibb.co/N9HPzF3/list-arrow.png') no-repeat 91% 50%/12px auto;
+}
+
+#ReviewLi:focus{
+    outline: none;
+}
+
+.Review_CoList{
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 30px auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.Review_CoList thead{
+    background-color: #F5F8FB;
+    color: #404040;
+    font-weight: 500;
+    height: 59px;
+    border-bottom:1px solid #C0C0C0;
+    
+}
+
+.Review_CoList td{
+    border-bottom:1px solid #C0C0C0;
+    height: 90px;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
