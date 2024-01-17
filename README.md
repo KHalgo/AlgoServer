@@ -1,4 +1,4 @@
-기본 jsp 업로드 방법
+<h3>기본 jsp 업로드 방법</h3>
 
 1. 기본적으로 html(jsp)파일은 /views/폴더 안에 넣는다. 
 2. js, css는 별도로 resources 파일 안에 넣는다
