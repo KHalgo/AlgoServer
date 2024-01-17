@@ -16,7 +16,7 @@
 	        <li><a href="${ path }/"><img src="https://i.ibb.co/K92Q9ps/logo-1.png" alt="로고" style="margin-top:-5px; width: 57px;"></a></li>
 	    </ul>
 	    <ul class="main_nav">
-	        <li style="margin-left:70px;">
+	        <li>
 				<a href="${ path }/companyReview/">기업 리뷰</a>
 				<ul>
 					<li><a href="${ path }/">기업 리뷰</a></li>
@@ -24,7 +24,7 @@
 				</ul>
 			</li>
 	        <li>
-				<a href="${ path }">커뮤니티</a>
+				<a href="${ path }/">커뮤니티</a>
 				<ul>
 					<li><a href="${ path }/">알고 TALK</a></li>
 					<li><a href="${ path }/">알고 Q&A</a></li>

@@ -158,16 +158,35 @@ header{
 }
 
 .main_nav{
-    width:70%
+    width:70%;
 }
 
-.main_nav li{
-    padding:0 27px;
+.main_nav>li{
+    width: 130px;
+    /* padding:0 27px; */
+    float:left;
 }
 
-.main_nav li:hover>a{
+.main_nav li:hover{
     color: #004591;
     cursor: pointer;
+}
+
+.main_nav>li>ul{
+    display:none;
+    width: 130px;
+    /* display: block; */
+    background-color: #fff;
+    height: 95px;
+    margin-top:10px;
+}
+
+.main_nav>li>ul>li{
+    padding:10px 20px;
+}
+
+.main_nav>li:hover>ul{
+    display: block;
 }
 
 .right_nav{
