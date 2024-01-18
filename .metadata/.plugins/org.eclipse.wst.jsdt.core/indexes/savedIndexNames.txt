@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\Algo\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1268379502.index
-3962854128.index
-2920634722.index
-2185235393.index
-2232385648.index
-560895831.index
-1342835118.index
