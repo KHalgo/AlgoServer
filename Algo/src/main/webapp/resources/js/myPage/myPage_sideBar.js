@@ -1,0 +1,1 @@
+$("#mySideBar").load("/mypage/mysideBar.html");
