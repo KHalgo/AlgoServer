@@ -75,21 +75,6 @@
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">아 디자인 공부를 어디서 해야할 지 모르겠다..</a></td>
-                                    <td class="iql_board_dmD">2023.12.14</td>
-                                    <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
-                                </tr>
-                                <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">지역 설정을 여러개 한 번에 하고 싶은데 어떻...</a></td>
-                                    <td class="iql_board_dmD">2023.12.14</td>
-                                    <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
-                                </tr>
-                                <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
-                                    <td class="iql_board_dmD">2023.12.14</td>
-                                    <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
-                                </tr>
-                                <tr class="iql_board_dm">
                                     <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
