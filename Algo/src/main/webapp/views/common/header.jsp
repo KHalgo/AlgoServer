@@ -31,18 +31,11 @@
 				</ul>
 			</li>
 	        <li><a href="${ path }/">알바 정보</a></li>
-	        <li>
-<<<<<<< HEAD
+	        <li>				
 				<a href="${ path }/cscenter/">고객센터</a>
 				<ul>
 					<li><a href="${ path }/cscenter/notice">공지사항</a></li>
-					<li><a href="${ path }/">1:1문의</a></li>
-=======
-				<a href="${ path }/myPage/main">고객센터</a>
-				<ul>
-					<li><a href="${ path }/">공지사항</a></li>
 					<li><a href="${ path }/myPage/question">1:1문의</a></li>
->>>>>>> origin/HYG123
 				</ul>
 			</li>
 	        <li style="padding-right:0;"><a href="">이벤트</a></li>
