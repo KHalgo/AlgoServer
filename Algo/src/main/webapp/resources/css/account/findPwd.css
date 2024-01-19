@@ -1,0 +1,81 @@
+th {
+    width: 130px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.acc-table {
+    border-radius: 10px;
+    color: #c0c0c0;
+    height: 500px;
+    width: 900px;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    border: 1px solid #c0c0c0;
+}
+
+.acc-table table {
+    font-size: 18px;
+    margin: 40px auto;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.user_info_input_tag1 {
+    width: 400px;
+    height: 40px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background: #f4f6f9;
+    color: #101010;
+    line-height: 1.2em;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+}
+
+.user_info_input_tag2 {
+    width: 400px;
+    height: 40px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: #101010;
+    line-height: 1.2em;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+}
+
+.user_info_input_tag1::placeholder{
+    color:#a2a2a2;
+}
+
+.user_info_input_tag2::placeholder{
+    color:#a2a2a2;
+}
+
+.user_info_input_tag1:focus{
+    outline: 1px solid #004591;
+}
+
+.user_info_input_tag2:focus{
+    outline: 1px solid #004591;
+}
+
+.acc-table .algo_btn1 {
+    width: 174px;
+    border: none;
+    height: 43px;
+    margin-top: 40px;
+    font-size: 15px;
+}
+
+.findPwd_logo {
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: -15px;
+    width: 79.16px;
+    height: 77.04;
+}

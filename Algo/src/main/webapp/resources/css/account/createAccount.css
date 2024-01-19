@@ -1,0 +1,142 @@
+.createAccount_logo {
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: -15px;
+    width: 79.16px;
+    height: 77.04;
+}
+
+.top_div {
+    font-size: 30px;
+    font-weight: bold;
+    color: #003566;
+}
+
+.main_div {
+    border: 1px solid;
+    color: #cacaca;
+    height: 1350px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003566;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.inner_top_div {
+    border: 1px solid;
+    color: #cacaca;
+    height: 400px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 50px;
+    
+}
+
+.required_option {
+    color: #004591;
+    font-weight: bold;
+}
+
+.select_option {
+    color: #c1c1c1;
+}
+
+.manual a,
+.manual {
+    color: #c1c1c1;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.inner_top_div > input{
+    margin: 12px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: 8px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+th{
+    font-size: 20px;
+    height: 50px;
+    text-align: left;
+    width: 150px;
+}
+
+.user_info_input_tag1 {
+    width: 450px;
+    height: 40px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background: #f4f6f9;
+    color: black;
+    line-height: 1.2em;
+    cursor: pointer;
+    border: 1px solid #c0c0c0;
+}
+
+.user_info_input_tag2 {
+    width: 450px;
+    height: 40px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    color: black;
+    line-height: 1.2em;
+    cursor: pointer;
+    border: 1px solid #c0c0c0;
+}
+
+.algo_btn200{
+    width: 102px;
+    height: 40px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    border:1px solid #004591;
+    background: #fff;
+    box-sizing: border-box;
+    color:#004591;
+    line-height: 1.2em;
+    cursor: pointer;
+}
+
+.algo_btn100{
+    width: 150px;
+    height: 40px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background: #004591;
+    color:#fff;
+    line-height: 1.2em;
+    cursor: pointer;
+}
+
+.signInBtn{
+    margin: 40px auto;
+    text-align: center;
+}
+
+span{
+    color: red;
+}

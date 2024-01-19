@@ -1,0 +1,54 @@
+.communitySearchResultForm{
+    /* border: 1px solid black; */
+    /* height: 1500px; */
+    margin: 50px;
+    font-size: 20px;
+}
+
+.albaInfoSearchResultForm{
+    /* border: 1px solid black; */
+    height: 500px;
+    margin: 50px;
+    font-size: 20px;
+}
+
+.moreButton{
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+h4{
+    text-decoration: underline;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.postDetail{
+    font-size: 15px;
+}
+
+.postlocation{
+    font-size: 13px;
+    color: #949494;
+}
+
+
+.search1{
+    width: 678px;
+    height: 40px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #004591;
+}
+
+.searchResultNumber{
+    color: #004591;
+}
+
+/* .aTag:visited {
+    color: blue !important;
+} */
+

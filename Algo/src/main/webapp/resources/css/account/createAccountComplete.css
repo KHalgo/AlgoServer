@@ -1,0 +1,32 @@
+.algo_btn_blue_long {
+    width: 250px;
+    height: 60px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background: #004591;
+    color: #fff;
+    line-height: 1.2em;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .first_div {
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    height: 70%;
+    margin-top: 120px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 120px;
+  }
+  
+  .second_div {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
