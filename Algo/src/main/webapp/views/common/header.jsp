@@ -42,8 +42,8 @@
 	    </ul>
 	    <ul class="right_nav">
 	        <li class="locate"><a href="${ path }/"><span style="vertical-align: middle;">강남구</span></a></li>
-	        <li><a href="${ path }/">로그인</a></li>
-	        <li><a href="${ path }/">회원가입</a></li>
+	        <li><a href="${ path }/views/account/login.jsp">로그인</a></li>
+	        <li><a href="${ path }//views/account/createAccount.jsp">회원가입</a></li>
 	    </ul>
 		</nav>
 	</header>

@@ -1,0 +1,146 @@
+<<<<<<< HEAD
+#biglogo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.first_div {
+    border: 1px solid #004591;
+    border-radius: 10px;
+    height: 400px;
+    width: 650px;
+    margin: 20px auto;
+    margin-bottom: 120px;
+}
+
+.login-box{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#input_id {
+    border: 1px solid #004591;
+    border-radius: 10px;
+    height: 50px;
+    width: 500px;
+    margin-top: 50px;
+    background-image: url(https://i.ibb.co/TKyQLd7/id-Icon.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 45px;
+}
+
+#input_pass {
+    border: 1px solid #004591;
+    border-radius: 10px;
+    height: 50px;
+    width: 500px;
+    margin-top: 20px;
+    background-image: url(https://i.ibb.co/wz2kYDS/password-Icon.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 45px;
+}
+
+.first_div input::placeholder{
+    color:#a2a2a2;
+}
+
+input:focus{
+    outline: none;
+}
+
+.login_info_save {
+    margin-top: 20px;
+}
+
+.login_info_save label{
+    color: #303030;
+}
+
+.login_btn {
+    height: 50px;
+    width: 500px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background: #004591;
+    color: #fff;
+    line-height: 1.2em;
+    cursor: pointer;
+    margin-top: 40px;
+    border:none;
+    font-size: 16px;
+}
+
+.label_signup {
+    float: left;
+}
+
+.label_pass {
+    float: right;
+}
+
+.label_id {
+    float: right;
+    margin-right:20px;
+}
+=======
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.main{
+    width: 500px;
+    height: 543;
+    margin: 0 auto;
+    margin-bottom: 230px;
+    border-radius: 10px;
+    border: 1px solid #004591;
+    background: rgba(217, 217, 217, 0.00);
+}
+.login-wrapper{
+    width: 500px;
+    height: 350px;
+    padding: 40px;
+    box-sizing: border-box;
+    
+}
+
+.login-wrapper > h2{
+    font-size: 24px;
+    color: #6A24FE;
+    margin-bottom: 20px;
+}
+
+#login-form > input{
+    width: 400px;
+    height: 48px;
+    box-sizing: border-box;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+#login-form > input::placeholder{
+    color: #D2D2D2;
+}
+#login-form > input[type="submit"]{
+    color: #fff;
+    font-size: 16px;
+    background-color: #004591;
+    margin-top: 20px;
+}
+
+#biglogo{
+    text-align: center;
+    margin-top: 50px;
+}
+>>>>>>> junseok
