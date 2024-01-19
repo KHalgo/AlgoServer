@@ -39,7 +39,7 @@
                         <div class="w_content_box">
                             <div>
                                 <h3>작성한 기업 리뷰</h3>
-                                <button id="wb_btn1" class="wc_btn1" value="리뷰 작성">리뷰 작성</button>
+                                <button id="wb_btn1" class="wc_btn1" value="리뷰 작성" onclick="location.href='${ path }/'" >리뷰 작성</button>
                             </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
@@ -80,17 +80,20 @@
                                     
                             </table>
                             <div class="pagging">
-                                <div class="prev_page" id="prev_page"><a href=""><</a></div>
+                                <!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="prev_page" id="prev_page"><a href="${ path}"><</a></div>
                                 <div class="pages">
-                                    <span class="active">1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>4</span>
-                                    <span>5</span>
+                                    <span class="active"><a href="">1</a></span>
+                                    <span><a href="">2</a></span>
+                                    <span><a href="">3</a></span>
+                                    <span><a href="">4</a></span>
+                                    <span><a href="">5</a></span>
                                 </div>
-                                <div class="next_page" id="next_page"><a href="">></a></div>
+                                <!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="next_page" id="next_page"><a href="${ path}">></a></div>
                             </div>
-                            <button id="wb_btn2" class="wc_btn2" value="리뷰 삭제">리뷰 삭제</button>
+                            <!-- 글 삭제 구현 할것 -->
+                            <button id="wb_btn2" class="wc_btn2" value="글 삭제">글 삭제</button>
                         </div>
 
                     </div>

@@ -14,7 +14,7 @@
             <li><a href="/Algo/myPage/wrBoard" class="myp_sideD">작성한 게시글</a></li>
             <li><a href="/Algo/myPage/wrComment" class="myp_sideD">작성한 댓글</a></li>
             <li><a href="/Algo/myPage/wrReview" class="myp_sideD">작성한 기업 리뷰</a></li>
-            <li><a href="/Algo/myPage/inquiry" class="myp_sideM">1:1 문의</a></li>
+            <li><a href="/Algo/myPage/question" class="myp_sideM">1:1 문의</a></li>
             <li><a href="/Algo/myPage/inquiryLog">문의 내역</a></li>
         </ul>
     </div>

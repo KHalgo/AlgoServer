@@ -45,7 +45,8 @@
                                     <textarea id="q_content" name="bcontent" placeholder="문의 내용을 입력하세요" cols="30" rows="20"></textarea>
                                 </div>
                                 <div class="q_sub_btn">
-                                    <button type="submit" id="q_btn1">문의하기</button>
+                                	<!-- (미구현)버튼 클릭시 정보 넘기고 링크로 이동해야할것! -->
+                                    <button type="submit" id="q_btn1" onclick="location.href='${ path }/myPage/question/success'">문의하기</button>
                                 </div>
                             </fieldset>
                         </div>

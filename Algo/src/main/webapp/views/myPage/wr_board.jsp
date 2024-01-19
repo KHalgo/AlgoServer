@@ -39,7 +39,7 @@
                         <div class="w_content_box">
                             <div>
                                 <h3>작성한 게시글</h3>
-                                <button id="wb_btn1" class="wc_btn1" value="글 작성">글 작성</button>
+                                <button id="wb_btn1" class="wc_btn1" value="글 작성" onclick="location.href='${ path }/'" >글 작성</button>
                             </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
@@ -51,86 +51,89 @@
                                     </thead>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                                     <tr class="w_dm_d">
                                         <td class="w_dm_cb"><input type="checkbox" name="wc_cb" id="wc_cb"></td>
-                                        <td class="w_dm_co"><a href="#">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
+                                        <td class="w_dm_co"><a href="${ path }/">프로토 타입 완성,전기 자동차로 해양을 가로...</a></td>
                                         <td class="w_dm_da">2023.08.01</td>
                                         <td class="w_dm_ct">알고TALK</td>
                                         <td class="w_dm_re">50</td>
                                     </tr>
                             </table>
                             <div class="pagging">
-                                <div class="prev_page" id="prev_page"><a href=""><</a></div>
+                            	<!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="prev_page" id="prev_page"><a href="${ path }"><</a></div>
                                 <div class="pages">
-                                    <span class="active">1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>4</span>
-                                    <span>5</span>
+                                    <span class="active"><a href="">1</a></span>
+                                    <span><a href="">2</a></span>
+                                    <span><a href="">3</a></span>
+                                    <span><a href="">4</a></span>
+                                    <span><a href="">5</a></span>
                                 </div>
-                                <div class="next_page" id="next_page"><a href="">></a></div>
+                                <!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="next_page" id="next_page"><a href="${ path }">></a></div>
                             </div>
+                            <!-- 글 삭제 구현 할것 -->
                             <button id="wb_btn2" class="wc_btn2" value="글 삭제">글 삭제</button>
                         </div>
 

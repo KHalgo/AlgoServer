@@ -29,6 +29,7 @@
 	<!-- 내용 넣기 -->
 	<main>
 		<section>
+		<jsp:include page="/views/myPage/mysideBar.jsp" />
             <div class="lm_content">
                 <form action="" name="sidebar">
                     <div id="mySideBar"></div>
@@ -50,23 +51,23 @@
                                 <tr class="lm_tr">
                                     <tr>
                                         <td class="lm_td">
-                                            <img src="../icon/location_logo.png" width="24px" height="24px" alt="">
+                                            <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 강남구</div>
                                             <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
                                         </td>
                                         <td class="lm_td">
-                                            <img src="../icon/location_logo.png" width="24px" height="24px" alt="">
+                                            <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 중구</div>
                                             <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
                                         </td>
                                     </tr>
                                     <td class="lm_td">
-                                        <img src="../icon/location_logo.png" width="24px" height="24px" alt="">
+                                        <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">경기도 남양주시</div>
                                         <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
                                     </td>
                                     <td class="lm_td">
-                                        <img src="../icon/location_logo.png" width="24px" height="24px" alt="">
+                                        <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">서울시 강남구</div>
                                         <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
                                     </td>

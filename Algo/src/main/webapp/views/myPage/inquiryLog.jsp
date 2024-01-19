@@ -38,74 +38,76 @@
                     <div class="iql_content_box">
                         <div>
                             <h3>1:1 문의 내역</h3>
-                            <button id="iqlQG" value="문의 하기">문의 하기</button>
+                            <button id="iqlQG" value="문의 하기" onclick="location.href='${ path }/myPage/question'">문의 하기</button>
                         </div>
                         <div class="iql_board">
                             <h4>나의 문의 내역</h4>
                             <table class="iql_board_case">
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.15</td>
                                     <td><button id="iql_board_dmY" value="답변 대기중">답변 대기중</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">어제 새로운 카페를 발견했다.. 바로가자</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">어제 새로운 카페를 발견했다.. 바로가자</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href=""><p>새로운 레시피를 시도해봤는데.. 맛 없어서 혼났음</p>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer"><p>새로운 레시피를 시도해봤는데.. 맛 없어서 혼났음</p>
                                     </a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">아 디자인 공부를 어디서 해야할 지 모르겠다..</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">아 디자인 공부를 어디서 해야할 지 모르겠다..</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">지역 설정을 여러개 한 번에 하고 싶은데 어떻...</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">지역 설정을 여러개 한 번에 하고 싶은데 어떻...</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 <tr class="iql_board_dm">
-                                    <td class="iql_board_dmT"><a href="">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
+                                    <td class="iql_board_dmT"><a href="${ path }/myPage/inquiry/answer">닉네임을 변경하고 싶은데 어떻게 하면 될까요?</a></td>
                                     <td class="iql_board_dmD">2023.12.14</td>
                                     <td><button id="iql_board_dmN" value="답변 완료">답변 완료</button></td>
                                 </tr>
                                 
                             </table>
                                 <div class="pagging" id="iq_log_p">
-                                    <div class="prev_page" id="prev_page"><a href=""><</a></div>
-                                    <div class="pages">
-                                        <span class="active">1</span>
-                                        <span>2</span>
-                                        <span>3</span>
-                                        <span>4</span>
-                                        <span>5</span>
-                                    </div>
-                                    <div class="next_page" id="next_page"><a href="">></a></div>
+                                    <!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="prev_page" id="prev_page"><a href="${ path}"><</a></div>
+                                <div class="pages">
+                                    <span class="active"><a href="#">1</a></span>
+                                    <span><a href="#">2</a></span>
+                                    <span><a href="#">3</a></span>
+                                    <span><a href="#">4</a></span>
+                                    <span><a href="#">5</a></span>
+                                </div>
+                                <!-- 앞/뒤 이동 버튼 구현할것 -->
+                                <div class="next_page" id="next_page"><a href="${ path}">></a></div>
                                 </div>
                             </div>
                         </form>

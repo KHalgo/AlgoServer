@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "myPageInquiry", urlPatterns = { "/myPage/inquiry" })
-public class MyPageInquiryServlet extends HttpServlet {
+@WebServlet(name = "myPageInquiryAnswer", urlPatterns = { "/myPage/inquiry/answer" })
+public class MyPageInquiryAnswerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public MyPageInquiryServlet() {
+    public MyPageInquiryAnswerServlet() {
     }
     
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/myPage/inquiry.jsp")
+		request.getRequestDispatcher("/views/myPage/inquiryAnswer.jsp")
 		.forward(request, response);
 	}
     

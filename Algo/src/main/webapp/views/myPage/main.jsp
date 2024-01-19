@@ -42,15 +42,15 @@
                             <p class="pr_lText">게시글 관리</p>
                             <hr>
                             <div class="mp_content_m_box">
-                                <p><a href="#">1</a><br>작성한 기업 리뷰</p>
+                                <p><a href="${ path }/myPage/wrReview">1</a><br>작성한 기업 리뷰</p>
                             </div>
                             <div class="mp_content_m_box">
                                 <div>
-                                    <p><a href="#">2</a><br>작성한 게시글</p>
+                                    <p><a href="${ path }/myPage/wrBoard">2</a><br>작성한 게시글</p>
                                 </div>
                             </div>
                             <div class="mp_content_m_box">
-                                <p><a href="#">3</a><br>작성한 댓글</p>
+                                <p><a href="${ path }/myPage/wrComment">3</a><br>작성한 댓글</p>
                             </div>
                             <div class="mp_content"></div>
                         </div>
@@ -66,24 +66,24 @@
                         <div class="prBox2">
                             <div class="pr_lTitle">
                                 <span><p class="pr_lText">1:1 문의</p></span>
-                                <div class="more pr_more"><a href="">+ MORE</a></div>
+                                <div class="more pr_more"><a href="${ path }/myPage/question">+ MORE</a></div>
                                 <div class="mp_content_box">
                                     <div class="mp_dm">
-                                        <a href="">
+                                        <a href="${ path }/myPage/inquiry">
                                             <span class="mp_dm_ti">최근에 본 좋은 영화 있어요?</span>
                                             <span class="mp_dm_de">2023.12.15</span>
                                         </a>
                                     </div>
 
                                     <div class="mp_dm">
-                                        <a href="">
+                                        <a href="${ path }/myPage/inquiry">
                                             <span class="mp_dm_ti">최근에 본 좋은 영화 있어요?</span>
                                             <span class="mp_dm_de">2023.12.15</span>
                                         </a>
                                     </div>
 
                                     <div class="mp_dm">
-                                        <a href="">
+                                        <a href="${ path }/myPage/inquiry">
                                             <span class="mp_dm_ti">최근에 본 좋은 영화 있어요?</span>
                                             <span class="mp_dm_de">2023.12.15</span>
                                         </a>
