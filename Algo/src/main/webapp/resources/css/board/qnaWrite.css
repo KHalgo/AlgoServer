@@ -1,0 +1,66 @@
+.writeBoard{
+    width: 1065px;
+    border: 1px solid #C0C0C0;
+    border-collapse: collapse;
+    margin: 30px auto;
+}
+
+th {
+    background-color: #F4F6F9;
+    border: 1px solid #C0C0C0;
+}
+
+td {
+    border: 1px solid #C0C0C0;
+    padding-left: 20px;
+}
+
+tr {
+    height: 50px;
+}
+
+select {
+    width: 158px;
+    height: 35px;
+    padding-left: 13px;
+    border: 1px solid #C0C0C0;
+    appearance: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+.title {
+    width: 700px;
+    border: none;
+}
+
+.title:focus {
+    outline: none;
+}
+
+.contentBox {
+    height: 350px;
+}
+
+.content {
+    width: 1020px;
+    height: 300px;
+    border: none;
+    resize: none;
+}
+
+.content:focus {
+    outline: none;
+}
+
+.buttons {
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.algo_btn1 {
+    margin-right: 10px;
+}

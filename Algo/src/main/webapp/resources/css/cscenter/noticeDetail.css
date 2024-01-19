@@ -1,0 +1,93 @@
+main {
+    background-color: #F5F8FB;
+    height: auto;
+    padding: 70px 0;
+    }
+    
+    h2 {
+        text-align: left;
+        padding-bottom: 0px;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .bar-box {
+        width: 1055px;
+        height: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    /* 사이드 바 메뉴 */
+    .sidebar {
+        width: 180px;
+        height: 165px;
+        border: 1px solid #D6D6D6;
+        background-color: #FFF;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .sidebar * {
+        font-weight: bold;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    
+    .s-first {
+        padding-bottom: 30px;
+    }
+    
+    /* 메인 공지사항 게시판 */
+    .cs-board-box {
+        width: 860px;
+        border: 1px solid #D6D6D6;
+        background-color: #FFF;
+        padding: 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .noticeBox {
+        width: 798px;
+        border: 1px solid #D9D9D9;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    tr {
+        border: 1px solid #D9D9D9;
+    }
+    
+    td {
+        padding-left: 20px;
+    }
+    
+    .title {
+        height: 70px;
+        font-size: 18px;
+    }
+    
+    .writeInfo {
+        height: 40px;
+        text-align: right;
+        padding-right: 25px;
+    }
+    
+    .content {
+        padding: 30px;
+    }
+    
+    .content p {
+        text-align: top;
+    }
+    
+    .noticeList {
+        /* margin: 0 auto; */
+        text-align: center;
+        margin-top: 20px;
+    }

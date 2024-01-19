@@ -1,0 +1,142 @@
+main {
+    background-color: #F5F8FB;
+    padding: 70px 0;
+}
+
+h2 {
+    text-align: left;
+    padding: 30px 40px;
+}
+
+h4 {
+    padding-left: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+.bar-box {
+    width: 1055px;
+    height: 680px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sidebar {
+    width: 180px;
+    height: 165px;
+    border: 1px solid #D6D6D6;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sidebar * {
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.s-first {
+    padding-bottom: 30px;
+}
+
+.cs-board-box {
+    width: 860px;
+    height: 680px;
+    border: 1px solid #D6D6D6;
+    background-color: #FFF;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.cs-qna {
+    width: 790px;
+    height: 280px;
+    border: 1px solid #D6D6D6;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.cs-qna-h {
+    position: relative;
+    width: 750px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #d6d6d6
+}
+
+.cs-qna-h .more {
+    font-size: 13px;
+    top: 21px;
+}
+
+.cs-qna-list{
+    width:790px;
+    margin:10px auto;
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+    table-layout: fixed;
+    padding-left: 30px;
+    padding-right: 80px;
+}
+
+.cs-qna-list td {
+    padding: 0 7px;
+}
+
+.cs-bottom {
+    width: 790px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.cs-notice, .cs-my  {
+    width: 385px;
+    height: 240px;
+    border: 1px solid #D6D6D6;
+    border-radius: 20px;
+}
+
+.cs-notice {
+    float: left;
+}
+
+.cs-my {
+    float: right;
+}
+
+.cs-notice-h {
+    position: relative;
+    width: 345px;
+    padding: 20px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #d6d6d6
+}
+
+.cs-notice-list{
+    width:345px;
+    margin:10px auto;
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+    table-layout: fixed;
+}
+
+.cs-notice-list td {
+    padding: 0 7px;
+}
+
+table > tbody > tr > td:first-child {
+    width: 70%;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.cs-notice-h .more {
+    font-size: 13px;
+    top: 21px;
+}

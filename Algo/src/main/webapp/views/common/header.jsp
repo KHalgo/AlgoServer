@@ -24,17 +24,17 @@
 				</ul>
 			</li>
 	        <li>
-				<a href="${ path }">커뮤니티</a>
+				<a href="${ path }/talkBoard/">커뮤니티</a>
 				<ul>
-					<li><a href="${ path }/">알고 TALK</a></li>
-					<li><a href="${ path }/">알고 Q&A</a></li>
+					<li><a href="${ path }/talkBoard/">알고 TALK</a></li>
+					<li><a href="${ path }/qnaBoard/">알고 Q&A</a></li>
 				</ul>
 			</li>
 	        <li><a href="${ path }/">알바 정보</a></li>
 	        <li>
-				<a href="${ path }/">고객센터</a>
+				<a href="${ path }/cscenter/">고객센터</a>
 				<ul>
-					<li><a href="${ path }/">공지사항</a></li>
+					<li><a href="${ path }/cscenter/notice">공지사항</a></li>
 					<li><a href="${ path }/">1:1문의</a></li>
 				</ul>
 			</li>

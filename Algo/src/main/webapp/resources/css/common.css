@@ -277,6 +277,7 @@ header{
     align-items: center;
     margin-bottom: 40px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .pagging>div, .pages span{

@@ -1,0 +1,150 @@
+/* 검색 창 */
+.searchBox {
+    margin-top: 15px;
+    position: relative;
+}
+
+.board_btn1 {
+    width: 102px;
+    height: 35px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background: #004591;
+    color:#fff;
+    line-height: 1.2em;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    float: right;
+    margin-left: 10px;
+    border: none;
+}
+
+.board_btn1  a {
+    color:#fff;
+}
+
+.searching * {
+    margin-left: 10px;
+}
+
+.box1:focus {
+    outline: none;
+}
+
+.box2:focus {
+    outline: none;
+}
+
+.searching {
+    float: right;
+}
+
+.searching select {
+    width: 158px;
+    height: 35px;
+    padding-left: 13px;
+    border: 1px solid #C0C0C0;
+    appearance: none;
+    
+}
+
+.searching input[type="search"] {
+    width: 374px;
+    height: 35px;
+    border: 1px solid #C0C0C0;
+    padding-left: 13px;
+}
+
+.board_btn2 {
+    width: 92px;
+    height: 35px;
+    padding: 7px 20px;
+    border-radius: 5px;
+    border:1px solid #004591;
+    background: #fff;
+    box-sizing: border-box;
+    color:#004591;
+    line-height: 1.2em;
+    cursor: pointer;
+}
+
+.board_btn2 a {
+    color:#004591;
+}
+
+/* 게시판 목록 */
+.list-top p {
+    font-size: 10pt;
+}
+
+.list-top span {
+    color: #004591;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #101010;
+}
+
+.noticeImg { 
+    vertical-align: middle;
+}
+
+.notice {
+    background-color: #F4F6F9
+}
+
+
+.board_list {
+    width: 100%;
+    border: 1px solid #C0C0C0
+}
+
+.board_list th, td {
+    height: 50px;
+}
+
+.board_list tr {
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.board_list th {
+    color: #5C5C5C;
+}
+
+.board_list td {
+    text-align: center;
+    padding: 5px;
+}
+
+.board_list_wrap .paging {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.board_list_wrap .paging a {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 12pt;
+    color: #C0C0C0;
+}
+
+.board_list_wrap .paging a.on {
+    color: #101010;
+    font-weight: bold;
+}
+
+.board_list_wrap .paging a:first-child {
+    margin-left: 0;
+}
