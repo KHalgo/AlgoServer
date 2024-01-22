@@ -41,7 +41,7 @@
                             <div class="lm_search">
                                 <div class="lm_search_bar">
                                     <input type="search" name="lm_search" id="lm_search_input" placeholder="원하는 지역을 입력해주세요">
-                                    <button id="lm_btn1"><img id="lm_img1" src="../icon/search.png" alt=""></button>
+                                    <button id="lm_btn1"><img id="lm_img1" src="https://i.ibb.co/ByBFcyt/search.png" alt=""></button>
                                 </div>
                             </div>
                         </form>
@@ -53,23 +53,23 @@
                                         <td class="lm_td">
                                             <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 강남구</div>
-                                            <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
+                                            <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                         </td>
                                         <td class="lm_td">
                                             <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 중구</div>
-                                            <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
+                                            <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                         </td>
                                     </tr>
                                     <td class="lm_td">
                                         <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">경기도 남양주시</div>
-                                        <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
+                                        <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                     </td>
                                     <td class="lm_td">
                                         <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">서울시 강남구</div>
-                                        <img src="../icon/yellow_heart.png" width="24px" height="24px" alt="">
+                                        <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                     </td>
                                 </tr>
                             </table>

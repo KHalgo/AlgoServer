@@ -39,7 +39,7 @@
                         <div>
                             <h3>프로필 관리</h3>
                             <div class="ps_img">
-                                <span><img src="../icon/algo_banner2.jpg" alt="../icon/algo_banner2.jpg" id="ps_img"></span>
+                                <span><img src="https://i.ibb.co/TYGjRpx/algo-banner2.jpg" alt="algo-banner2" id="ps_img"></span>
                                 <span><p>홍길동 님</p></span>
                             </div>
                         </div>

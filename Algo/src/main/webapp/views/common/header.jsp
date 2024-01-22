@@ -31,7 +31,8 @@
 				</ul>
 			</li>
 	        <li><a href="${ path }/">알바 정보</a></li>
-	        <li>				
+
+	        <li>
 				<a href="${ path }/cscenter/">고객센터</a>
 				<ul>
 					<li><a href="${ path }/cscenter/notice">공지사항</a></li>

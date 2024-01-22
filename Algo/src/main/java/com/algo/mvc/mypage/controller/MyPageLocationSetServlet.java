@@ -1,4 +1,4 @@
-package com.algo.mvc.company.controller;
+package com.algo.mvc.mypage.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "myPageMain", urlPatterns = { "/myPage/main" })
-public class MyPageMainServlet extends HttpServlet {
+@WebServlet(name = "myPageLocationSet", urlPatterns = { "/myPage/locationSet" })
+public class MyPageLocationSetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public MyPageMainServlet() {
+    public MyPageLocationSetServlet() {
     }
     
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.getRequestDispatcher("/views/myPage/main.jsp")
-		.forward(request, response);
+    	request.getRequestDispatcher("/views/myPage/locationSet.jsp")
+    		.forward(request, response);
 	}
     
     @Override
