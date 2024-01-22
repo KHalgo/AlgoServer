@@ -55,9 +55,9 @@
                                 </div>
                             </div>
                             <div class="iq_btn_c">
-                                <button class="iq_btn" onclick=""><a href="#">문의 삭제</a></button>
-                                <button class="iq_btn" onclick=""><a href="${ path }/myPage/inquiry">목록</a></button>
-                                <button class="iq_btn" onclick=""><a href="${ path }/myPage/inquiry">문의하기</a></button>
+                                <button class="iq_btn" onclick=""><a href="${ path }/myPage/inquiryLog">문의 삭제</a></button>
+                                <button class="iq_btn" onclick=""><a href="${ path }/myPage/inquiryLog">목록</a></button>
+                                <button class="iq_btn" onclick=""><a href="${ path }/myPage/question">문의하기</a></button>
                             </div>
                         </div>
                     </div>
