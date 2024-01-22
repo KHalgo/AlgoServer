@@ -174,15 +174,21 @@
                 </tbody>
             </table>
             <div class="pagging">
-                <div class="prev_page" id="prev_page">&lt;</div>
-                <div class="pages">
-                    <span class="active">1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                </div>
-                <div class="next_page" id="next_page">&gt;</div>
+	            <!-- 이전 페이지로 -->
+				<button class="prev_page" onclick="location.href='${ path }/companyReview/list?page=${ pageInfo.prevPage }'">&lt;</button>
+                <!--  10개 페이지 목록 -->
+				<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+					<c:choose>
+						<c:when test="${ current == pageInfo.currentPage }">
+							<button class="pages" disabled>${ current }</button>
+						</c:when>
+						<c:otherwise>
+							<button class="active" onclick="location.href='${ path }/companyReview/list?page=${ current }'">${ current }</button>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+                <!-- 다음 페이지로 -->
+				<button class="next_page" onclick="location.href='${ path }/companyReview/list?page=${ pageInfo.nextPage }'">&gt;</button>
             </div>
         </section>
     </main>
