@@ -38,7 +38,7 @@
                     <div class="iql_content_box">
                         <div>
                             <h3>1:1 문의 내역</h3>
-                            <button id="iqlQG" value="문의 하기" onclick="location.href='${ path }/myPage/question'">문의 하기</button>
+                            <input type="button" id="iqlQG" value="문의 하기" onclick="location.href='${ path }/myPage/question'"></input>
                         </div>
                         <div class="iql_board">
                             <h4>나의 문의 내역</h4>
