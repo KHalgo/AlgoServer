@@ -93,7 +93,7 @@
                                 <div class="next_page" id="next_page"><a href="${ path}">></a></div>
                             </div>
                             <!-- 글 삭제 구현 할것 -->
-                            <button id="wc_btn2" class="wc_btn2" value="글 삭제">글 삭제</button>
+                            <button id="wc_btn2" class="wc_btn2" value="리뷰 삭제">리뷰 삭제</button>
                         </div>
 
                     </div>

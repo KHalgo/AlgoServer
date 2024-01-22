@@ -57,7 +57,7 @@
                             </tr>
                             <tr class="ps_ct">
                                 <td colspan="2"><input type="text" var="pr_addres" class="pr_put2" placeholder="주소" readonly></td>
-                                <td><input type="number" var="pr_c_number" class="pr_put1" placeholder="인증번호입력"></td>
+                                <td><input type="text" var="pr_c_number" class="pr_put1" placeholder="인증번호입력"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="인증확인">인증확인</button></td>
                             </tr>
                             <tr class="ps_ct">
