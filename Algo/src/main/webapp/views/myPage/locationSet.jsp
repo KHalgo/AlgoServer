@@ -29,6 +29,7 @@
 	<!-- 내용 넣기 -->
 	<main>
 		<section>
+		
 		<jsp:include page="/views/myPage/mysideBar.jsp" />
             <div class="lm_content">
                 <form action="" name="sidebar">
@@ -36,7 +37,7 @@
                 </form>
                 <form action="" name="content">
                     <div class="local_box">
-                        <form action="" class=" local_set_saerch">
+                        <form action="">
                             <h3>지역 설정</h3>
                             <div class="lm_search">
                                 <div class="lm_search_bar">
@@ -51,35 +52,36 @@
                                 <tr class="lm_tr">
                                     <tr>
                                         <td class="lm_td">
-                                            <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
+                                            <img src="https://i.ibb.co/HhQ0sDr/location-logo.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 강남구</div>
                                             <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                         </td>
                                         <td class="lm_td">
-                                            <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
+                                            <img src="https://i.ibb.co/HhQ0sDr/location-logo.png" width="24px" height="24px" alt="location" border="0">
                                             <div class="lm_dm">서울시 중구</div>
                                             <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                         </td>
                                     </tr>
                                     <td class="lm_td">
-                                        <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
+                                        <img src="https://i.ibb.co/HhQ0sDr/location-logo.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">경기도 남양주시</div>
                                         <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                     </td>
                                     <td class="lm_td">
-                                        <img src="https://i.ibb.co/kSdL3Ns/location.png" width="24px" height="24px" alt="location" border="0">
+                                        <img src="https://i.ibb.co/HhQ0sDr/location-logo.png" width="24px" height="24px" alt="location" border="0">
                                         <div class="lm_dm">서울시 강남구</div>
-                                        <img src="https://i.ibb.co/V97jmW2/yellow-heart.png" alt="yellow-heart" border="0" width="24px" height="24px">
+                                        <img src="https://i.ibb.co/v34CvHX/yellow-heart-empty.png" alt="yellow-heart" border="0" width="24px" height="24px">
                                     </td>
                                 </tr>
                             </table>
                             <div class="lm_rs">
                                 <span><p id="lm_p1">현재 내가 설정한 지역은</p></span>
-                                <span><a href="" class="lm_local">서울시 강남구</a></span>
+                                <span><a href="${ path }/myPage/location/window" class="lm_local" target="_blank">서울시 강남구</a></span>
                                 <span><p id="lm_p2">입니다.</p></span>
                             </div>
                         </form>
                     </div>
+                    
             </div>
         </section>
 	</main>
@@ -89,6 +91,7 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>	
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage.js"></script>
 </body>
 </html>

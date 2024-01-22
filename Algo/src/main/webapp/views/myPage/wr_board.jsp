@@ -39,7 +39,7 @@
                         <div class="w_content_box">
                             <div>
                                 <h3>작성한 게시글</h3>
-                                <button id="wb_btn1" class="wc_btn1" value="글 작성" onclick="location.href='${ path }/'" >글 작성</button>
+                                <button id="wb_btn1" class="wc_btn1" value="글 작성" onclick="location.href='Algo/talkBoard/talkWrite'" >글 작성</button>
                             </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
@@ -148,6 +148,7 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>	
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage.js"></script>
 </body>
 </html>

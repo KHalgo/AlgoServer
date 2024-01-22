@@ -126,30 +126,29 @@ main {
     background-color: #ffffff;
     display: block;
     float: right;
-    padding: 25px;
+    padding: 35px;
     margin: 5px auto;
 }
 
 .lm_search {
     width: 800px;
     margin-top: 20px;
-    /* 테두리 지울거 */
-    /* border: 1px solid #004591; */
-}
+    }
 
 .lm_search_bar {
-    width: 760px;
+    width: 800px;
     height: 50px;
     border: 1px solid #d9d9d9;
     border-radius: 10px;
-    margin: auto;
+    padding: 15px 8px;
+    margin-bottom : 25px;
 }
 
 .lm_table {
     width: 800px;
-    margin-top: 30px;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid #d9d9d9;
+    margin: auto;
 }
 
 .table_title {
@@ -172,7 +171,10 @@ main {
     padding: 10px;
     font-size: 18px;
     font-weight: 500;
-    margin: 7px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 5px;
 }
 
 .lm_rs {
@@ -188,9 +190,10 @@ main {
     font-size: 45px;
     font-weight: 500;
     margin-left: 260px;
+    text-decoration: underline;
 }
 #lm_p1 {
-    padding: 30px 200px;
+    padding: 50px 180px;
     font-size: 20px;
 }
 
@@ -202,19 +205,19 @@ main {
 }
 
 #lm_search_input {
-    width: 600px;
-    height: 40px;
-    padding: 5px;
-    margin: 5px;
+    width: 680px;
+    height: auto;
+    padding: 5px 10px;
     border: none;
+    float: left;
+    margin: -4px;
 }
 
 #lm_btn1 {
-    width: 40px;
-    height: 40px;
     background-color: #fff;
     border: none;
-    margin: auto;
+    margin-right: 10px;
+    float: right;
 }
 
 #lm_img1 {
@@ -262,8 +265,7 @@ main {
     padding: 5px;
 }
 #ls_search {
-    margin-top: 25px;
-    margin-left: 25px;
+    margin: auto;
     width: 720px;
     height: 50px;
     border-top: 1px solid #d9d9d9;
@@ -273,6 +275,152 @@ main {
     padding-left: 15px;
     padding-right: 60px;
 }
+
+#ls_search_input {
+    float: left;
+}
+
+#ls_img1 {
+    background-color: #fff;
+    border: none;
+    margin-right: 10px;
+    margin-left: 30px;
+    float: right;
+}
+
+#ls_btn1 {
+    background-color: #fff;
+    border: none;
+    margin-left: 30px;
+    margin-right: 10px;
+    float: right;
+}
+/* 지역 설정 페이지에서 클릭시 */
+
+.lw_content {
+    width: 860px;
+    height: 680px;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.lw_content h3 {
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.lw_search {
+    display: inline-flexbox;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 720px;
+    height: 50px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: none;
+    border-right: none;
+    padding: 10px 25px;
+}
+
+.lw_search {
+    display: inline-flex;
+    width: 720px;
+    height: 50px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: none;
+    border-right: none;
+    margin-top: 25px;
+    margin-left: 25px;
+    padding: 15px 25px;
+}
+
+.lw_table {
+    border: none;
+}
+
+.lw_td {
+    width: 360px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: space-between;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.lw_dm a {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+/* 비밀 번호 설정 페이지 */
+
+.cp_content_box {
+    padding: 20px;
+}
+.cp_content_box h2 {
+    text-align: justify;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+
+.cp_change {
+    width: 800px;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    margin-top: 90px;
+    margin-bottom: 15px;
+}
+
+.cp_m {
+    display: flex;
+    width: 764.802px;
+    height: 37px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    padding-left: 15px;
+    border: none;
+}
+
+.cp_d1 {
+    margin-top: 18px;
+}
+
+.cp_content_box hr {
+    background-color: #d9d9d9;
+    
+    border-color: #d9d9d9;
+}
+
+.cp_btn {
+    width: 207px;
+    height: 48px;
+    border-radius: 10px;
+    background: #004591;
+    color: #fff;
+    margin-top: 90px;
+    margin-left: 332px;
+}
+
 
 /* 1:1 문의 페이지 */
 .qcontent {

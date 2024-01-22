@@ -50,6 +50,7 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>	
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage.js"></script>	
 </body>
 </html>

@@ -18,8 +18,8 @@
 
 
 <!-- css 추가 -->
-<link rel="stylesheet" href="${ path }/resources/css/mypage/changePwd.css">
-
+<link rel="stylesheet" href="${ path }/resources/css/mypage/myPage.css">
+<link rel="stylesheet" href="${ path }/resources/css/mypage/sideBar.css">
 
 </head>
 <body>
@@ -30,34 +30,33 @@
 	<!-- 내용 넣기 -->
 	<main>
 		<section>
-			<form action="">
-				<div>
-					<img src="https://i.ibb.co/K6dj7KV/logo-3.png" alt="로고"
-						class="Pwd_logo" /> <strong
-						style="font-size: 30px; color: #003566">비밀 번호 변경</strong>
-				</div>
-				<div>
-					<div class="acc-table">
-						<table>
-							<tr>
-								<th>새 비밀번호</th>
-								<td><input class="user_info_input_tag1" type="password"
-									name="" id="" placeholder="8~15자 영문, 숫자 포함" /></td>
-							</tr>
-							<tr>
-								<th>새 비밀번호 확인</th>
-								<td><input class="user_info_input_tag1" type="password"
-									name="" id="" placeholder="8~15자 영문, 숫자 포함" /></td>
-							</tr>
-						</table>
-						<div style="margin: -50px auto; text-align: center">
-							<button class="algo_btn1" type="button"
-								onclick="location.href='${ path }/account/findPwdComplete'">변경하기</button>
-						</div>
-					</div>
-				</div>
-			</form>
-		</section>
+			<jsp:include page="/views/myPage/mysideBar.jsp" />
+            <div class="content">
+                <form action="" name="sidebar">
+                    <div id="mySideBar"></div>
+                </form>
+                <form action="" name="content">
+                    <div class="mp_box">
+                        <div class="w_content_box cp_content_box">
+                            <div><h2>비밀 번호 변경</h2></div>
+                            <div class="cp_change">
+                                <input type="password" placeholder="현재 비밀번호" class="cp_m">
+                            </div>
+                            <hr>
+                            <div class="cp_change cp_d1">
+                                <input type="password" placeholder="새 비밀번호 (8~15자 영문,숫자,포함)" class="cp_m">
+                            </div>
+                            <div class="cp_change cp_d1">
+                                <input type="password" placeholder="새 비밀번호 확인" class="cp_m">
+                            </div>
+                            <hr>
+                            <button type="button" class="cp_btn">비밀번호 변경</button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </section>
 	</main>
 
 	<!-- 푸터 -->
@@ -65,5 +64,8 @@
 
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage.js"></script>
+	
 </body>
 </html>
