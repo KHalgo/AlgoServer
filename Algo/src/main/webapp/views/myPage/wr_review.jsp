@@ -39,7 +39,8 @@
                         <div class="w_content_box">
                             <div>
                                 <h3>작성한 기업 리뷰</h3>
-                                <button id="wb_btn1" class="wc_btn1" value="리뷰 작성" onclick="location.href='${ path }/'" >리뷰 작성</button>
+                                <input type="button" id="wb_btn1" class="wc_btn1" value="리뷰 작성" onClick="location.href='${ path }/companyReview/list'" ></input>
+                                
                             </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
@@ -93,7 +94,7 @@
                                 <div class="next_page" id="next_page"><a href="${ path}">></a></div>
                             </div>
                             <!-- 글 삭제 구현 할것 -->
-                            <button id="wc_btn2" class="wc_btn2" value="리뷰 삭제">리뷰 삭제</button>
+                            <button id="wc_btn2" class="wc_btn2" value="리뷰 삭제" >리뷰 삭제</button>
                         </div>
 
                     </div>

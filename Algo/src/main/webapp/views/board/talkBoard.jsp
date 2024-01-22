@@ -37,7 +37,7 @@
         <!-- 2. 검색 창 -->
         <section>
             <div class="searchBox">
-                <button class="board_btn1" onclick="location.href='${ path }/talkBoard/talkWrite';">글쓰기</button>
+                <button class="board_btn1" onclick="location.href='${ path }/talkBoard/talkWrite'">글쓰기</button>
                 <form class="searching">
                     <select class="box1" name="" id="" style="background: url(https://i.ibb.co/N9HPzF3/list-arrow.png) no-repeat right 7px center;">
                         <option>말머리없음</option>

@@ -34,13 +34,14 @@
                 <form action="" name="sidebar">
                     <div id="mySideBar"></div>
                 </form>
-                <form action="" name="content">
+                 <form action="" name="content">
                     <div class="mp_ps_box">
-                        <div>
+                        <div style="padding: 10px">
                             <h3>프로필 관리</h3>
-                            <div class="ps_img">
-                                <span><img src="https://i.ibb.co/TYGjRpx/algo-banner2.jpg" alt="algo-banner2" id="ps_img"></span>
-                                <span><p>홍길동 님</p></span>
+                            <div style="margin-top: 35px">
+                                <div class="ps_imgD"><img src="" alt="" id="ps_img">
+                                    <span><p id="ps_nick">홍길동 님</p></span>
+                                </div>
                             </div>
                         </div>
                         <table>

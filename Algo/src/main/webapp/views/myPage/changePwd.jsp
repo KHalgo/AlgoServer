@@ -50,7 +50,7 @@
                                 <input type="password" placeholder="새 비밀번호 확인" class="cp_m">
                             </div>
                             <hr>
-                            <button type="button" class="cp_btn">비밀번호 변경</button>
+                            <input type="button" class="cp_btn" id="cp_btn" onclick="location.href='/Algo/myPage/changePwd/success'" value="비밀번호 변경"></input>
                         </div>
                         
                     </div>

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .mySideBar {
     width: 180px;
     height: 390px;
@@ -18,15 +17,22 @@
 
 .sidebar-menu {
     list-style: none;
-    text-align:center;
+    padding: 23px;
+    text-align:justify;
 }
 
 .myp_sideM {
-    margin-top: 15px;
+    margin-top: 12px;
     margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: bold;
 }
+
 .myp_sideD {
-    padding: 5px;
+    padding: 4px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .sidebar-menu li a {
@@ -39,9 +45,3 @@
     color: #004591;
 }
 
-.myp_sideM {
-    font-size: 15px;
-}
-.myp_sideD {
-    font-size: 12px;
-}

@@ -28,17 +28,20 @@ main {
     display: inline-block;
     margin: 30px 60px 0px 60px;
 }
+
+.mp_content_m_box p {
+	text-align: center;
+}
 .mp_content_m_box a {
     font-size: 50px;
     color: #004591;
-    margin-left: 45px;
 }
 .mp_content_m_box label {
     font-size: 15px;
 }
 
 .prBox1 {
-    border: 1px solid gray;
+    border: 1px solid #D6D6D6;
     border-radius: 15px;
     width: 800px;
     height: 280px;
@@ -48,12 +51,12 @@ main {
 }
 
 .prBox1 hr {
-    width: 720px;
-    margin: 10px 10px;
+    width: 740px;
+    margin: 10px auto;
     color: #d9d9d9;
 }
 .prBox2 {
-    border: 1px solid gray;
+    border: 1px solid #D6D6D6;
     border-radius: 15px;
     flex-basis: calc(50% - 10px);
     width: 400px;
@@ -63,19 +66,27 @@ main {
 }
 
 .mp_content_text {
-    font-size: 25px;
-    margin-top: 50px;
+    font-size: 15px;
+    margin: 25px;
     text-align: center;
 }
 .mp_content_text a {
     color: #004591;
+    font-weight: 500;
+    font-size: 25px;
 }
 
+.mp_content_text p {
+    font-size: 15px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    
+}
 .mp_dm {
     width: 360px;
     height: 25px;
-    padding: 25px;
-    display: inline-block;
+    padding: 15px 5px;
+    display: inline-table;
 }
 .mp_dm_ti {
     float: left;
@@ -122,12 +133,12 @@ main {
 
 .local_box {
     width: 860px;
-    height: 680px;
+    height: 700px;
     background-color: #ffffff;
     display: block;
     float: right;
     padding: 35px;
-    margin: 5px auto;
+    margin: auto;
 }
 
 .lm_search {
@@ -510,13 +521,18 @@ main {
     display: block;
     float: right;
     padding: 25px;
-    margin: 5px auto;
     margin-bottom: 45px;
+}
+
+.ps_imgD {
+    display: flex;
+    align-items: flex-end;
 }
 
 #ps_img {
     width: 150px;
     height: 150px;
+    background-color: #D9D9D9;
 }
 
 .ps_img span p {
@@ -524,6 +540,15 @@ main {
     font-size: 20px;
     font-weight: 500;
 }
+
+#ps_nick {
+    padding: 5px;
+    margin-left: 10px;
+    color: #1F1F1F;
+    font-size: 15px;
+    font-weight: 500;
+}
+
 
 .ps_ct td {
     margin-top: 20px;
@@ -739,7 +764,6 @@ main {
 
 .iq_btn_c {
     margin-top: 30px;
-    height: 30x;
 }
 
 .iq_btn {
@@ -751,9 +775,8 @@ main {
     margin-left: 20px;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
     background: #676767;
-    font-size: 10px;
+    font-size: 12px;
     border: none;
 }
 
@@ -781,7 +804,7 @@ main {
     border-spacing: 0px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: -5px;
+    margin: auto;
 }
 
 .w_dm_t {
@@ -839,7 +862,7 @@ main {
 }
 .wc_btn1 {
     float: right;
-    margin: -55px 40px 10px 0px;
+    margin: -55px 25px 10px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -859,7 +882,7 @@ main {
     border-radius: 3px;
     text-align: center;
     border: none;
-    margin: -55px 60px 0px 0px;
+    margin: -60px 35px 0px 0px;
 }
 /* 작성한 기업 리뷰 고유 */
 .w_dm_rs {

@@ -39,7 +39,7 @@
                         <div class="w_content_box">
                             <div>
                                 <h3>작성한 게시글</h3>
-                                <button id="wb_btn1" class="wc_btn1" value="글 작성" onclick="location.href='Algo/talkBoard/talkWrite'" >글 작성</button>
+                                <input type="button" id="wb_btn1" class="wc_btn1" value="글 작성" onClick="location.href='${ path }/talkBoard/talkWrite'" ></input>
                             </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
