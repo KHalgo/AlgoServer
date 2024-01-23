@@ -77,14 +77,14 @@
             <div class="pagging">
 	            <!-- 이전 페이지로 -->
 				<button class="prev_page" onclick="location.href='${ path }/companyReview/list?page=${ pageInfo.prevPage }'">&lt;</button>
-                <!--  10개 페이지 목록 -->
+                <!--  5개 페이지 목록 -->
 				<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
 					<c:choose>
 						<c:when test="${ current == pageInfo.currentPage }">
-							<button class="pages" disabled>${ current }</button>
+							<button disabled>${ current }</button>
 						</c:when>
 						<c:otherwise>
-							<button class="active" onclick="location.href='${ path }/companyReview/list?page=${ current }'">${ current }</button>
+							<button onclick="location.href='${ path }/companyReview/list?page=${ current }'">${ current }</button>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>

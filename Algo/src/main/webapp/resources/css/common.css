@@ -290,6 +290,18 @@ span.active{
     color:#131313;
 }
 
+.pagging button{
+	background-color: #fff;
+	border: none;
+	margin: 0 5px;
+	color: #C0C0C0;
+	cursor: pointer;
+}
+
+.pagging button:disabled{
+	color:#131313;
+}
+
 
 /* 푸터 */
 footer{
