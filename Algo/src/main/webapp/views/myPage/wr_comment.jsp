@@ -37,9 +37,7 @@
                 <form action="" name="content">
                     <div class="mp_box">
                         <div class="w_content_box">
-                            <div>
                                 <h3>작성한 댓글</h3>
-                            </div>
                             <table class="w_board_case">
                                     <thead class="w_dm_t">
                                         <th class="w_dm_cb"></th>
