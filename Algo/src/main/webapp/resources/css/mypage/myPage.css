@@ -13,8 +13,6 @@ main {
     width: 860px;
     height: 680px;
     background-color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
     float: right;
     padding: 25px;
     margin: 5px auto;
@@ -676,7 +674,7 @@ main {
 /* 문의하기 버튼 */
 #iqlQG {
     float: right;
-    margin: -55px 0px 10px 0px;
+    margin: -55px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -684,7 +682,6 @@ main {
     border: none;
     border-radius: 5px;
     color: #fff;
-    gap: 10px;
 }
 
 #iql_board_dmY {
@@ -843,7 +840,7 @@ main {
     height: 48px;
     max-width: 360px;
     float: left;
-    padding: 10px 4px;
+    padding: 12px 4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -869,6 +866,7 @@ main {
 #wc_cb {
     width: 16px;
     height: 16px;
+    margin-top: 4px;
 }
 .wc_btn1 {
     float: right;

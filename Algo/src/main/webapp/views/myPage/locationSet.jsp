@@ -38,7 +38,7 @@
                 <form action="" name="content">
                     <div class="local_box">
                         <form action="">
-                            <h3>지역 설정</h3>
+                            <h3 style="font-weight: bold">지역 설정</h3>
                             <div class="lm_search">
                                 <div class="lm_search_bar">
                                     <input type="search" name="lm_search" id="lm_search_input" placeholder="원하는 지역을 입력해주세요">

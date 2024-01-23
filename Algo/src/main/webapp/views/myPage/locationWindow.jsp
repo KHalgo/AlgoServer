@@ -25,7 +25,7 @@
 		<section>
 			<form action="">
 				<div class="lw_content">
-                    <h3>지역 검색</h3>
+                    <h3 style="font-weight: bold">지역 검색</h3>
                     <div class="lw_search">
                         <input type="search" name="lm_search" id="lm_search_input" placeholder="원하는 지역을 입력해주세요">
                         <button id="ls_btn1"><img id="ls_img1" src="https://i.ibb.co/ByBFcyt/search.png" alt="" width="25px" ></button>
