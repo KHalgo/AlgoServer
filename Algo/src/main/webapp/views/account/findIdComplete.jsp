@@ -40,7 +40,7 @@
 						ghdrlfehd1234 <br> 입니다.
 					</h3>
 					<br />
-					<br /> <input class="algo_btn_blue_long" type="button" value="로그인" onclick="location.href='${ path }/account/login'" />
+					<br /> <input class="algo_btn_blue_long" type="button" value="로그인" onclick="location.href='${ path }/views/account/login'" />
 				</div>
 			</div>
 		</section>

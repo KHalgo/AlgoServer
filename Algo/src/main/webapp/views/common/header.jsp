@@ -31,7 +31,7 @@
 				</ul>
 			</li>
 	        <li><a href="${ path }/">알바 정보</a></li>
-	        <li>
+	        <li>				
 				<a href="${ path }/cscenter/">고객센터</a>
 				<ul>
 					<li><a href="${ path }/cscenter/notice">공지사항</a></li>
@@ -42,8 +42,8 @@
 	    </ul>
 	    <ul class="right_nav">
 	        <li class="locate"><a href="${ path }/"><span style="vertical-align: middle;">강남구</span></a></li>
-	        <li><a href="${ path }/views/account/login.jsp">로그인</a></li>
-	        <li><a href="${ path }//views/account/createAccount.jsp">회원가입</a></li>
+	        <li><a href="${ path }/views/account/login">로그인</a></li>
+	        <li><a href="${ path }/views/account/createAccount">회원가입</a></li>
 	    </ul>
 		</nav>
 	</header>

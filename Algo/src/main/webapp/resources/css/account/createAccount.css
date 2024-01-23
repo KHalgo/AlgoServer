@@ -140,3 +140,9 @@ th{
 span{
     color: red;
 }
+
+.sido {
+    margin-top: 8px;
+    margin-left: 10px;
+    height: 30px;
+}

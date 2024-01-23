@@ -48,13 +48,13 @@
 						<br /> <br />
 						<div class="label_signAndIdPass">
 							<div class="label_signup">
-								<a href="${ path }/views/account/createAccount.jsp">회원가입</a>
+								<a href="${ path }/views/account/createAccount">회원가입</a>
 							</div>
 							<div class="label_pass">
-								<a href="${ path }/views/account/findPwd.jsp">비밀번호 찾기</a>
+								<a href="${ path }/views/account/findPwd">비밀번호 찾기</a>
 							</div>
 							<div class="label_id">
-								<a href="${ path }/views/account/findId.jsp">아이디 찾기</a>
+								<a href="${ path }/views/account/findId">아이디 찾기</a>
 							</div>
 						</div>
 					</div>

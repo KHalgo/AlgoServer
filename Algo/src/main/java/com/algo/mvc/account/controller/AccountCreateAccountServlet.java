@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "accountCreateAccount", urlPatterns = { "/account/createAccount" })
+@WebServlet(name = "accountCreateAccount", urlPatterns = { "/views/account/createAccount" })
 public class AccountCreateAccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

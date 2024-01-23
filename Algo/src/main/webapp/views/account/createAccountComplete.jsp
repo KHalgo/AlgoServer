@@ -32,13 +32,13 @@
 		<section>
 			<div class="first_div">
 				<div class="second_div">
-					<br>
-					<br> <img src="https://i.ibb.co/Tcs07wR/complete-check.png"alt="" /> 
-					<br>
-					<br>
+					<br />
+					<br /> <img src="https://i.ibb.co/Tcs07wR/complete-check.png"
+						alt="" /> <br />
+					<br />
 					<h2>회원가입 완료</h2>
-					<br>
-					<br>
+					<br />
+					<br />
 					<h4>
 						지금 바로 알바고수들의 <br> 이야기를 들으러 가보세요!
 					</h4>
