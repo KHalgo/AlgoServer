@@ -49,12 +49,23 @@
                         <p>그런거 없음</p>
                     </td>
                 </tr>
+                
                 <!-- 추천 버튼 -->
                 <tr class="likeButton" style="border-bottom: 1px solid #C0C0C0;">
                     <td colspan="2">
                         <button class="algo_btn2">추천해요</button>
                     </td>
                 </tr>
+                
+                <!--  댓글 입력 -->
+                <tr style="border-bottom: 1px solid #C0C0C0;">
+                	<td colspan="2">
+                		<textarea placeholder="댓글을 입력하시오."></textarea>
+                		<button class="algo_btn3">댓글</button>
+                	</td>
+                </tr>
+                
+                <!-- 댓글 목록 -->
                 <tr style="border-bottom: 1px solid #C0C0C0;">
                     <td colspan="2">댓글 <strong>3</strong>개</td>
                 </tr>
