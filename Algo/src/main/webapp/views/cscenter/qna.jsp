@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
+                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" id="cscImg"></td>
                                 <td class="question">
                                     <a href="#">글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다</a>
                                 </td>
@@ -51,7 +51,7 @@
                                 <td>30</td>
                             </tr>
                             <!-- toggle -->
-                            <tr class="answerBox">
+                            <tr class="answerBox" id="answerBox">
                                 <td colspan="4">
                                     연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
                                     지명하는 자를 임명한다.

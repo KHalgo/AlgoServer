@@ -15,7 +15,6 @@ main {
     background-color: #ffffff;
     float: right;
     padding: 25px;
-    margin: 5px auto;
 }
 
 /* 메인 페이지 */
@@ -48,10 +47,10 @@ main {
     position: relative;
 }
 
-.prBox1_hr {
+.prBox1 hr {
     width: 740px;
     margin: 10px auto;
-    border-bottom: 1px solid #d9d9d9;
+    color: #d9d9d9;
 }
 .prBox2 {
     border: 1px solid #D6D6D6;
@@ -94,18 +93,18 @@ main {
 }
 .pr_lText {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .pr_more {
     position: relative;
-    top: -20px;
+    top: -10px;
     right: 0px;
+    border-bottom: 1px #d9d9d9 solid;
 }
 
 .pr_more a {
     font-size: 15px;
-    margin-bottom: 10px;
 }
 .qscontent {
     width: 620px;
@@ -121,10 +120,6 @@ main {
     margin-left: 100px;
 }
 
-
-.mp_content_box {
-    border-top: 1px solid #D9D9D9;
-}
 /* 지역 설정 메인 페이지 */
 
 .lm_content {
@@ -202,16 +197,16 @@ main {
     color: #004591;
     font-size: 45px;
     font-weight: 500;
-    margin-left: 260px;
+    margin-left: 220px;
     text-decoration: underline;
 }
 #lm_p1 {
-    padding: 50px 180px;
+    padding: 45px 180px;
     font-size: 20px;
 }
 
 #lm_p2 {
-    padding-left: 500px;
+    padding-left: 550px;
     margin-top: 30px;
     font-size: 20px;
     position: absolute;
@@ -311,15 +306,16 @@ main {
 /* 지역 설정 페이지에서 클릭시 */
 
 .lw_content {
-    width: 860px;
-    height: 680px;
+    width: 100%;
+    height: auto;
     padding: 30px;
     background-color: #fff;
+    float: left;
 }
 
 .lw_content h3 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
 
 }
 
@@ -351,6 +347,7 @@ main {
 
 .lw_table {
     border: none;
+    float: left;
 }
 
 .lw_td {
@@ -402,11 +399,6 @@ main {
     margin-bottom: 15px;
 }
 
-.cp_change_border {
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
-}
-
 .cp_m {
     display: flex;
     width: 764.802px;
@@ -423,6 +415,10 @@ main {
     margin-top: 18px;
 }
 
+.cp_change_border {
+	border-top: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9; 
+}
 
 .cp_btn {
     width: 207px;
@@ -460,7 +456,6 @@ main {
 #q_main_title {
     float: left;
     padding: 25px;
-    margin-left: 10px;
 }
 
 #q_hr {
@@ -527,10 +522,6 @@ main {
     margin-bottom: 45px;
 }
 
-.ps_h3 {
-    font-weight: bold;
-}
-
 .ps_imgD {
     display: flex;
     align-items: flex-end;
@@ -540,6 +531,10 @@ main {
     width: 150px;
     height: 150px;
     background-color: #D9D9D9;
+}
+
+#ps_h3 {
+	font-weight: bold;
 }
 
 .ps_img span p {
@@ -618,7 +613,7 @@ main {
 .iql_content_box h3 {
     font-size: 25px;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .iql_board {
@@ -674,7 +669,7 @@ main {
 /* 문의하기 버튼 */
 #iqlQG {
     float: right;
-    margin: -55px 0px;
+    margin: -55px 0px 10px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -682,6 +677,7 @@ main {
     border: none;
     border-radius: 5px;
     color: #fff;
+    gap: 10px;
 }
 
 #iql_board_dmY {
@@ -732,7 +728,7 @@ main {
 .iq_content_box h3 {
     font-size: 25px;
     margin-bottom: 30px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .iq_board {
@@ -798,11 +794,10 @@ main {
 .w_content_box {
     width: 820px;
     height: 640px;
-    padding: 15px;
 }
 .w_content_box h3 {
     font-size: 25px;
-    margin: 0px 0px 30px 10px;
+    margin-bottom: 30px;
     font-weight: bold;
 }
 
@@ -815,14 +810,14 @@ main {
 }
 
 .w_dm_t {
-    display: table;
+    display: inline-block;
     width: 760px;
-    height: 30px;
+    height: 50px;
     background-color: #f4f6f9;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
     font-size: 15px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .w_dm_t th {
@@ -840,7 +835,7 @@ main {
     height: 48px;
     max-width: 360px;
     float: left;
-    padding: 12px 4px;
+    padding: 10px 4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -866,11 +861,10 @@ main {
 #wc_cb {
     width: 16px;
     height: 16px;
-    margin-top: 4px;
 }
 .wc_btn1 {
     float: right;
-    margin: -55px 10px 0px 0px;
+    margin: -55px 25px 10px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -890,7 +884,7 @@ main {
     border-radius: 3px;
     text-align: center;
     border: none;
-    margin: -60px 20px 0px 0px;
+    margin: -60px 35px 0px 0px;
 }
 /* 작성한 기업 리뷰 고유 */
 .w_dm_rs {

@@ -37,8 +37,8 @@
                 <form action="" name="content">
                     <div class="mp_box">
                         <div class="w_content_box">
-                            <div>
                                 <h3>작성한 게시글</h3>
+                            <div>
                                 <input type="button" id="wb_btn1" class="wc_btn1" value="글 작성" onClick="location.href='${ path }/talkBoard/talkWrite'" ></input>
                             </div>
                             <table class="w_board_case">
