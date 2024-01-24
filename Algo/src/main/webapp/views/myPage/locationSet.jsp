@@ -76,7 +76,7 @@
                             </table>
                             <div class="lm_rs">
                                 <span><p id="lm_p1">현재 내가 설정한 지역은</p></span>
-                                <span><a href="${ path }/myPage/location/window" class="lm_local" target="_blank">서울시 강남구</a></span>
+                                <span><a href="${ path }/myPage/location/window" class="lm_local" target="_blank">${ loginMember.sido } ${ loginMember.sigungu }</a></span>
                                 <span><p id="lm_p2">입니다.</p></span>
                             </div>
                         </form>
