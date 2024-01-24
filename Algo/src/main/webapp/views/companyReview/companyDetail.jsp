@@ -135,17 +135,31 @@
                     연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
                 </div>
             </div>
-            <div class="pagging">
-                <div class="prev_page" id="prev_page">&lt;</div>
-                <div class="pages">
-                    <span class="active">1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                </div>
-                <div class="next_page" id="next_page">&gt;</div>
-            </div>
+            <c:choose>
+	            <c:when test="${ empty list }">
+	            -
+	            </c:when>
+	            <c:otherwise>
+		           <div class="pagging">
+			            <!-- 이전 페이지로 -->
+						<button class="prev_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ pageInfo.prevPage }'">&lt;</button>
+		                <!--  5개 페이지 목록 -->
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+							<c:choose>
+								<c:when test="${ current == pageInfo.currentPage }">
+									<button disabled>${ current }</button>
+								</c:when>
+								<c:otherwise>
+									<button onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+		                <!-- 다음 페이지로 -->
+						<button class="next_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ pageInfo.nextPage }'">&gt;</button>
+		            </div>
+	            </c:otherwise>
+            </c:choose>
+
         </section>
         <div style="width:104px; margin:30px auto;">
             <button class="com-re-de-bu" onclick="location.href='${ path }/companyReview/list'">목록</button>

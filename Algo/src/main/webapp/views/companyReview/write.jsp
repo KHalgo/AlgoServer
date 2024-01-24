@@ -104,6 +104,12 @@
                     </div>
                 </fieldset>
                 
+                <input type="hidden" name="inputStarRate1" value="1"/>
+                <input type="hidden" name="inputStarRate2" value="1"/>
+                <input type="hidden" name="inputStarRate3" value="1"/>
+                <input type="hidden" name="inputStarRate4" value="1"/>
+                <input type="hidden" name="inputStarRate5" value="1"/>
+
                 <!-- 버튼 -->
                 <div class="com-button">
                     <input type="submit" class="com-wr-btn01" value="작성완료"/>
@@ -131,6 +137,16 @@
         }else{
             $('#currentLength').text(currentLength);
         }
+     });
+     $(document).ready(function(){
+
+         $('div[id^=starRate] span').click(function(event){
+            console.log($(event.target).parents('div').attr('id'));
+            console.log($(event.target).attr('value'));
+            let idIdxStr = $(event.target).parents('div').attr('id').replace('starRate', '');
+            let valueStr = $(event.target).attr('value');
+            $('input[name=inputStarRate'+ idIdxStr + ']').val(valueStr);
+         });
      });
 	</script>
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>

@@ -1,8 +1,5 @@
 package com.algo.mvc.company.model.vo;
 
-import java.util.Date;
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,28 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Company {
+public class CompanyComment {
 	private int industryID;
 	
-	private int inRowNum;
+	private int coRowNum;
 	
-	private String industryName;
-	
-	private String industryLc;
-	
-	private String industryType;
-	
-	private String industryHp;
-	
-	private int readCount;
-	
-	private Date industryDate;
+	private int reviewNo;
 	
 	private double baseRate;
-	
-	private int count;
-	
-	private String bestComment;
 	
 	private double detailRate1;
 	
@@ -40,5 +23,11 @@ public class Company {
 	private double detailRate3;
 	
 	private double detailRate4;
+	
+	private String postComment;
+	
+	private String userID;
+	
+	private int like;
 
 }

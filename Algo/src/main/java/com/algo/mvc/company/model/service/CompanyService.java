@@ -1,14 +1,18 @@
 package com.algo.mvc.company.model.service;
 
 import com.algo.mvc.common.util.PageInfo;
+import com.algo.mvc.company.model.dao.CompanyCommentDao;
 import com.algo.mvc.company.model.dao.CompanyDao;
 import com.algo.mvc.company.model.vo.Company;
+import com.algo.mvc.company.model.vo.CompanyComment;
 
 import java.sql.Connection;
 import java.util.List;
 
 import static com.algo.mvc.common.jdbc.JDBCTemplate.getConnection;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
+import static com.algo.mvc.common.jdbc.JDBCTemplate.commit;
+import static com.algo.mvc.common.jdbc.JDBCTemplate.rollback;
 
 public class CompanyService {
 
@@ -29,6 +33,8 @@ public class CompanyService {
 		
 		list = new CompanyDao().findAll(connection, pageInfo);
 		
+		close(connection);
+		
 		return list;
 	}
 
@@ -41,5 +47,22 @@ public class CompanyService {
 		close(connection);
 		return company;
 	}
+
+	public int save(CompanyComment comment) {
+		int result = 0;
+		
+		Connection connection = getConnection();
+		
+		result = new CompanyDao().insertComment(connection, comment);
+		
+		if(result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		return result;
+	}
+
 	
 }

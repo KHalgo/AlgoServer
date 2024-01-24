@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.company.model.vo.Company;
+import com.algo.mvc.company.model.vo.CompanyComment;
 
 import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
 
@@ -164,6 +165,34 @@ public class CompanyDao {
 			close(pstmt);
 		}
 		return company;
+	}
+
+	public int insertComment(Connection connection, CompanyComment comment) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO INDUSTRY_REVIEW VALUES (SEQ_INDUSTRY_REVIEW_NO.NEXTVAL, ?, ?, ?, DEFAULT, ?, ?, ?, ?, ?, DEFAULT)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1 , comment.getIndustryID());
+			pstmt.setDouble(2, comment.getBaseRate());
+			pstmt.setString(3, comment.getPostComment());
+			pstmt.setDouble(4, comment.getDetailRate1());
+			pstmt.setDouble(5, comment.getDetailRate2());
+			pstmt.setDouble(6, comment.getDetailRate3());
+			pstmt.setDouble(7, comment.getDetailRate4());
+			pstmt.setString(8, comment.getUserID());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 
