@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "companyMain", urlPatterns = { "/companyReview/" })
+@WebServlet(name = "companyMain", urlPatterns = { "/companyReview" })
 public class CompanyMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -18,10 +18,6 @@ public class CompanyMainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.getRequestDispatcher("/views/companyReview/index.jsp")
 		.forward(request, response);
-	}
-    
-    @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }

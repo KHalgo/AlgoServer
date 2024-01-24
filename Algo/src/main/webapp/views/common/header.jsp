@@ -19,7 +19,7 @@
 		</ul>
 		<ul class="main_nav">
 			<li style="margin-left: 70px;"><a
-				href="${ path }/companyReview/">기업 리뷰</a>
+				href="${ path }/companyReview">기업 리뷰</a>
 				<ul>
 					<li><a href="${ path }/">기업 리뷰</a></li>
 					<li><a href="${ path }/">기업 리스트</a></li>
