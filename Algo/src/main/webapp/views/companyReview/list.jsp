@@ -69,7 +69,7 @@
                 <tbody>
 	                <c:if test="${ empty list }">
 						<tr>
-							<td colspan="6">
+							<td colspan="7">
 								조회된 게시글이 없습니다.
 							</td>
 						</tr>	

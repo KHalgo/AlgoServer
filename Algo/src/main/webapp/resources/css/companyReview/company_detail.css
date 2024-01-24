@@ -147,6 +147,12 @@
     padding:15px 0;
 }
 
+.sub-rate-box{
+	    width: 40%; 
+    box-sizing: border-box; 
+    display: inline-flex; 
+}
+
 .co-sub-re-2{
     font-weight: 600;
     margin-top: 55px;
@@ -170,9 +176,6 @@
 
 /* 3의 별점 */
 .star_rating {
-    width: 40%; 
-    box-sizing: border-box; 
-    display: inline-flex; 
     float: left;
     flex-direction: row; 
     justify-content: flex-start;

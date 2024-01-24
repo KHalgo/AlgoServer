@@ -47,11 +47,7 @@
                     <div>
                         <div class="star_point">${ company.baseRate }</div>
                         <div class ="star_rating" id="starRate1">
-                            <span class="star on" value="1"> </span>
-                            <span class="star on" value="2"> </span>
-                            <span class="star on" value="3"> </span>
-                            <span class="star on" value="4"> </span>
-                            <span class="star on" value="5"> </span>
+                        	<!-- 별을 표시할 공간 -->
                         </div>
                     </div>
                 </div>
@@ -95,46 +91,34 @@
                 평가
                 <div class="sub-rate" style="margin-top:25px;">
                     <div class="sub-rate-txt">일과 삶의 균형</div>
-                    <div class ="star_rating" id="starRate2">
-                        <span class="star on" value="1"> </span>
-                        <span class="star on" value="2"> </span>
-                        <span class="star on" value="3"> </span>
-                        <span class="star on" value="4"> </span>
-                        <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 ${ company.detailRate1 } </div>
+                    <div class="sub-rate-box">
+	                    <div class ="star_rating" id="starRate2">
+	                    </div>
+	                    <div class="sub_star_point">평점 ${ company.detailRate1 }</div>
                     </div>
                 </div>
                 <div class="sub-rate">
                     <div class="sub-rate-txt">급여 및 복지</div>
-                    <div class ="star_rating" id="starRate3">
-                        <span class="star on" value="1"> </span>
-                        <span class="star on" value="2"> </span>
-                        <span class="star on" value="3"> </span>
-                        <span class="star on" value="4"> </span>
-                        <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 ${ company.detailRate2 }</div>
+                    <div class="sub-rate-box">
+	                    <div class ="star_rating" id="starRate3">
+	                    </div>
+	                    <div class="sub_star_point">평점 ${ company.detailRate2 }</div>
                     </div>
                 </div>
                 <div class="sub-rate">
                     <div class="sub-rate-txt">근무 분위기</div>
-                    <div class ="star_rating" id="starRate4">
-                        <span class="star on" value="1"> </span>
-                        <span class="star on" value="2"> </span>
-                        <span class="star on" value="3"> </span>
-                        <span class="star on" value="4"> </span>
-                        <span class="star" value="5"> </span>
-                        <div class="sub_star_point">평점 ${ company.detailRate3 }</div>
+                    <div class="sub-rate-box">
+	                    <div class ="star_rating" id="starRate4">
+	                    </div>
+	                    <div class="sub_star_point">평점 ${ company.detailRate3 }</div>
                     </div>
                 </div>
                 <div class="sub-rate">
                     <div class="sub-rate-txt">재취업 의사</div>
-                    <div class ="star_rating" id="starRate4">
-                        <span class="star on" value="1"> </span>
-                        <span class="star on" value="2"> </span>
-                        <span class="star on" value="3"> </span>
-                        <span class="star on" value="4"> </span>
-                        <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 ${ company.detailRate4 }</div>
+                    <div class="sub-rate-box">
+	                    <div class ="star_rating" id="starRate5">
+	                    </div>
+	                    <div class="sub_star_point">평점 ${ company.detailRate4 }</div>
                     </div>
                 </div>
             </div>
@@ -173,5 +157,58 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
+	<script>
+		window.onload = function () {
+			 // company.baseRate 값을 가져와서 해당하는 별에 'on' 클래스 추가
+		    var baseRate = ${ company.baseRate }; // JSP에서 가져온 값
+		    // 별을 표시할 공간에 별 추가
+		    for (var i = 1; i <= 5; i++) {
+		        var star = document.createElement('span');
+		        star.className = 'star' + (i <= baseRate ? ' on' : '');
+		        star.value = i;
+		        document.getElementById('starRate1').appendChild(star);
+		    }
+		    
+		 	// company.detailRate1 값을 가져와서 해당하는 별에 'on' 클래스 추가
+		    var baseRate = ${ company.detailRate1 }; // JSP에서 가져온 값
+		    // 별을 표시할 공간에 별 추가
+		    for (var i = 1; i <= 5; i++) {
+		        var star = document.createElement('span');
+		        star.className = 'star' + (i <= baseRate ? ' on' : '');
+		        star.value = i;
+		        document.getElementById('starRate2').appendChild(star);
+		    }
+		    
+		 	// company.detailRate2 값을 가져와서 해당하는 별에 'on' 클래스 추가
+		    var baseRate = ${ company.detailRate2 }; // JSP에서 가져온 값
+		    // 별을 표시할 공간에 별 추가
+		    for (var i = 1; i <= 5; i++) {
+		        var star = document.createElement('span');
+		        star.className = 'star' + (i <= baseRate ? ' on' : '');
+		        star.value = i;
+		        document.getElementById('starRate3').appendChild(star);
+		    }
+		    
+		 // company.detailRate3 값을 가져와서 해당하는 별에 'on' 클래스 추가
+		    var baseRate = ${ company.detailRate3 }; // JSP에서 가져온 값
+		    // 별을 표시할 공간에 별 추가
+		    for (var i = 1; i <= 5; i++) {
+		        var star = document.createElement('span');
+		        star.className = 'star' + (i <= baseRate ? ' on' : '');
+		        star.value = i;
+		        document.getElementById('starRate4').appendChild(star);
+		    }
+		    
+		    // company.detailRate4 값을 가져와서 해당하는 별에 'on' 클래스 추가
+		    var baseRate = ${ company.detailRate4 }; // JSP에서 가져온 값
+		    // 별을 표시할 공간에 별 추가
+		    for (var i = 1; i <= 5; i++) {
+		        var star = document.createElement('span');
+		        star.className = 'star' + (i <= baseRate ? ' on' : '');
+		        star.value = i;
+		        document.getElementById('starRate5').appendChild(star);
+		    }
+		}
+	</script>
 </body>
 </html>
