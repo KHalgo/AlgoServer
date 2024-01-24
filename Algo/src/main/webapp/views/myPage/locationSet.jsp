@@ -3,14 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<c:set var="path" value="${ pageContext.request.contextPath }"/>    
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
     
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>마이페이지_작성한 댓글</title>
-	<link rel="stylesheet" href="${ path }/resources/css/common.css">  
+	<link rel="stylesheet" href="${ path }/resources/css/common.css">
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	
@@ -38,7 +38,7 @@
                 <form action="" name="content">
                     <div class="local_box">
                         <form action="">
-                            <h3>지역 설정</h3>
+                            <h3 style="font-weight: bold">지역 설정</h3>
                             <div class="lm_search">
                                 <div class="lm_search_bar">
                                     <input type="search" name="lm_search" id="lm_search_input" placeholder="원하는 지역을 입력해주세요">
@@ -87,8 +87,8 @@
 	</main>
 	
     <!-- 푸터 -->
-   <jsp:include page="/views/common/footer.jsp" /> 
-   
+    <jsp:include page="/views/common/footer.jsp" />
+    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
 	<script type="text/javascript" src="${ path }/resources/js/myPage/myPage_sideBar.js"></script>

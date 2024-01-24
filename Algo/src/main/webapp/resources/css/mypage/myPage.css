@@ -13,8 +13,6 @@ main {
     width: 860px;
     height: 680px;
     background-color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
     float: right;
     padding: 25px;
     margin: 5px auto;
@@ -50,10 +48,10 @@ main {
     position: relative;
 }
 
-.prBox1 hr {
+.prBox1_hr {
     width: 740px;
     margin: 10px auto;
-    color: #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
 }
 .prBox2 {
     border: 1px solid #D6D6D6;
@@ -96,18 +94,18 @@ main {
 }
 .pr_lText {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .pr_more {
     position: relative;
-    top: -10px;
+    top: -20px;
     right: 0px;
-    border-bottom: 1px #d9d9d9 solid;
 }
 
 .pr_more a {
     font-size: 15px;
+    margin-bottom: 10px;
 }
 .qscontent {
     width: 620px;
@@ -123,6 +121,10 @@ main {
     margin-left: 100px;
 }
 
+
+.mp_content_box {
+    border-top: 1px solid #D9D9D9;
+}
 /* 지역 설정 메인 페이지 */
 
 .lm_content {
@@ -386,7 +388,7 @@ main {
 .cp_content_box h2 {
     text-align: justify;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 15px;
 }
 
@@ -398,6 +400,11 @@ main {
     border: 1px solid #d9d9d9;
     margin-top: 90px;
     margin-bottom: 15px;
+}
+
+.cp_change_border {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
 }
 
 .cp_m {
@@ -416,11 +423,6 @@ main {
     margin-top: 18px;
 }
 
-.cp_content_box hr {
-    background-color: #d9d9d9;
-    
-    border-color: #d9d9d9;
-}
 
 .cp_btn {
     width: 207px;
@@ -458,6 +460,7 @@ main {
 #q_main_title {
     float: left;
     padding: 25px;
+    margin-left: 10px;
 }
 
 #q_hr {
@@ -522,6 +525,10 @@ main {
     float: right;
     padding: 25px;
     margin-bottom: 45px;
+}
+
+.ps_h3 {
+    font-weight: bold;
 }
 
 .ps_imgD {
@@ -667,7 +674,7 @@ main {
 /* 문의하기 버튼 */
 #iqlQG {
     float: right;
-    margin: -55px 0px 10px 0px;
+    margin: -55px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -675,7 +682,6 @@ main {
     border: none;
     border-radius: 5px;
     color: #fff;
-    gap: 10px;
 }
 
 #iql_board_dmY {
@@ -792,11 +798,12 @@ main {
 .w_content_box {
     width: 820px;
     height: 640px;
+    padding: 15px;
 }
 .w_content_box h3 {
     font-size: 25px;
-    margin-bottom: 30px;
-    font-weight: 600;
+    margin: 0px 0px 30px 10px;
+    font-weight: bold;
 }
 
 .w_board_case {
@@ -808,14 +815,14 @@ main {
 }
 
 .w_dm_t {
-    display: inline-block;
+    display: table;
     width: 760px;
-    height: 50px;
+    height: 30px;
     background-color: #f4f6f9;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
     font-size: 15px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .w_dm_t th {
@@ -833,7 +840,7 @@ main {
     height: 48px;
     max-width: 360px;
     float: left;
-    padding: 10px 4px;
+    padding: 12px 4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -859,10 +866,11 @@ main {
 #wc_cb {
     width: 16px;
     height: 16px;
+    margin-top: 4px;
 }
 .wc_btn1 {
     float: right;
-    margin: -55px 25px 10px 0px;
+    margin: -55px 10px 0px 0px;
     width: 100px;
     height: 30px;
     text-align: center;
@@ -882,7 +890,7 @@ main {
     border-radius: 3px;
     text-align: center;
     border: none;
-    margin: -60px 35px 0px 0px;
+    margin: -60px 20px 0px 0px;
 }
 /* 작성한 기업 리뷰 고유 */
 .w_dm_rs {

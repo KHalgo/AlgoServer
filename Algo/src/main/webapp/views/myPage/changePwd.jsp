@@ -38,18 +38,18 @@
                 <form action="" name="content">
                     <div class="mp_box">
                         <div class="w_content_box cp_content_box">
-                            <div><h2>비밀 번호 변경</h2></div>
+                            <h2>비밀 번호 변경</h2>
                             <div class="cp_change">
                                 <input type="password" placeholder="현재 비밀번호" class="cp_m">
                             </div>
-                            <hr>
-                            <div class="cp_change cp_d1">
-                                <input type="password" placeholder="새 비밀번호 (8~15자 영문,숫자,포함)" class="cp_m">
+                            <div class="cp_change_border">
+                                <div class="cp_change cp_d1">
+                                    <input type="password" placeholder="새 비밀번호 (8~15자 영문,숫자,포함)" class="cp_m">
+                                </div>
+                                <div class="cp_change cp_d1">
+                                    <input type="password" placeholder="새 비밀번호 확인" class="cp_m">
+                                </div>
                             </div>
-                            <div class="cp_change cp_d1">
-                                <input type="password" placeholder="새 비밀번호 확인" class="cp_m">
-                            </div>
-                            <hr>
                             <input type="button" class="cp_btn" id="cp_btn" onclick="location.href='/Algo/myPage/changePwd/success'" value="비밀번호 변경"></input>
                         </div>
                         

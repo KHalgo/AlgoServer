@@ -34,10 +34,10 @@
                 <form action="" name="sidebar">
                     <div id="mySideBar"></div>
                 </form>
-                 <form action="" name="content">
+                <form action="" name="content">
                     <div class="mp_ps_box">
                         <div style="padding: 10px">
-                            <h3>프로필 관리</h3>
+                            <h3 class="ps_h3">프로필 관리</h3>
                             <div style="margin-top: 35px">
                                 <div class="ps_imgD"><img src="" alt="" id="ps_img">
                                     <span><p id="ps_nick">홍길동 님</p></span>
@@ -51,18 +51,16 @@
                                 <td colspan="2"><input type="email" var="pr_email" class="pr_put2" placeholder="이메일"></td>
                             </tr>
                             <tr class="ps_ct">
-                                <td><input type="text" var="pr_p_number" class="pr_put1" placeholder="우편번호" readonly></td>
-                                <td><button class="pr_ch_box" id="pr_nick_ch" value="우편번호검색">우편번호</button></td>
+                                <td colspan="2"><input type="text" var="pr_addres" class="pr_put2" placeholder="주소"></td>
                                 <td><input type="text" var="pr_tel" class="pr_put1" placeholder="휴대폰 번호"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="">인증받기</button></td>
                             </tr>
                             <tr class="ps_ct">
-                                <td colspan="2"><input type="text" var="pr_addres" class="pr_put2" placeholder="주소" readonly></td>
+                                <td colspan="2"><input type="text" var="pr_d_addres" class="pr_put2" placeholder="상세 주소"></td>
                                 <td><input type="text" var="pr_c_number" class="pr_put1" placeholder="인증번호입력"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="인증확인">인증확인</button></td>
                             </tr>
                             <tr class="ps_ct">
-                                <td colspan="2"><input type="text" var="pr_d_addres" class="pr_put2" placeholder="상세 주소" readonly></td>
                                 <td colspan="2"><input type="text" var="pr_b_date" class="pr_put2" placeholder="생년월일"></td>
                             </tr>
                         </table>

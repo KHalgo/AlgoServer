@@ -40,7 +40,7 @@
                         <h2>홍길동님 어서 오세요</h2>
                         <div class="prBox1">
                             <p class="pr_lText">게시글 관리</p>
-                            <hr>
+                            <div class="prBox1_hr"></div>
                             <div class="mp_content_m_box">
                                 <p><a href="#">1</a><br>작성한 기업 리뷰</p>
                             </div>
@@ -57,10 +57,12 @@
                         <div class="prBox2">
                             <span><p class="pr_lText">지역 설정</p></span>
                             <div class="more pr_more"><a href="">+ MORE</a></div>
-                            <div class="mp_content_text">
-                                <p style="padding-top: 0px">현재 홍길동 님의 지역은</p>
-                                <a href="">서울시 강남구</a>
-                                <p>입니다.</p>
+                            <div class="mp_content_box">
+                                <div class="mp_content_text">
+                                    <p style="padding-top: 0px">현재 홍길동 님의 지역은</p>
+                                    <a href="" style="font-weight: bold">서울시 강남구</a>
+                                    <p>입니다.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="prBox2">
