@@ -37,10 +37,10 @@
 
         <!-- 2. 기업리뷰 작성파트 -->
         <section>
-            <form>
+            <form action="${ path }/companyReview/write?industryID=${company.industryID} " method="POST">
                 <fieldset>
                 <div class="com-ti-wr">
-                    한진택배
+                    ${ company.industryName }
                 </div>
                     <div class="com-rate">
                         <p>기업 총 평점 <span>이 기업에 몇 점을 주고 싶나요?</span></p>

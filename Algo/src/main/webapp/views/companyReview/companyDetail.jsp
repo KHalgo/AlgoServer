@@ -39,7 +39,7 @@
         <section id="co-section-2">
             <div class="co-main-box">
                 <h3>${ company.industryName }</h3>
-                <button onclick="location.href='${ path }/companyReview/write'">리뷰 작성</button>
+                <button onclick="location.href='${ path }/companyReview/write?industryID=${company.industryID}'">리뷰 작성</button>
             </div>
             <div class="co-main-re-box">
                 <div class="co-main-re-1">
