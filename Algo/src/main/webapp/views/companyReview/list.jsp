@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>    
     
 <!DOCTYPE html>
@@ -40,6 +42,8 @@
             <form class="Review_CoSh" onchange="selectOnChange(this)">
                 <input type="search" name="ReviewSh" id="ReviewSh" placeholder="지역명 / 기업명을 입력하세요."/>
                 <input type="submit" id="ReviewSb" value="검색">
+            </form>
+            <form>
                 <select name="ReviewLi" id="ReviewLi">
                     <option value="score" selected>평점순</option>
                     <option value="view">조회순</option>
@@ -63,127 +67,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr onclick="location.href='${ path }/companyReview/companyDetail'">
-                        <td>파리바게트 강북구청점</td>
-                        <td>IT</td>
-                        <td>서울특별시 강남구</td>
-                        <td>4.5</td>
-                        <td>2023.10.19</td>
-                        <td>1,222</td>
-                        <td>850</td>
-                    </tr>
-                    <tr onclick="location.href=''">
-                        <td>아이에스 동서</td>
-                        <td>식품</td>
-                        <td>경기도 부천시</td>
-                        <td>4.4</td>
-                        <td>20203.08.21</td>
-                        <td>1,283</td>
-                        <td>192</td>
-                    </tr>
-                    <tr>
-                        <td>SKC</td>
-                        <td>기계건설</td>
-                        <td>경기도 수원시</td>
-                        <td>4.1</td>
-                        <td>2023.08.09</td>
-                        <td>373</td>
-                        <td>79</td>
-                    </tr>
-                    <tr>
-                        <td>삼성전자</td>
-                        <td>IT</td>
-                        <td>서울특별시 강남구</td>
-                        <td>4.5</td>
-                        <td>2023.10.19</td>
-                        <td>1,222</td>
-                        <td>850</td>
-                    </tr>
-                    <tr>
-                        <td>아이에스 동서</td>
-                        <td>식품</td>
-                        <td>경기도 부천시</td>
-                        <td>4.4</td>
-                        <td>20203.08.21</td>
-                        <td>1,283</td>
-                        <td>192</td>
-                    </tr>
-                    <tr>
-                        <td>SKC</td>
-                        <td>기계건설</td>
-                        <td>경기도 수원시</td>
-                        <td>4.1</td>
-                        <td>2023.08.09</td>
-                        <td>373</td>
-                        <td>79</td>
-                    </tr>
-                    <tr>
-                        <td>삼성전자</td>
-                        <td>IT</td>
-                        <td>서울특별시 강남구</td>
-                        <td>4.5</td>
-                        <td>2023.10.19</td>
-                        <td>1,222</td>
-                        <td>850</td>
-                    </tr>
-                    <tr>
-                        <td>아이에스 동서</td>
-                        <td>식품</td>
-                        <td>경기도 부천시</td>
-                        <td>4.4</td>
-                        <td>20203.08.21</td>
-                        <td>1,283</td>
-                        <td>192</td>
-                    </tr>
-                    <tr>
-                        <td>SKC</td>
-                        <td>기계건설</td>
-                        <td>경기도 수원시</td>
-                        <td>4.1</td>
-                        <td>2023.08.09</td>
-                        <td>373</td>
-                        <td>79</td>
-                    </tr>
-                    <tr>
-                        <td>삼성전자</td>
-                        <td>IT</td>
-                        <td>서울특별시 강남구</td>
-                        <td>4.5</td>
-                        <td>2023.10.19</td>
-                        <td>1,222</td>
-                        <td>850</td>
-                    </tr>
-                    <tr>
-                        <td>아이에스 동서</td>
-                        <td>식품</td>
-                        <td>경기도 부천시</td>
-                        <td>4.4</td>
-                        <td>20203.08.21</td>
-                        <td>1,283</td>
-                        <td>192</td>
-                    </tr>
-                    <tr>
-                        <td>SKC</td>
-                        <td>기계건설</td>
-                        <td>경기도 수원시</td>
-                        <td>4.1</td>
-                        <td>2023.08.09</td>
-                        <td>373</td>
-                        <td>79</td>
-                    </tr>
+	                <c:if test="${ empty list }">
+						<tr>
+							<td colspan="7">
+								조회된 게시글이 없습니다.
+							</td>
+						</tr>	
+					</c:if>
+					<c:if test="${ not empty list }">
+						<c:forEach var="company" items="${ list }">
+		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}'">
+		                        <td>${ company.industryName }</td>
+		                        <td>${ company.industryType }</td>
+		                        <td>${ company.industryLc }</td>
+		                        <td>${ company.baseRate }</td>
+		                        <td><fmt:formatDate value ="${ company.industryDate }" pattern="yyyy.MM.dd"/></td>
+		                        <td>${ company.count }</td>
+		                        <td>${ company.readCount }</td>
+		                    </tr>
+						</c:forEach>
+                    </c:if>
                 </tbody>
             </table>
             <div class="pagging">
 	            <!-- 이전 페이지로 -->
 				<button class="prev_page" onclick="location.href='${ path }/companyReview/list?page=${ pageInfo.prevPage }'">&lt;</button>
-                <!--  10개 페이지 목록 -->
+                <!--  5개 페이지 목록 -->
 				<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
 					<c:choose>
 						<c:when test="${ current == pageInfo.currentPage }">
-							<button class="pages" disabled>${ current }</button>
+							<button disabled>${ current }</button>
 						</c:when>
 						<c:otherwise>
-							<button class="active" onclick="location.href='${ path }/companyReview/list?page=${ current }'">${ current }</button>
+							<button onclick="location.href='${ path }/companyReview/list?page=${ current }'">${ current }</button>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
