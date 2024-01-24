@@ -38,14 +38,14 @@
         <!-- 2. 메인 평점 -->
         <section id="co-section-2">
             <div class="co-main-box">
-                <h3>한진 택배</h3>
+                <h3>${ company.industryName }</h3>
                 <button onclick="location.href='${ path }/companyReview/write'">리뷰 작성</button>
             </div>
             <div class="co-main-re-box">
                 <div class="co-main-re-1">
-                    <span class="co-main-re-1-txt">알바 리뷰 평점</span> (<span>10명</span>)
+                    <span class="co-main-re-1-txt">알바 리뷰 평점</span> (<span>${ company.count }명</span>)
                     <div>
-                        <div class="star_point">4.8</div>
+                        <div class="star_point">${ company.baseRate }</div>
                         <div class ="star_rating" id="starRate1">
                             <span class="star on" value="1"> </span>
                             <span class="star on" value="2"> </span>
@@ -58,11 +58,11 @@
                 <table class="co-main-re-2">
                     <tr>
                         <th>위치</th>
-                        <td>서울특별시 중구 남대문로 63</td>
+                        <td>${ company.industryLc }</td>
                     </tr>
                     <tr>
                         <th>업계</th>
-                        <td>운송</td>
+                        <td>${ company.industryType }</td>
                     </tr>
                     <tr>
                         <th>동일업계순위</th>
@@ -70,14 +70,21 @@
                     </tr>
                     <tr>
                         <th>홈페이지</th>
-                        <td>https://www.hanjin.com</td>
+                        <td>${ company.industryHp }</td>
                     </tr>
                 </table>
                 <div class="co-main-re-3">
                     BEST 알고 한줄평
-                    <div class="review-word-box">
-                        연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
-                    </div>
+                    <c:if test="${ empty company.bestComment }">
+                    	<div class="review-word-box">
+                    		조회된 한줄평이 없습니다.
+                    	</div>
+                    </c:if>
+                    <c:if test="${ not empty company.bestComment }">
+	                    <div class="review-word-box">
+	                        ${ company.bestComment }
+	                    </div>
+	                </c:if>
                 </div>
             </div>
         </section>
@@ -94,7 +101,7 @@
                         <span class="star on" value="3"> </span>
                         <span class="star on" value="4"> </span>
                         <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 4.2</div>
+                        <div class="sub_star_point">평점 ${ company.detailRate1 } </div>
                     </div>
                 </div>
                 <div class="sub-rate">
@@ -105,7 +112,7 @@
                         <span class="star on" value="3"> </span>
                         <span class="star on" value="4"> </span>
                         <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 4.5</div>
+                        <div class="sub_star_point">평점 ${ company.detailRate2 }</div>
                     </div>
                 </div>
                 <div class="sub-rate">
@@ -116,7 +123,7 @@
                         <span class="star on" value="3"> </span>
                         <span class="star on" value="4"> </span>
                         <span class="star" value="5"> </span>
-                        <div class="sub_star_point">평점 3.8</div>
+                        <div class="sub_star_point">평점 ${ company.detailRate3 }</div>
                     </div>
                 </div>
                 <div class="sub-rate">
@@ -127,7 +134,7 @@
                         <span class="star on" value="3"> </span>
                         <span class="star on" value="4"> </span>
                         <span class="star on" value="5"> </span>
-                        <div class="sub_star_point">평점 4.0</div>
+                        <div class="sub_star_point">평점 ${ company.detailRate4 }</div>
                     </div>
                 </div>
             </div>

@@ -31,5 +31,15 @@ public class CompanyService {
 		
 		return list;
 	}
+
+	public Company getCompanyByID(int industryID) {
+		Company company = null;
+		Connection connection = getConnection();
+		
+		company = new CompanyDao().findCompanyById(connection, industryID);
+		
+		close(connection);
+		return company;
+	}
 	
 }

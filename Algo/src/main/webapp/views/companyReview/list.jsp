@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>    
     
 <!DOCTYPE html>
@@ -40,6 +42,8 @@
             <form class="Review_CoSh" onchange="selectOnChange(this)">
                 <input type="search" name="ReviewSh" id="ReviewSh" placeholder="지역명 / 기업명을 입력하세요."/>
                 <input type="submit" id="ReviewSb" value="검색">
+            </form>
+            <form>
                 <select name="ReviewLi" id="ReviewLi">
                     <option value="score" selected>평점순</option>
                     <option value="view">조회순</option>
@@ -63,15 +67,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr onclick="location.href='${ path }/companyReview/companyDetail'">
-                        <td>파리바게트 강북구청점</td>
-                        <td>IT</td>
-                        <td>서울특별시 강남구</td>
-                        <td>4.5</td>
-                        <td>2023.10.19</td>
-                        <td>1,222</td>
-                        <td>850</td>
-                    </tr>
+	                <c:if test="${ empty list }">
+						<tr>
+							<td colspan="6">
+								조회된 게시글이 없습니다.
+							</td>
+						</tr>	
+					</c:if>
+					<c:if test="${ not empty list }">
+						<c:forEach var="company" items="${ list }">
+		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}'">
+		                        <td>${ company.industryName }</td>
+		                        <td>${ company.industryType }</td>
+		                        <td>${ company.industryLc }</td>
+		                        <td>${ company.baseRate }</td>
+		                        <td><fmt:formatDate value ="${ company.industryDate }" pattern="yyyy.MM.dd"/></td>
+		                        <td>${ company.count }</td>
+		                        <td>${ company.readCount }</td>
+		                    </tr>
+						</c:forEach>
+                    </c:if>
                 </tbody>
             </table>
             <div class="pagging">
