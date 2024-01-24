@@ -8,6 +8,9 @@ public class PageInfo {
 	private int listCount;
 
 	private int listLimit;	
+	
+	// 수정
+	private int startListNum;	
 
 	/**
 	 * @param currentPage 현재 페이지
@@ -20,10 +23,12 @@ public class PageInfo {
 		this.pageLimit = pageLimit;
 		this.listCount = listCount;
 		this.listLimit = listLimit;
+		// 수정
+		this.startListNum = listCount%listLimit;
 	}
 
 	/** 	
-	 * @return 전체 페이지 중 가장 마지막 페이지
+	 * @return 전체 페이지 중 가장 마지막 페이지 / 
 	 */
 	public int getMaxPage() {
 		/*
@@ -101,7 +106,8 @@ public class PageInfo {
 
 		return nextPage > this.getMaxPage() ? this.getMaxPage() : nextPage;
 	}
-
+	
+	
 	/**
 	 * 
 	 * @return 페이지의 시작 리스트 
@@ -119,4 +125,33 @@ public class PageInfo {
 
 		return endList > this.listCount ? this.listCount : endList;
 	}
+	
+	
+
+	// 수정
+	/**
+	 * 
+	 * @return 페이지의 시작 리스트 
+	 */ 	
+	public int getStartList2() {
+		return (this.getMaxPage() - this.getCurrentPage()) * this.listLimit + this.startListNum;
+	}
+
+	/**
+	 * 
+	 * @return 페이지의 마지막 리스트
+	 */ 	
+	public int getEndList2() {
+		int endList = this.getStartList2() - this.listLimit + 1;
+
+		return endList > 1 ? endList : 1;
+	}
+	
+//	public static void main(String[] args) {
+//		PageInfo pageinfo = new PageInfo(1, 5, 44, 20);
+//		System.out.println(pageinfo.getStartList());
+//		System.out.println(pageinfo.getEndList());
+//		System.out.println(pageinfo.getMaxPage());
+//		System.out.println(pageinfo.getCurrentPage());
+//	}
 }

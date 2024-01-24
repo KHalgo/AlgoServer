@@ -38,17 +38,26 @@
         <section>
             <table class="postBoard">
                 <tr>
-                    <th colspan="2"><span style="color: #9C9C9C;">[알바TIP]</span> 유니클로 알바 유의사항</th>
+                    <th colspan="2">
+                    <span style="color: #9C9C9C;">
+                    <c:if test="${ board.smallCategoryId  == 'TIP'}">
+	                    [알바TIP]
+                    </c:if>
+                    <c:if test="${ board.smallCategoryId  == 'SSUL'}">
+                    	[알바SSUL]
+                    </c:if>
+                    </span> 
+                    ${ board.postTitle }</th>
                 </tr>
                 <tr style="border-bottom: 1px solid #C0C0C0;">
-                    <td>알바왕&nbsp; &#124; &nbsp;서울시&nbsp; &gt; &nbsp;강남구&nbsp; &#124; &nbsp;2023.12.16 17:30</td>
+                    <td>${ board.userNick }&nbsp; &#124; &nbsp;서울시&nbsp; &gt; &nbsp;강남구&nbsp; &#124; &nbsp;${ board.postDate }</td>
                     <td class="write-r">
-                        조회&nbsp;0&nbsp; &#124; &nbsp;추천&nbsp;0&nbsp; &#124; &nbsp;<a href="#">신고</a>
+                        조회&nbsp;${ board.postViewCount }&nbsp; &#124; &nbsp;추천&nbsp;${ board.postLikeCount }&nbsp; &#124; &nbsp;<a href="#">신고</a>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="content">
-                        <p>그런거 없음</p>
+                        <p>${ board.postContent }</p>
                     </td>
                 </tr>
                 <!-- 추천 버튼 -->
@@ -57,6 +66,16 @@
                         <button class="algo_btn2">추천해요</button>
                     </td>
                 </tr>
+                
+                <!--  댓글 입력 -->
+                <tr style="border-bottom: 1px solid #C0C0C0;">
+                	<td colspan="2">
+                		<textarea placeholder="댓글을 입력하시오."></textarea>
+                		<button class="algo_btn3">댓글</button>
+                	</td>
+                </tr>
+                
+                <!-- 댓글 목록 -->
                 <tr style="border-bottom: 1px solid #C0C0C0;">
                     <td colspan="2">댓글 <strong>3</strong>개</td>
                 </tr>

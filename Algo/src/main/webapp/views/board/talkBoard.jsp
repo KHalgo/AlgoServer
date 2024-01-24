@@ -55,7 +55,7 @@
             <!-- 3-1) 전체 글 count -->
             <div class="list-top">
                 <p class="total">
-                    전체 글 <span>1234</span>개
+                    전체 글 <span>1234</span>개 ${ listCount }
                 </p>
             </div>
             <!-- 3-2) 게시판 글 목록 -->
@@ -97,66 +97,32 @@
                             <td>16487</td>
                             <td></td>
                         </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>123</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>456</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>789</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>741</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>852</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>
-                                <a href="#">제목입니다.</a>
-                            </td>
-                            <td>닉네임1</td>
-                            <td>2023.12.12</td>
-                            <td>123</td>
-                            <td>4</td>
-                        </tr>
+                        <c:if test="${ empty list }">
+	                        <tr>
+	                        	<td colspan="6">
+	                        	조회된 게시글이 없습니다.
+	                        	</td>
+	                        </tr>                        
+                        </c:if>
+                        
+                        <c:if test="${ not empty list }">
+                        	<c:forEach var="board" items="${ list }">
+	                        	<tr>
+		                            <td>${ board.rowNum }</td>
+		                            <td>
+		                                <a href="${ path }/talkBoard/talkPost?no=${board.postNo}">
+		                                	${ board.postTitle }
+		                                </a>
+		                            </td>
+		                            <td>${ board.writerId }</td>
+		                            <td>${ board.postDate }</td>
+		                            <td>${ board.postViewCount }</td>
+		                            <td>${ board.postLikeCount }</td>
+		                        </tr>
+                        	</c:forEach>                        
+                        </c:if>
+                        <!--  
+                        
                         <tr>
                             <td>4</td>
                             <td>
@@ -297,11 +263,78 @@
                             <td>852</td>
                             <td>0</td>
                         </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <a href="#">제목입니다.</a>
+                            </td>
+                            <td>닉네임1</td>
+                            <td>2023.12.12</td>
+                            <td>123</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <a href="#">제목입니다.</a>
+                            </td>
+                            <td>닉네임1</td>
+                            <td>2023.12.12</td>
+                            <td>456</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <a href="#">제목입니다.</a>
+                            </td>
+                            <td>닉네임1</td>
+                            <td>2023.12.12</td>
+                            <td>789</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <a href="#">제목입니다.</a>
+                            </td>
+                            <td>닉네임1</td>
+                            <td>2023.12.12</td>
+                            <td>741</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a href="#">제목입니다.</a>
+                            </td>
+                            <td>닉네임1</td>
+                            <td>2023.12.12</td>
+                            <td>852</td>
+                            <td>0</td>
+                        </tr>
+                    	-->
                     </tbody>
                 </table>
                 <!-- 3-3) 목록 페이지 넘버 -->
                 <div class="pagging">
-                    <div class="prev_page" id="prev_page">&lt;</div>
+                	<!-- 이전 페이지로 -->
+                	<button class="prev_page" onclick="location.href='${ path }/talkBoard/?page=${ pageInfo.prevPage }'">&lt;</button>
+                    <!-- 5개 페이지 목록 -->
+					<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+						<c:choose>
+							<c:when test="${ current == pageInfo.currentPage }">
+								<button disabled>${ current }</button>
+							</c:when>
+							
+							<c:otherwise>
+								<button onclick="location.href='${ path }/talkBoard/?page=${ current }'">${ current }</button>
+							</c:otherwise>
+						</c:choose>
+					
+					</c:forEach>
+
+                    <!-- 
                     <div class="pages">
                         <span class="active">1</span>
                         <span>2</span>
@@ -309,7 +342,10 @@
                         <span>4</span>
                         <span>5</span>
                     </div>
-                    <div class="next_page" id="next_page">&gt;</div>
+                    -->
+                    
+                    <!-- 다음 페이지로 -->
+                    <button class="next_page" onclick="location.href='${ path }/talkBoard/?page=${ pageInfo.nextPage }'">&gt;</button>
                 </div>
             </div>
         </section>
