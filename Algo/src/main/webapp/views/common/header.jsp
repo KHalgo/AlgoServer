@@ -43,8 +43,8 @@
 				<li><a href="${ path }/views/account/createAccount">회원가입</a></li>
 			</c:if>
 			<c:if test="${ not empty loginMember }">
-				<li class="locate"><a href="${ path }/"><span
-						style="vertical-align: middle;">지역 가져와</span></a></li>
+				<li class="locate"><a href="${ path }/myPage/locationSet"><span
+						style="vertical-align: middle;">${ loginMember.sigungu }</span></a></li>
 				<li><a href="${ path }/myPage/main">마이페이지</a></li>
 				<li><a href="${ path }/logout">로그아웃</a></li>
 			</c:if>
