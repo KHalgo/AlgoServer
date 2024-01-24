@@ -39,7 +39,7 @@
 						지금 바로 알바 고수들의 <br /> 이야기를 들으러 가보세요!
 					</h3>
 					<br /> <br /> <input class="algo_btn_blue_long" type="button"
-						value="로그인" onclick="location.href='${ path }/account/login'" />
+						value="로그인" onclick="location.href='${ path }/views/account/login'" />
 				</div>
 			</div>
 		</section>
