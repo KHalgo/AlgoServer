@@ -74,22 +74,25 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>이름<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" />
+                                <input type="text" id="userName" name="userName" class="user_info_input_tag1" />
+                            </td>
+                            <td>
+                                <input type="button" id="userNameBtn" class="algo_btn200" value="확인" />
                             </td>
                         </tr>
                         <tr>
                             <th>생년월일</th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="ex)19970801" />
+                                <input type="text" class="user_info_input_tag1" placeholder="ex)19970801" maxlength="8" />
                             </td>
                         </tr>
                         <tr>
                             <th>아이디<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="5~15자 영문, 숫자 포함" />
+                                <input type="text" id="userId" class="user_info_input_tag1" placeholder="5~15자 영문, 숫자 포함" />
                             </td>
                             <td>
-                                <input type="button" class="algo_btn200" value="중복확인" />
+                                <input type="button" id="userIdBtn" class="algo_btn200" value="중복확인" />
                             </td>
                         </tr>
                         <tr>
