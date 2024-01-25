@@ -33,7 +33,7 @@ public class UsersDao {
 				users.setUserPhone(rs.getString("USER_PHONE"));
 				users.setUserEmail(rs.getString("USER_EMAIL"));
 				users.setUserBirthday(rs.getDate("USER_BIRTHDAY"));
-				users.setUserAddress(rs.getString("USER_ADDRESS"));
+//				users.setUserAddress(rs.getString("USER_ADDRESS"));
 				users.setUserDormant(rs.getString("USER_DORMANT"));
 				users.setUserDate(rs.getDate("USER_DATE"));
 				users.setUserPhoto(rs.getString("USER_PHOTO"));
@@ -50,5 +50,35 @@ public class UsersDao {
 			close(pstmt);
 		}
 		return users;
+	}
+
+	public int insertUsers(Connection connection, Users users) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String query = "INSERT INTO USERS VALUES(?,?,?,?,?,DEFAULT,DEFAULT,DEFAULT,DEFAULT,DEFAULT,?,DEFAULT,?,?)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, users.getUserId());
+			pstmt.setString(2, users.getUserName());
+			pstmt.setString(3, users.getUserPw());
+			pstmt.setString(4, users.getUserPhone());
+			pstmt.setString(5, users.getUserEmail());
+//			pstmt.setString(6, users.getUserBirthday());
+			pstmt.setString(6, users.getUserNick());
+			pstmt.setString(7, users.getSido());
+			pstmt.setString(8, users.getSigungu());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
 	}
 }

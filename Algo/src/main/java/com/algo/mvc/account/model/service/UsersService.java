@@ -30,5 +30,28 @@ public class UsersService {
 		}
 
 	}
+
+
+	public int save(Users users) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = new UsersDao().insertUsers(connection, users);
+		
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+
+		close(connection);
+		
+		return result;
+	}
+
+
+	public Boolean isDuplicateId(String userId) {
+		return this.findMemberById(userId) != null;
+	}
 	
 }

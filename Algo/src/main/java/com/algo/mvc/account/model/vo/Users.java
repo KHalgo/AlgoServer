@@ -10,18 +10,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Users {
-	private String userId      ;
+	private String agrMarketing;
+	private String agrSms     ;
+	private String agrEmail     ;
+	private String agrLocation     ;
 	private String userName    ;
+	private Date userBirthday;
+	private String userId      ;
 	private String userPw      ;
+	private String userNick    ;
 	private String userPhone   ;
 	private String userEmail   ;
-	private Date userBirthday;
-	private String userAddress ;
 	private String userDormant ;
-	private Date userDate    ;
-	private String userPhoto   ;
-	private String userNick    ;
-	private String adminYn     ;
 	private String sido        ;
 	private String sigungu     ;
+	
+	
+	private Date userDate    ;
+	private String userPhoto   ;
+	private String adminYn     ;
+	
+	
+	
 }
