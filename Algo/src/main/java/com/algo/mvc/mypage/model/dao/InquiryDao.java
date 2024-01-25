@@ -1,16 +1,21 @@
 package com.algo.mvc.mypage.model.dao;
 
+import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.mypage.model.vo.Inquiry;
 
 public class InquiryDao {
 	
 	// 아이디값 구하기 (inquiry 테이블)
-	public Inquiry findInquiryById(Connection connection, int inquiryNo) {
+	public Inquiry findInquiryByNo(Connection connection, int inquiryNo) {
 		Inquiry inquiry = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -48,6 +53,74 @@ public class InquiryDao {
 			close(rs);
 			close(pstmt);
 		}
-		return null;
+		return inquiry;
+	}
+
+	public int getInquiryCount(Connection connection) {
+		
+		int count = 0;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		String query = "SELECT COUNT(INQUIRY_NO) FROM INQUIRY";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(connection);
+		}
+		
+		return count;
+	}
+
+	public List<Inquiry> findAll(Connection connection, PageInfo pageInfo) {
+		List<Inquiry> list = new ArrayList<>();	
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT  "
+				+ "FROM ( "
+				+ "    SELECT ROWNUM AS RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
+				+ "    FROM ( "
+				+ "            SELECT I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
+				+ "            FROM INQUIRY I "
+				+ "            INNER JOIN INQUIRY_ANSWER IA ON (I.INQUIRY_NO = IA.INQUIRY_NO) "
+				+ "            WHERE I.INQUIRY_NO  = '42' "
+				+ "            ORDER BY I.INQUIRY_NO "
+				+ "    ) "
+				+ ") "
+				+ "WHERE RNUM BETWEEN ? AND ? "
+				+ "ORDER BY RNUM DESC; ";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getEndList());
+			pstmt.setInt(2, pageInfo.getStartList());
+			
+			rs = pstmt.executeQuery();
+			
+			Inquiry inquiry;
+			while (rs.next()) {
+				inquiry = new Inquiry();
+				
+				Inquiry.set
+				
+				list.add(Inquiry);
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return list;
 	}
 }

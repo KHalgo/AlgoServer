@@ -1,6 +1,7 @@
 package com.algo.mvc.mypage.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,7 @@ public class MyPagequestionSuccessServlet extends HttpServlet {
     
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.getRequestDispatcher("/views/myPage/question_success.jsp")
+		request.getRequestDispatcher("/views/myPage/question_success.jsp")
 		.forward(request, response);
 	}
     

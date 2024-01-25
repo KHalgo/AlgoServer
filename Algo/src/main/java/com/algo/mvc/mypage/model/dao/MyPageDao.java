@@ -1,5 +1,7 @@
 package com.algo.mvc.mypage.model.dao;
 
+import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
