@@ -38,13 +38,14 @@ main {
 }
 
 .prBox1 {
-    border: 1px solid #D6D6D6;
-    border-radius: 15px;
     width: 800px;
     height: 280px;
-    flex-wrap: wrap;
+    display: table-caption;
+    border: 1px solid #D6D6D6;
+    border-radius: 15px;
     padding: 30px;
     position: relative;
+    margin-bottom: 20px
 }
 
 .prBox1 hr {
@@ -53,11 +54,11 @@ main {
     color: #d9d9d9;
 }
 .prBox2 {
+    width: 390px;
+    height: 240px;
+    display: table-cell;
     border: 1px solid #D6D6D6;
     border-radius: 15px;
-    flex-basis: calc(50% - 10px);
-    width: 400px;
-    height: 240px;
     padding: 15px;
     margin-right: 10px;
 }
@@ -93,7 +94,7 @@ main {
 }
 .pr_lText {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .pr_more {
@@ -118,6 +119,11 @@ main {
     text-align: center;
     margin-top: 80px;
     margin-left: 100px;
+}
+
+#mp_h2 {
+	text-align: justify;
+	margin-bottom: 15px
 }
 
 /* 지역 설정 메인 페이지 */
