@@ -34,4 +34,16 @@ public class CompanyCommentService {
 		
 		return list;
 	}
+
+	public CompanyComment getCompanyBestComment(int industryID) {
+		CompanyComment bestComment = null;
+		
+		Connection connection = getConnection();
+		
+		bestComment = new CompanyCommentDao().findBestComment(connection, industryID);
+		
+		close(connection);
+		
+		return bestComment;
+	}
 }

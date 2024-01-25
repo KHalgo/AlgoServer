@@ -71,14 +71,14 @@
                 </table>
                 <div class="co-main-re-3">
                     BEST 알고 한줄평
-                    <c:if test="${ empty company.bestComment }">
+                    <c:if test="${ empty bestComment.postComment }">
                     	<div class="review-word-box">
-                    		조회된 한줄평이 없습니다.
+                    	 	작성된 리뷰가 없습니다.
                     	</div>
                     </c:if>
-                    <c:if test="${ not empty company.bestComment }">
+                    <c:if test="${ not empty bestComment.postComment }">
 	                    <div class="review-word-box">
-	                        ${ company.bestComment }
+	                        ${ bestComment.postComment }
 	                    </div>
 	                </c:if>
                 </div>
@@ -125,24 +125,26 @@
 
             <div class="co-sub-re-2">
                 한줄 리뷰
-                <div class="review-word-box">
-                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
-                </div>
-                <div class="review-word-box">
-                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
-                </div>
-                <div class="review-word-box">
-                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.
-                </div>
+                <c:if test="${ not empty list }">
+                	<c:forEach var="comment" items="${ list }">
+		                <div class="review-word-box">
+		                    ${ comment.postComment }
+		                </div>
+                	</c:forEach>
+                </c:if>
+                <c:if test="${ empty list }">
+	                <div class="review-word-box">
+	                    작성된 리뷰가 없습니다.
+	                </div>
+                </c:if>
             </div>
             <c:choose>
 	            <c:when test="${ empty list }">
-	            -
 	            </c:when>
 	            <c:otherwise>
 		           <div class="pagging">
 			            <!-- 이전 페이지로 -->
-						<button class="prev_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ pageInfo.prevPage }'">&lt;</button>
+						<button class="prev_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ pageInfo.prevPage }'">&lt;</button>
 		                <!--  5개 페이지 목록 -->
 						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
 							<c:choose>
@@ -150,12 +152,12 @@
 									<button disabled>${ current }</button>
 								</c:when>
 								<c:otherwise>
-									<button onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ current }'">${ current }</button>
+									<button onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ current }'">${ current }</button>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
 		                <!-- 다음 페이지로 -->
-						<button class="next_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}?page=${ pageInfo.nextPage }'">&gt;</button>
+						<button class="next_page" onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ pageInfo.nextPage }'">&gt;</button>
 		            </div>
 	            </c:otherwise>
             </c:choose>

@@ -53,41 +53,24 @@
                     <div class="more"><a href="${ path }/companyReview/list">+ MORE</a></div>
                 </div>
                 <table class="com-lank-list">
-                    <tr>
-                        <td>1</td>
-                        <td>한화생명</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>파리바게트 서울역사점</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>한화생명</td>
-                        <td>건설 제조 업체</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>한화생명</td>
-                        <td>요식업계</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>한화생명</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
+                    <c:if test="${ empty list2 }">
+						<tr>
+							<td colspan="5">
+								조회된 기업이 없습니다.
+							</td>
+						</tr>	
+					</c:if>
+					<c:if test="${ not empty list2 }">
+						<c:forEach var="company" items="${ list2 }">
+		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ current }'">
+		                        <td>${ company.inRowNum }</td>
+		                        <td>${ company.industryName }</td>
+		                        <td>${ company.industryType }</td>
+								<td class ="star_rating" id="LCstarRate${company.inRowNum}"></td>
+		                        <td>${ company.baseRate }</td>
+		                    </tr>
+						</c:forEach>
+                    </c:if>
                 </table>
             </div>
 
@@ -97,41 +80,24 @@
                     <div class="more"><a href="${ path }/companyReview/list">+ MORE</a></div>
                 </div>
                 <table class="com-lank-list">
-                    <tr>
-                        <td>1</td>
-                        <td>한화생명</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>파리바게트 서울역사점</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>한화생명</td>
-                        <td>건설 제조 업체</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>한화생명</td>
-                        <td>요식업계</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>한화생명</td>
-                        <td>보험</td>
-                        <td style="font-size:25px; color:#FFC300;">★★★★★</td>
-                        <td>4.8</td>
-                    </tr>
+                    <c:if test="${ empty list }">
+						<tr>
+							<td colspan="5">
+								조회된 기업이 없습니다.
+							</td>
+						</tr>	
+					</c:if>
+					<c:if test="${ not empty list }">
+						<c:forEach var="company" items="${ list }">
+		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ current }'">
+		                        <td>${ company.inRowNum }</td>
+		                        <td>${ company.industryName }</td>
+		                        <td>${ company.industryType }</td>
+								<td class ="star_rating" id="BCstarRate${company.inRowNum}"></td>
+		                        <td>${ company.baseRate }</td>
+		                    </tr>
+						</c:forEach>
+                    </c:if>
                 </table>
             </div>
         </section>
@@ -322,6 +288,32 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-	
+	<script>
+		window.onload = function () {
+			<c:forEach var="company" items="${list2}">
+            var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
+            // 별을 표시할 공간에 별 추가
+            for (var i = 1; i <= 5; i++) {
+                var star = document.createElement('span');
+                star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
+                star.value = i;
+                document.getElementById('LCstarRate${company.inRowNum}').appendChild(star);
+            }
+        	</c:forEach>
+        	
+        	<c:forEach var="company" items="${list}">
+            var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
+            // 별을 표시할 공간에 별 추가
+             for (var i = 1; i <= 5; i++) {
+                var star = document.createElement('span');
+                star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
+                star.value = i;
+                document.getElementById('BCstarRate${company.inRowNum}').appendChild(star);
+            }
+            
+        	</c:forEach>
+           
+		}
+	</script>
 </body>
 </html>

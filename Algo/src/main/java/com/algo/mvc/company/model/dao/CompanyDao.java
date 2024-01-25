@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.algo.mvc.account.model.vo.Users;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.company.model.vo.Company;
 import com.algo.mvc.company.model.vo.CompanyComment;
@@ -193,6 +194,67 @@ public class CompanyDao {
 		}
 		
 		return result;
+	}
+	
+	public List<Company> findLocal(Connection connection, PageInfo pageInfo, Users loginMember){
+		List<Company> list2 = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * FROM ( "
+				+ "SELECT ROWNUM AS RNUM, INDUSTRY_ID, INDUSTRY_NAME, INDUSTRY_LOCATION, INDUSTRY_TYPE, IN_READCOUNT, BASE_RATE, COUNT "
+				+ "    FROM ( "
+				+ "         SELECT I.INDUSTRY_ID AS INDUSTRY_ID, "
+				+ "          MAX(I.INDUSTRY_NAME    )   AS  INDUSTRY_NAME, "
+				+ "          MAX(I.INDUSTRY_LOCATION)   AS  INDUSTRY_LOCATION, "
+				+ "          MAX(I.INDUSTRY_TYPE    )   AS  INDUSTRY_TYPE, "
+				+ "          MAX(I.IN_READCOUNT     )   AS  IN_READCOUNT, "
+				+ "          ROUND(AVG(NVL(R.BASE_RATE,0)),1) AS BASE_RATE, "
+		        + "          COUNT(R.INDUSTRY_ID) AS COUNT "
+				+ "      FROM INDUSTRY I "
+				+ "      LEFT OUTER JOIN "
+				+ "           INDUSTRY_REVIEW R "
+				+ "        ON R.INDUSTRY_ID = I.INDUSTRY_ID "
+				+ "		 WHERE I.INDUSTRY_LOCATION LIKE ? "
+				+ "     GROUP BY "
+				+ "           I.INDUSTRY_ID "
+				+ "     ORDER BY "
+				+ "			BASE_RATE DESC "
+				+ "    ) "
+				+ ") "
+				+ "WHERE RNUM BETWEEN ? and ?";	
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, "%" + loginMember.getSigungu());
+			pstmt.setInt(2, pageInfo.getStartList());
+			pstmt.setInt(3, pageInfo.getEndList());
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Company company = new Company();
+				
+				company.setIndustryID(rs.getInt("INDUSTRY_ID"));
+				company.setInRowNum(rs.getInt("RNUM"));
+				company.setIndustryName(rs.getString("INDUSTRY_NAME"));
+				company.setIndustryLc(rs.getString("INDUSTRY_LOCATION"));
+				company.setIndustryType(rs.getString("INDUSTRY_TYPE"));
+				company.setReadCount(rs.getInt("IN_READCOUNT"));
+				company.setBaseRate(rs.getDouble("BASE_RATE"));
+				company.setCount(rs.getInt("COUNT"));
+				
+				list2.add(company);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return list2;
 	}
 
 

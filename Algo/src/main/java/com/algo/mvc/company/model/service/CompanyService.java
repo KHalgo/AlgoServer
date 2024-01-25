@@ -1,5 +1,6 @@
 package com.algo.mvc.company.model.service;
 
+import com.algo.mvc.account.model.vo.Users;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.company.model.dao.CompanyCommentDao;
 import com.algo.mvc.company.model.dao.CompanyDao;
@@ -37,6 +38,17 @@ public class CompanyService {
 		
 		return list;
 	}
+	
+	public List<Company> getLocalCompanyList(PageInfo pageInfo, Users loginMember) {
+		List<Company> list2 = null;
+		Connection connection = getConnection();
+		
+		list2 = new CompanyDao().findLocal(connection, pageInfo, loginMember);
+		
+		close(connection);
+		
+		return list2;
+	}
 
 	public Company getCompanyByID(int industryID) {
 		Company company = null;
@@ -60,6 +72,8 @@ public class CompanyService {
 		} else {
 			rollback(connection);
 		}
+		
+		close(connection);
 		
 		return result;
 	}

@@ -89,4 +89,45 @@ public class CompanyCommentDao {
 		return list;
 	}
 
+	public CompanyComment findBestComment(Connection connection, int industryID) {
+		CompanyComment bestComment = new CompanyComment();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * "
+				+ "    FROM ( "
+				+ "      SELECT  I.INDUSTRY_ID AS INDUSTRY_ID "
+				+ "           , R.POST_COMMENT AS POST_COMMENT "
+				+ "           , R.REVIEW_LIKE AS REVIEW_LIKE "
+				+ "        FROM INDUSTRY I "
+				+ "        LEFT OUTER JOIN "
+				+ "        INDUSTRY_REVIEW R "
+				+ "        ON R.INDUSTRY_ID = I.INDUSTRY_ID "
+				+ "        WHERE I.INDUSTRY_ID = ? "
+				+ "        ORDER BY "
+				+ "          R.REVIEW_LIKE DESC) "
+				+ "    WHERE ROWNUM = 1 ";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, industryID);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				bestComment.setIndustryID(rs.getInt("INDUSTRY_ID"));
+				bestComment.setPostComment(rs.getString("POST_COMMENT"));
+				bestComment.setLike(rs.getInt("REVIEW_LIKE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return bestComment;
+	}
+
 }

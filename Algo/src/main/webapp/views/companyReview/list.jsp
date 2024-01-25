@@ -76,7 +76,7 @@
 					</c:if>
 					<c:if test="${ not empty list }">
 						<c:forEach var="company" items="${ list }">
-		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}'">
+		                    <tr onclick="location.href='${ path }/companyReview/companyDetail?industryID=${company.industryID}&page=${ current }'">
 		                        <td>${ company.industryName }</td>
 		                        <td>${ company.industryType }</td>
 		                        <td>${ company.industryLc }</td>

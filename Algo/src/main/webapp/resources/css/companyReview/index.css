@@ -3,6 +3,32 @@
     margin: 30px auto;
 }
 
+/* 별점 */
+.star_rating {
+    float: left;
+    flex-direction: row; 
+    justify-content: flex-start;
+}
+
+.star_rating .star {
+    width: 24px; 
+    height: 24px; 
+    margin: 5px 0 5px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+.star_rating .star.on {
+    width: 24px; 
+    height: 24px; 
+    margin: 5px 0 5px 0;
+    display: inline-block; 
+    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+    background-size: 100%; 
+    box-sizing: border-box; 
+}
+
 /*3. 지역 기업 랭킹*/
 h5{
     font-size: 20px;
@@ -76,9 +102,6 @@ h5{
     text-overflow: ellipsis;
 }
 
-.com-lank-list td:nth-child(4){
-    width: 35%;
-}
 
 .com-lank-list td:last-child{
     width: 9%;

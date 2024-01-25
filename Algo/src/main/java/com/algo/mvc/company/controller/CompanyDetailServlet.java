@@ -34,6 +34,7 @@ public class CompanyDetailServlet extends HttpServlet {
 		int listCount = 0;
     	PageInfo pageInfo = null;
     	List<CompanyComment> list = null;
+    	CompanyComment bestComment = null;
 		
     	try {
     		page = Integer.parseInt(request.getParameter("page"));
@@ -44,12 +45,14 @@ public class CompanyDetailServlet extends HttpServlet {
     	listCount = new CompanyCommentService().getCompanyCommentCount(industryID);
 		pageInfo = new PageInfo(page, 5, listCount, 3);
 		list = new CompanyCommentService().getCompanyCommentList(pageInfo, industryID);
-    	
+		bestComment = new CompanyCommentService().getCompanyBestComment(industryID);
 		
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("list", list);
+		request.setAttribute("bestComment", bestComment);
+		
     	
-		System.out.println(list);
+		System.out.println(bestComment.getLike());
     	request.getRequestDispatcher("/views/companyReview/companyDetail.jsp")
 		.forward(request, response);
 	}
