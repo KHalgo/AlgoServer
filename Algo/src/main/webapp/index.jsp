@@ -296,7 +296,7 @@
                 var star = document.createElement('span');
                 star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
                 star.value = i;
-                document.getElementById('BCstarRate${company.inRowNum}').appendChild(star);
+                document.getElementById('RCstarRate${company.inRowNum}').appendChild(star);
             }
             
         	</c:forEach>
