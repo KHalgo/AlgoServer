@@ -16,36 +16,25 @@ public class CscenterService {
 		int count = 0;
 		Connection connection = getConnection();
 		
-		count = new CscenterDao().getCsCount(connection);
+		count = new CscenterDao().getCscenterCount(connection);
 		close(connection);
 		
 		return count;
 	}
 
 	public List<Cscenter> getBoardList(PageInfo pageInfo) {
-		
-		return null;
-	}
-
-	public Cscenter getCscenterByNo(int no, boolean hasRead) {
-		Board board = null;
+		List<Cscenter> list = null;
 		Connection connection = getConnection();
 		
-		board = new BoardDao().findBoardByNo(connection, no);
+		list = new CscenterDao().findAll(connection, pageInfo);
 		
-		// 게시글 조회수를 증가시키는 로직
-		if(board != null && !hasRead) {
-			int result = new BoardDao().updateReadCount(connection, board);
-			
-			if(result > 0) {
-				commit(connection);
-			} else {
-				rollback(connection);
-			}
-		}
+		System.out.println(list);
 		
 		close(connection);
 		
-		return board;
+		return list;
 	}
+	
+	
+	
 }
