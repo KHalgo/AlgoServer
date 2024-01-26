@@ -1,6 +1,7 @@
 package com.algo.mvc.board.model.vo;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -43,5 +44,11 @@ public class Board {
 	private String postFile4;
 	
 	private String userNick;
+	
+	private String sido;
+	
+	private String sigungu;
+	
+	private List<Reply> replies;
 	
 }

@@ -14,11 +14,9 @@
 	
 	<!-- css 추가 -->
 	<link rel="stylesheet" href="${ path }/resources/css/board/talkWrite.css">  
-	
 </head>
 <body>
-
-	<!-- 헤더 -->
+<!-- 헤더 -->
 	<jsp:include page="/views/common/header.jsp" />
 	
 	<!-- 내용 넣기 -->
@@ -35,7 +33,8 @@
             </div>
         </section>
          <!-- 2. 알고TALK 글쓰기 페이지 -->
-        <form action="${ path }/talkBoard/talkWrite" method="POST" enctype="multipart/form-data">
+        <form action="${ path }/talkBoard/update" method="POST" enctype="multipart/form-data">
+        	<input type="hidden" name="no" value="${ board.postNo }" >
         	<section>
 	            <table class="writeBoard">
 	                <tr>
@@ -67,18 +66,21 @@
 	                <tr>
 	                    <th>제목</th>
 	                    <td colspan="3">
-	                        <input type="text" name="title" id="" class="title" placeholder="제목을 입력하시오.">
+	                        <input type="text" name="title" id="" class="title" placeholder="제목을 입력하시오." value="${ board.postTitle }">
 	                    </td>
 	                </tr>
 	                <tr>
 	                    <td class="contentBox" colspan="4">
-	                        <textarea name="content" id="" class="content" placeholder="무분별한 비방 및 욕설, 유해 사이트 홍보 등은 무통보 삭제 후 사이트 이용 제한 처리됩니다."></textarea>
+	                        <textarea name="content" id="" class="content" placeholder="무분별한 비방 및 욕설, 유해 사이트 홍보 등은 무통보 삭제 후 사이트 이용 제한 처리됩니다.">${ board.postContent }</textarea>
 	                    </td>
 	                </tr>
 	                <tr>
 	                    <th>첨부파일 1</th>
 	                    <td>
 	                        <input type="file" name="upfile1" id="">
+	                        <c:if test="${ not empty board.postFile1 }">
+	                        	<span>${ board.postFile1 }</span>
+	                        </c:if>
 	                    </td>
 	                    <th>첨부파일 2</th>
 	                    <td>
@@ -99,12 +101,13 @@
 	        </section>
 	        <!-- 3. 하단 버튼 -->
 	        <section>
-	            <div class="buttons">
-	                <button type="submit" class="algo_btn1">완료</button>
+	            <div class="buttons">	            	
+	                <button type="submit" class="algo_btn1">수정</button>	            	
 	                <button type="button" id="listButton" class="algo_btn2" onclick="location.href='${ path }/talkBoard/'">취소</button>
 	            </div>
 	        </section>
 	       </form>
+	       
 	       <script type="text/javascript">
 	       	let listButton = document.getElementById('listButton');
 	       	listButton.onclick = function() {
@@ -118,6 +121,5 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-	
 </body>
 </html>

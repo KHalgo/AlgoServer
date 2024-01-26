@@ -93,6 +93,33 @@
                             <td>16487</td>
                             <td></td>
                         </tr>
+                        
+                        <c:if test="${ empty list }">
+	                        <tr>
+	                        	<td colspan="6">
+	                        	조회된 게시글이 없습니다.
+	                        	</td>
+	                        </tr>                        
+                        </c:if>
+                        
+                        <c:if test="${ not empty list }">
+                        	<c:forEach var="board" items="${ list }">
+	                        	<tr>
+		                            <td>${ board.rowNum }</td>
+		                            <td>
+		                                <a href="${ path }/qnaBoard/qnaPost?no=${board.postNo}">
+		                                	${ board.postTitle }
+		                                </a>
+		                            </td>
+		                            <td>${ board.writerId }</td>
+		                            <td>${ board.postDate }</td>
+		                            <td>${ board.postViewCount }</td>
+		                            <td>${ board.postLikeCount }</td>
+		                        </tr>
+                        	</c:forEach>                        
+                        </c:if>
+                        
+                        <!--  
                         <tr>
                             <td>5</td>
                             <td>
@@ -293,9 +320,33 @@
                             <td>852</td>
                             <td>0</td>
                         </tr>
+                        -->
                     </tbody>
                 </table>
                 <!-- 3-3) 목록 페이지 넘버 -->
+                <div class="pagging">
+                	<!-- 이전 페이지로 -->
+                	<button class="prev_page" onclick="location.href='${ path }/qnaBoard/?page=${ pageInfo.prevPage }'">&lt;</button>
+                    <!-- 5개 페이지 목록 -->
+					<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+						<c:choose>
+							<c:when test="${ current == pageInfo.currentPage }">
+								<button disabled>${ current }</button>
+							</c:when>
+							
+							<c:otherwise>
+								<button onclick="location.href='${ path }/qnaBoard/?page=${ current }'">${ current }</button>
+							</c:otherwise>
+						</c:choose>
+					
+					</c:forEach>
+ 
+                    <!-- 다음 페이지로 -->
+                    <button class="next_page" onclick="location.href='${ path }/qnaBoard/?page=${ pageInfo.nextPage }'">&gt;</button>
+                </div>
+                
+                
+                <!--  
                 <div class="pagging">
                     <div class="prev_page" id="prev_page">&lt;</div>
                     <div class="pages">
@@ -307,6 +358,7 @@
                     </div>
                     <div class="next_page" id="next_page">&gt;</div>
                 </div>
+                -->
             </div>
         </section>
     </main>
