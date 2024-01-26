@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
+                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox1"></td>
                                 <td class="question">
                                     <a href="#">글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다</a>
                                 </td>
@@ -51,138 +51,139 @@
                                 <td>30</td>
                             </tr>
                             <!-- toggle -->
-                            <tr class="answerBox">
+                            <tr class="answerBox" id="answerBox1">
                                 <td colspan="4">
                                     연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
                                     지명하는 자를 임명한다.
                                 </td>
                             </tr>
                             <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td class="question">
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png"></td>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr class="answerBox">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox2"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox2">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox3"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox3">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox4"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox4">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox5"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox5">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox6"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox6">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox7"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox7">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox8"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox8">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox9"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox9">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr><tr>
+                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox10"></td>
+				                <td class="question">
+                    			<a href="#">글 제목입니다.</a>
+                				</td>
+                				<td>2023.12.12</td>
+                				<td>30</td>
+							</tr>
+				            <!-- toggle -->
+				            <tr class="answerBox" id="answerBox10">
+				                <td colspan="4">
+				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
+				                    지명하는 자를 임명한다.
+				                </td>
+				            </tr>
                         </tbody>
                     </table>
                     <!-- 3-3) 목록 페이지 넘버 -->
@@ -224,5 +225,6 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/cscenter/cscenter.js"></script>
 </body>
 </html>

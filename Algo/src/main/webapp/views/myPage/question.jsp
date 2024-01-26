@@ -38,16 +38,15 @@
                             <h2 id="q_main_title">문의하기</h2>
                             <fieldset class="qs_board">
                                 <div class="q_notion">
-                                    <input type="text" id="q_title" name="title" placeholder="제목을 입력하세요"/>
+                                    <input type="text" id="q_title" name="inquiryTitle" placeholder="제목을 입력하세요"/>
                                 </div>
                                 <hr id="q_hr"/>
                                 <div class="form-group">
-                                    <textarea id="q_content" name="bcontent" placeholder="문의 내용을 입력하세요" cols="30" rows="20"></textarea>
+                                    <textarea id="q_content" name="inquiryContent" placeholder="문의 내용을 입력하세요" cols="30" rows="20"></textarea>
                                 </div>
                             </fieldset>
                                 <div class="q_sub_btn">
-                                	<!-- (미구현)버튼 클릭시 정보 넘기고 링크로 이동해야할것! -->
-                                    <button type="submit" id="q_btn1" onclick="location.href='${ path }/myPage/question/success'">문의하기</button>
+                                    <button type="submit" id="q_btn1">문의하기</button>
                                 </div>
                         </div>
                     </div>
