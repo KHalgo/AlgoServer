@@ -24,6 +24,8 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                     <img class="createAccount_logo" src="https://i.ibb.co/K6dj7KV/logo-3.png" alt="" />
                     회원가입
                 </div>
+                <form action="${ path }/views/account/createAccount" method="POST" >
+                <!-- method="POST" -->
                 <div class="main_div">
                     <h3>약관 동의</h3>
                     <div class="inner_top_div">
@@ -47,24 +49,24 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                             <span class="manual"><a href="#">(약관보기)</a></span></label
                         >
                         <br />
-                        <input type="checkbox" class="options" name="agreeMarketing" id="select_option1" />
+                        <input type="checkbox" class="options" name="agrMarketing" id="select_option1" />
                         <label for="select_option1"
                             ><span class="select_option">(선택)</span> 개인정보 수집 및 이용 동의 - 마케팅
                             <span class="manual"><a href="#">(약관보기)</a></span></label
                         >
                         <br />
-                        <input type="checkbox" class="options" name="agreeSMS" id="select_option2" />
+                        <input type="checkbox" class="options" name="agrSms" id="select_option2" />
                         <label for="select_option2"
                             ><span class="select_option">(선택)</span> 광고성 정보 SMS 수신 동의 <span class="manual"><a href="#">(약관보기)</a></span></label
                         >
                         <br />
-                        <input type="checkbox" class="options" name="agreeEmail" id="select_option2" />
+                        <input type="checkbox" class="options" name="agrEmail" id="select_option2" />
                         <label for="select_option2"
                             ><span class="select_option">(선택)</span> 광고성 정보 이메일 수신 동의
                             <span class="manual"><a href="#">(약관보기)</a></span></label
                         >
                         <br />
-                        <input type="checkbox" class="options" name="agreeLocation" id="select_option3" />
+                        <input type="checkbox" class="options" name="agrLocation" id="select_option3" />
                         <label for="select_option3"
                             ><span class="select_option">(선택)</span> 위치 정보 수집 및 이용 동의 <span class="manual"><a href="#">(약관보기)</a></span></label
                         >
@@ -77,19 +79,20 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                                 <input type="text" id="userName" name="userName" class="user_info_input_tag1" />
                             </td>
                             <td>
-                                <input type="button" id="userNameBtn" class="algo_btn200" value="확인" />
+                                <!-- <input type="button" id="userNameBtn" class="algo_btn200" value="확인" />  -->
                             </td>
                         </tr>
                         <tr>
                             <th>생년월일</th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="ex)19970801" maxlength="8" />
+                                <input type="text" class="user_info_input_tag1" name="userBirthday" placeholder="ex)19970801" maxlength="8" />
+                                <!-- <p  style="padding-left: 12px; color: red;" >생년월일을 숫자로만 입력해주세요.</p> -->
                             </td>
                         </tr>
                         <tr>
                             <th>아이디<span>*</span></th>
                             <td>
-                                <input type="text" id="userId" class="user_info_input_tag1" placeholder="5~15자 영문, 숫자 포함" />
+                                <input type="text" name="userId" id="userId" class="user_info_input_tag1" placeholder="5~15자 영문, 숫자 포함" />
                             </td>
                             <td>
                                 <input type="button" id="userIdBtn" class="algo_btn200" value="중복확인" />
@@ -98,28 +101,30 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>비밀번호<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="text" id="userPw" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <p class="strongPassword-message hide" style="padding-left: 12px; color: red;" >8~15자 영문, 숫자를 포함하여 입력하세요.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>비밀번호 확인<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="text" id="userPw2" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <p class="mismatch-message hide" style="padding-left: 12px; color: red;" >비밀번호가 일치하지 않습니다.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>닉네임<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" placeholder="2~12자 이내" />
+                                <input type="text" id="userNick" class="user_info_input_tag1"  name="userNick" placeholder="2~12자 이내" />
                             </td>
                             <td>
-                                <input type="button" class="algo_btn200" value="중복확인" />
+                                <input type="button" id="nickBtn" class="algo_btn200" value="중복확인" />
                             </td>
                         </tr>
                         <tr>
                             <th>휴대폰 번호<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag2" placeholder="휴대폰 번호 '-' 제외하고 입력" />
+                                <input type="text" class="user_info_input_tag2" name="userPhone" placeholder="휴대폰 번호 '-' 제외하고 입력" />
                             </td>
                             <td>
                                 <input type="button" class="algo_btn200" value="인증받기" />
@@ -137,7 +142,7 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>이메일<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" />
+                                <input type="text" name="userEmail" class="user_info_input_tag1" />
                             </td>
                         </tr>
                         <tr>
@@ -174,8 +179,9 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                     </table>
                 </div>
                 <div class="signInBtn">
-                    <input type="button" class="algo_btn100" value="회원가입" onclick="location.href='${ path }/views/account/createAccountComplete'" />
+                    <input type="submit" class="algo_btn100" value="회원가입" />
                 </div>
+                </form>
             </section>
         </main>
 

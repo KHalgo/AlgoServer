@@ -18,6 +18,17 @@ public class UsersService {
 		return users;
 		
 	}
+	public Users findMemberByNick(String userNick) {
+		Users users = null;
+		Connection connection = getConnection();
+		
+		users = new UsersDao().findMemberByNick(connection, userNick);
+		
+		close(connection);
+		
+		return users;
+		
+	}
 	
 	
 	public Users login(String userId, String userPwd) {
@@ -29,6 +40,32 @@ public class UsersService {
 			return null;
 		}
 
+	}
+
+
+	public int save(Users users) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = new UsersDao().insertUsers(connection, users);
+		
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+
+		close(connection);
+		
+		return result;
+	}
+
+
+	public Boolean isDuplicateId(String userId) {
+		return this.findMemberById(userId) != null;
+	}
+	public Boolean isDuplicateNick(String userNick) {
+		return this.findMemberByNick(userNick) != null;
 	}
 	
 }
