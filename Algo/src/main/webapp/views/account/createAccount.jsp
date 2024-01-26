@@ -86,6 +86,7 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                             <th>생년월일</th>
                             <td>
                                 <input type="text" class="user_info_input_tag1" name="userBirthday" placeholder="ex)19970801" maxlength="8" />
+                                <!-- <p  style="padding-left: 12px; color: red;" >생년월일을 숫자로만 입력해주세요.</p> -->
                             </td>
                         </tr>
                         <tr>
@@ -100,22 +101,24 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>비밀번호<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="text" id="userPw" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <p class="strongPassword-message hide" style="padding-left: 12px; color: red;" >8~15자 영문, 숫자를 포함하여 입력하세요.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>비밀번호 확인<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="text" id="userPw2" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <p class="mismatch-message hide" style="padding-left: 12px; color: red;" >비밀번호가 일치하지 않습니다.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>닉네임<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag1"  name="userNick" placeholder="2~12자 이내" />
+                                <input type="text" id="userNick" class="user_info_input_tag1"  name="userNick" placeholder="2~12자 이내" />
                             </td>
                             <td>
-                                <input type="button" class="algo_btn200" value="중복확인" />
+                                <input type="button" id="nickBtn" class="algo_btn200" value="중복확인" />
                             </td>
                         </tr>
                         <tr>

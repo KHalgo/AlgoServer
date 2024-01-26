@@ -146,3 +146,12 @@ span{
     margin-left: 10px;
     height: 30px;
 }
+
+.hide {
+    display: none;
+}
+
+.notice{
+    font-size: 12px;
+    padding-left: 10px;
+}
