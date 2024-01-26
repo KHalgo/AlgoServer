@@ -1,15 +1,18 @@
 package com.algo.mvc.cscenter.model.dao;
 
+import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.algo.mvc.cscenter.model.vo.Cscenter;
 
 public class CscenterDao {
 	
 	
-	// 아이디값 구하기 (카테고리)
+	// 유저 아이디에 
 	public Cscenter findCsCenterById(Connection connection, String csId) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -24,21 +27,22 @@ public class CscenterDao {
 						+ "INNER JOIN INQUIRY_ANSWER IA ON (I.INQUIRY_NO =  IA.INQUIRY_NO) "
 						+ "WHERE I.USER_ID = ? "
 						+ "ORDER BY I.INQUIRY_NO;";
-				
-				
 		
-		pstmt = connection.prepareStatement(query);
-		// 마이페이지 카테고리 명으로 불러옴
-		pstmt.setString(1, csId);
-		
-		
-		rs = pstmt.executeQuery();
-		
-		if (rs.next()) {
-			cscenter = new Cscenter();
+		try {
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1, csId);
 			
+			rs = pstmt.executeQuery();
 			
+			if (rs.next()) {
+				cscenter = new Cscenter();
+				
+			} else {
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return cscenter;
 	}
 	
 	// 조회수 관련 dao
@@ -46,11 +50,25 @@ public class CscenterDao {
 		int count = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT COUNT(*) FROM MYPAGE WHERE MYPAGE_CATEGORY = 'QNA'";
+		String query = "SELECT COUNT(MYPAGE_VIEW) FROM MYPAGE";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(connection);
+		}
 		
 		return count;
 	}
-	
-	// 검색 관련 dao
-	puublic 
+
+	// 검색 관련 dao 만들것
 }

@@ -1,6 +1,8 @@
 package com.algo.mvc.mypage.model.service;
 
 import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
+import static com.algo.mvc.common.jdbc.JDBCTemplate.commit;
+import static com.algo.mvc.common.jdbc.JDBCTemplate.rollback;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
@@ -42,6 +44,33 @@ public class InquiryService {
 		close(connection);
 		
 		return list;
+	}
+	
+	public int save(Inquiry inquiry) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		// insert
+		result = new InquiryDao().insertInquiry(connection, inquiry);
+		
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}	
+		
+		return result;
+	}
+
+	public Inquiry getMypageByNo(int inquiryNo) {
+		Inquiry inquiry = null;
+		Connection connection = getConnection();
+		
+		inquiry = new InquiryDao().findInquiryByNo(connection, inquiryNo);
+		
+		close(connection);
+		
+		return inquiry;
 	}
 	
 }

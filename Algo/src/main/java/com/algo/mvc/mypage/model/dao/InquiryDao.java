@@ -3,6 +3,7 @@ package com.algo.mvc.mypage.model.dao;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,8 +28,7 @@ public class InquiryDao {
 						+ "              IA.ANSWER_CONTENT "
 						+ "FROM INQUIRY I "
 						+ "INNER JOIN INQUIRY_ANSWER IA ON (I.INQUIRY_NO =  IA.INQUIRY_NO) "
-						+ "WHERE I.INQUIRY_NO = ? "
-						+ "ORDER BY I.INQUIRY_NO;";
+						+ "WHERE I.INQUIRY_NO = ? ";
 		try {
 			pstmt = connection.prepareStatement(query);
 			// 마이페이지 카테고리 명으로 불러옴
@@ -79,19 +79,19 @@ public class InquiryDao {
 		
 		return count;
 	}
-
+	
+	// 유저가 등록할시
 	public List<Inquiry> findAll(Connection connection, PageInfo pageInfo) {
 		List<Inquiry> list = new ArrayList<>();	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT  "
+		String query = "SELECT RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CREATE_DATE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT  "
 				+ "FROM ( "
-				+ "    SELECT ROWNUM AS RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
+				+ "    SELECT ROWNUM AS RNUM, I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CREATE_DATE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
 				+ "    FROM ( "
-				+ "            SELECT I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
+				+ "            SELECT I.INQUIRY_NO, I.USER_ID, I.INQUIRY_TITLE, I.INQUIRY_CREATE_DATE, I.INQUIRY_CONTENT, IA.ANSWER_NO, IA.ANSWER_CONTENT "
 				+ "            FROM INQUIRY I "
 				+ "            INNER JOIN INQUIRY_ANSWER IA ON (I.INQUIRY_NO = IA.INQUIRY_NO) "
-				+ "            WHERE I.INQUIRY_NO  = '42' "
 				+ "            ORDER BY I.INQUIRY_NO "
 				+ "    ) "
 				+ ") "
@@ -110,9 +110,10 @@ public class InquiryDao {
 			while (rs.next()) {
 				inquiry = new Inquiry();
 				
-				Inquiry.set
+				inquiry.setInquiryNo(rs.getInt("INQUIRY_NO"));
+				inquiry.setUserId(rs.getString(0));
 				
-				list.add(Inquiry);
+				list.add(inquiry);
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -123,4 +124,31 @@ public class InquiryDao {
 		
 		return list;
 	}
+
+	public int insertInquiry(Connection connection, Inquiry inquiry) {
+		int rs = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO INQUIRY VALUES(SEQ_INQUIRY_NEXTVAL,?,?,?,SYSDATE)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, inquiry.getInquiryTitle());
+			pstmt.setString(2, inquiry.getInquiryContent());
+			pstmt.setString(3, inquiry.getUserId());
+			
+			rs = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return rs;
+	}
+	
+	public int updateInqiry(Connection connection, Inquiry inquiry) {
+		return 0;
+	}
+
 }

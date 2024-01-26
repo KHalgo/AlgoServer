@@ -6,23 +6,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.mypage.model.vo.MyPage;
 
 public class MyPageDao {
 	
 	// 아이디값 구하기 (mypage 테이블)
-	public MyPage findMyPageById(Connection connection, int myPageNo) {
+	public MyPage findMyPageById(Connection connection, String userId) {
 		MyPage myPage = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT * FROM MYPAGE WHERE MYPAGE_NO = '?' ORDER BY MYPAGE_NO";
+		
+		String query = "SELECT * FROM MYPAGE WHERE MYPAGE_NO = '?'";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			// 마이페이지 카테고리 명으로 불러옴
 			
-			pstmt.setInt(1, myPageNo);
+			pstmt.setString(1, userId);
 			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -42,8 +46,48 @@ public class MyPageDao {
 			close(rs);
 			close(pstmt);
 		}
-		return null;
+		return myPage;
+	}
+	public int getMypageCount(Connection connection) {
+		int count = 0;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		String query = "SELECT COUNT(MYPAGE_VIEW) FROM MYPAGE";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(connection);
+		}
+		
+		return count;
 	}
 	
-	
+	public List<MyPage> findAll(Connection connection, PageInfo pageInfo) {
+		List<MyPage> myPages = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * FROM MYPAGE";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getStartList());
+			pstmt.setInt(2, pageInfo.getEndList());
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return myPages;
+		
+	}
 }

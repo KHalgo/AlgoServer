@@ -54,15 +54,6 @@ public class MyPageInquiryLogServlet extends HttpServlet {
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
     	
-    	int inquiryNo = Integer.parseInt(request.getParameter("inquiryNo"));
-    	
-    	Inquiry inquiry = new InquiryService().getInquiryByNo(inquiryNo);
-    	
-    	System.out.println(inquiry);
-    	
-    	request.setAttribute("inquiry", inquiryNo);
-    	
-    	
 		request.getRequestDispatcher("/views/myPage/inquiryLog.jsp")
 		.forward(request, response);
     	

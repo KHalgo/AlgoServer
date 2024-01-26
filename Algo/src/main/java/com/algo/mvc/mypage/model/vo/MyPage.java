@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MyPage {
 	private int myPageNo;
+
+	private int rowNum;
 	
 	private String myPageTitle;
 	
