@@ -27,25 +27,25 @@ public class CscenterService {
 		return null;
 	}
 
-	public Cscenter getCscenterByNo(int no, boolean hasRead) {
-		Board board = null;
-		Connection connection = getConnection();
-		
-		board = new BoardDao().findBoardByNo(connection, no);
-		
-		// 게시글 조회수를 증가시키는 로직
-		if(board != null && !hasRead) {
-			int result = new BoardDao().updateReadCount(connection, board);
-			
-			if(result > 0) {
-				commit(connection);
-			} else {
-				rollback(connection);
-			}
-		}
-		
-		close(connection);
-		
-		return board;
-	}
+//	public Cscenter getCscenterByNo(int no, boolean hasRead) {
+//		Board board = null;
+//		Connection connection = getConnection();
+//		
+//		board = new BoardDao().findBoardByNo(connection, no);
+//		
+//		// 게시글 조회수를 증가시키는 로직
+//		if(board != null && !hasRead) {
+//			int result = new BoardDao().updateReadCount(connection, board);
+//			
+//			if(result > 0) {
+//				commit(connection);
+//			} else {
+//				rollback(connection);
+//			}
+//		}
+//		
+//		close(connection);
+//		
+//		return board;
+//	}
 }
