@@ -129,54 +129,22 @@
                         <div class="more"><a href="">+ MORE</a></div>
                     </div>
                     <div class="best_my_box">
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>베스킨라빈스 강북구청점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.이런 디자인은 정말 귀중합니다.이런 디자인은 정말 귀중합니다.</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.이런 디자인은 정말 귀중합니다.이런 디자인은 정말 귀중합니다.</p>
-                            </div>
-                        </div>
+                   <c:if test="${ empty list }">
+					등록된 기업이 없습니다.
+					</c:if>
+					<c:if test="${ not empty list }">
+						<c:forEach var="company" items="${ list }">
+							<div class="best_my_boxess">
+	                            <div class="flag"></div>
+	                            <div class="best_text_box">
+	                                <h3>${ company.industryName }</h3>
+	                                <p class ="star_rating" id="RCstarRate${company.inRowNum}"></p>
+	                                <p class="best_text_box_word">${ company.bestComment }</p>
+	                            </div>
+                        	</div>
+
+						</c:forEach>
+                    </c:if>
                     </div>
                 </div>
             </div>
@@ -308,5 +276,32 @@
 	<script type="text/javascript" src="${ path }/resources/js/index.js"></script>
 	<script type="text/javascript" src="${ path }/resources/slick/slick.min.js"></script>
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>	
+	<script>
+		window.onload = function () {
+			<c:forEach var="company" items="${list2}">
+            var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
+            // 별을 표시할 공간에 별 추가
+            for (var i = 1; i <= 5; i++) {
+                var star = document.createElement('span');
+                star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
+                star.value = i;
+                document.getElementById('LCstarRate${company.inRowNum}').appendChild(star);
+            }
+        	</c:forEach>
+        	
+        	<c:forEach var="company" items="${list}">
+            var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
+            // 별을 표시할 공간에 별 추가
+             for (var i = 1; i <= 5; i++) {
+                var star = document.createElement('span');
+                star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
+                star.value = i;
+                document.getElementById('BCstarRate${company.inRowNum}').appendChild(star);
+            }
+            
+        	</c:forEach>
+           
+		}
+	</script>
 </body>
 </html>

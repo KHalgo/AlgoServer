@@ -25,7 +25,7 @@
 	<main>
 		<!-- 1. 기업리뷰 배너-->
         <section>
-            <div class="banner-navi"> <a href="${ path }">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/companyReview/">기업리뷰</a></div>
+            <div class="banner-navi"> <a href="${ path }/home">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/companyReview">기업리뷰</a></div>
             <div class="banner">
                 <div class="banner-txt">
                     <h1>기업 리뷰</h1>

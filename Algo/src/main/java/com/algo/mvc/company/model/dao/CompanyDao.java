@@ -38,13 +38,14 @@ public class CompanyDao {
 		return count;
 	}
 	
+	// 기업 리뷰 목록 조회(전체)
 	public List<Company> findAll(Connection connection, PageInfo pageInfo){
 		List<Company> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String query = "SELECT * FROM ( "
-				+ "SELECT ROWNUM AS RNUM, INDUSTRY_ID, INDUSTRY_NAME, INDUSTRY_LOCATION, INDUSTRY_TYPE, IN_READCOUNT, INDUSTRY_DATE, BASE_RATE, COUNT "
+				+ "SELECT ROWNUM AS RNUM, INDUSTRY_ID, INDUSTRY_NAME, INDUSTRY_LOCATION, INDUSTRY_TYPE, IN_READCOUNT, INDUSTRY_DATE, BASE_RATE, POST_COMMENT, COUNT "
 				+ "    FROM ( "
 				+ "         SELECT I.INDUSTRY_ID AS INDUSTRY_ID, "
 				+ "          MAX(I.INDUSTRY_NAME    )   AS  INDUSTRY_NAME, "
@@ -52,6 +53,7 @@ public class CompanyDao {
 				+ "          MAX(I.INDUSTRY_TYPE    )   AS  INDUSTRY_TYPE, "
 				+ "          MAX(I.IN_READCOUNT     )   AS  IN_READCOUNT, "
 				+ "          MAX(I.INDUSTRY_DATE    )   AS  INDUSTRY_DATE, "
+				+ "          MAX(R.POST_COMMENT    )   AS  POST_COMMENT, "
 				+ "          ROUND(AVG(NVL(R.BASE_RATE,0)),1) AS BASE_RATE, "
 				+ "          COUNT(R.BASE_RATE) AS COUNT "
 				+ "      FROM INDUSTRY I "
@@ -93,6 +95,7 @@ public class CompanyDao {
 				company.setReadCount(rs.getInt("IN_READCOUNT"));
 				company.setIndustryDate(rs.getDate("INDUSTRY_DATE"));
 				company.setBaseRate(rs.getDouble("BASE_RATE"));
+				company.setBestComment(rs.getString("POST_COMMENT"));
 				company.setCount(rs.getInt("COUNT"));
 				
 				list.add(company);
@@ -107,6 +110,7 @@ public class CompanyDao {
 		return list;
 	}
 
+	// 기업리뷰 상세정보
 	public Company findCompanyById(Connection connection, int industryID) {
 		Company company = null;
 		PreparedStatement pstmt = null;
@@ -167,7 +171,8 @@ public class CompanyDao {
 		}
 		return company;
 	}
-
+	
+	// 기업리뷰 작성
 	public int insertComment(Connection connection, CompanyComment comment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -195,20 +200,22 @@ public class CompanyDao {
 		
 		return result;
 	}
-	
+
+	// 기업리뷰 메인 지역 베스트리스트 조회
 	public List<Company> findLocal(Connection connection, PageInfo pageInfo, Users loginMember){
 		List<Company> list2 = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String query = "SELECT * FROM ( "
-				+ "SELECT ROWNUM AS RNUM, INDUSTRY_ID, INDUSTRY_NAME, INDUSTRY_LOCATION, INDUSTRY_TYPE, IN_READCOUNT, BASE_RATE, COUNT "
+				+ "SELECT ROWNUM AS RNUM, INDUSTRY_ID, INDUSTRY_NAME, INDUSTRY_LOCATION, INDUSTRY_TYPE, IN_READCOUNT, BASE_RATE, POST_COMMENT, COUNT "
 				+ "    FROM ( "
 				+ "         SELECT I.INDUSTRY_ID AS INDUSTRY_ID, "
 				+ "          MAX(I.INDUSTRY_NAME    )   AS  INDUSTRY_NAME, "
 				+ "          MAX(I.INDUSTRY_LOCATION)   AS  INDUSTRY_LOCATION, "
 				+ "          MAX(I.INDUSTRY_TYPE    )   AS  INDUSTRY_TYPE, "
 				+ "          MAX(I.IN_READCOUNT     )   AS  IN_READCOUNT, "
+				+ "          MAX(R.POST_COMMENT    )   AS  POST_COMMENT, "
 				+ "          ROUND(AVG(NVL(R.BASE_RATE,0)),1) AS BASE_RATE, "
 		        + "          COUNT(R.INDUSTRY_ID) AS COUNT "
 				+ "      FROM INDUSTRY I "
@@ -242,6 +249,7 @@ public class CompanyDao {
 				company.setIndustryLc(rs.getString("INDUSTRY_LOCATION"));
 				company.setIndustryType(rs.getString("INDUSTRY_TYPE"));
 				company.setReadCount(rs.getInt("IN_READCOUNT"));
+				company.setBestComment(rs.getString("POST_COMMENT"));
 				company.setBaseRate(rs.getDouble("BASE_RATE"));
 				company.setCount(rs.getInt("COUNT"));
 				
@@ -255,6 +263,31 @@ public class CompanyDao {
 		}
 		
 		return list2;
+	}
+	
+	
+	//게시글 조회수 
+	public int updateReadCount(Connection connection, Company company) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE INDUSTRY SET IN_READCOUNT=? WHERE INDUSTRY_ID=? ";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			company.setReadCount(company.getReadCount() + 1);
+			
+			pstmt.setInt(1, company.getReadCount());
+			pstmt.setInt(2, company.getIndustryID());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 

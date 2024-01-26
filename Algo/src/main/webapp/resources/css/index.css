@@ -153,8 +153,33 @@
             height: 518px;
             width: 100%;
         }
-
         
+        /* 별점 */
+		.star_rating {
+		    float: left;
+		    flex-direction: row; 
+		    justify-content: flex-start;
+		}
+		
+		.star_rating .star {
+		    width: 24px; 
+		    height: 24px; 
+		    margin: 5px 0 5px 0;
+		    display: inline-block; 
+		    background: url('https://i.ibb.co/mzVDsHw/star-empty.png') no-repeat; 
+		    background-size: 100%; 
+		    box-sizing: border-box; 
+		}
+		.star_rating .star.on {
+		    width: 24px; 
+		    height: 24px; 
+		    margin: 5px 0 5px 0;
+		    display: inline-block; 
+		    background: url('https://i.ibb.co/KKKP2vB/star-on.png') no-repeat;
+		    background-size: 100%; 
+		    box-sizing: border-box; 
+		}
+
         .main_comu{
             width: 1100px;
             margin: 0 auto;

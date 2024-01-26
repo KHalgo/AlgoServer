@@ -49,12 +49,33 @@ public class CompanyService {
 		
 		return list2;
 	}
-
+	
 	public Company getCompanyByID(int industryID) {
 		Company company = null;
 		Connection connection = getConnection();
 		
 		company = new CompanyDao().findCompanyById(connection, industryID);
+		
+		close(connection);
+		return company;
+	}
+
+	public Company getCompanyByIDRead(int industryID,  boolean hasRead) {
+		Company company = null;
+		Connection connection = getConnection();
+		
+		company = new CompanyDao().findCompanyById(connection, industryID);
+		
+		// 게시글 조회수를 증가시키는 로직
+		if(company != null && !hasRead) {
+			int result = new CompanyDao().updateReadCount(connection, company);
+			
+			if(result > 0) {
+				commit(connection);
+			} else {
+				rollback(connection);
+			}
+		}
 		
 		close(connection);
 		return company;
