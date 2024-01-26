@@ -143,6 +143,7 @@ public class PageInfo {
 	 */ 	
 	public int getEndList2() {
 		int endList = this.getStartList2() - this.listLimit + 1;
+	
 
 		return endList > 1 ? endList : 1;
 	}

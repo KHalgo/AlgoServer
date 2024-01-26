@@ -176,4 +176,20 @@ public class BoardService {
 		return result;
 	}
 
+
+	public int deleteQ(int no) {
+		int result = 0;
+		Connection connection = getConnection();
+		
+		result = new BoardDao().updateStatusQ(connection, no);
+		
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		return result;
+	}
+
 }

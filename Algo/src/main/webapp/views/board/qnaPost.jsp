@@ -132,7 +132,7 @@
 			$(document).ready(() => {
 				$('#btnDelete').on('click', () => {
 					if (confirm('게시글을 삭제 하시겠습니까?')) {
-						location.replace('${ path }/talkBoard/delete?no=${ board.postNo }');
+						location.replace('${ path }/qnaBoard/delete?no=${ board.postNo }');
 					}
 				});
 				
@@ -143,6 +143,7 @@
 						$("#userId").focus();				
 					}
 				});
+			});
 		</script>
 	
 	<!-- 푸터 -->
