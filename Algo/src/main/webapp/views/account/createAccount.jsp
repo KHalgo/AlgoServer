@@ -78,15 +78,11 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                             <td>
                                 <input type="text" id="userName" name="userName" class="user_info_input_tag1" />
                             </td>
-                            <td>
-                                <!-- <input type="button" id="userNameBtn" class="algo_btn200" value="확인" />  -->
-                            </td>
                         </tr>
                         <tr>
                             <th>생년월일</th>
                             <td>
-                                <input type="text" class="user_info_input_tag1" name="userBirthday" placeholder="ex)19970801" maxlength="8" />
-                                <!-- <p  style="padding-left: 12px; color: red;" >생년월일을 숫자로만 입력해주세요.</p> -->
+                                <input oninput="inputNum(this.id)" type="text" id="input1" class="user_info_input_tag1" name="userBirthday" placeholder="ex)19970801" maxlength="8" />
                             </td>
                         </tr>
                         <tr>
@@ -142,36 +138,34 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>이메일<span>*</span></th>
                             <td>
-                                <input type="text" name="userEmail" class="user_info_input_tag1" />
+                                <input type="text" id="inputEmail" name="userEmail" class="user_info_input_tag1" />
+                                <p class="emailerrormsg hide" style="padding-left: 12px; color: red;" >이메일 형식에 맞게 입력하세요.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>주소<span>*</span></th>
                             <td>
-                                <select class="sido">
+                                <select id="address" class="sido">
                                     <option value="">시/도</option>
-                                    <option value="apple">서울특별시</option>
-                                    <option value="banana">부산광역시</option>
-                                    <option value="orange">대구광역시</option>
-                                    <option value="orange">인천광역시</option>
-                                    <option value="orange">광주광역시</option>
-                                    <option value="orange">대전광역시</option>
-                                    <option value="orange">울산광역시</option>
-                                    <option value="orange">세종특별자치시</option>
-                                    <option value="orange">경기도</option>
-                                    <option value="orange">강원특별자치도</option>
-                                    <option value="orange">충청북도</option>
-                                    <option value="orange">충청남도</option>
-                                    <option value="orange">전라북도</option>
-                                    <option value="orange">전라남도</option>
-                                    <option value="orange">경상북도</option>
-                                    <option value="orange">경상남도</option>
-                                    <option value="orange">제주특별자치도</option>
+                                    <option value="SE">서울특별시</option>
+                                    <option value="BS">부산광역시</option>
+                                    <option value="DG">대구광역시</option>
+                                    <option value="IC">인천광역시</option>
+                                    <option value="GW">광주광역시</option>
+                                    <option value="DJ">대전광역시</option>
+                                    <option value="US">울산광역시</option>
+                                    <option value="SJ">세종특별자치시</option>
+                                    <option value="GG">경기도</option>
+                                    <option value="GW">강원특별자치도</option>
+                                    <option value="CB">충청북도</option>
+                                    <option value="CN">충청남도</option>
+                                    <option value="JB">전라북도</option>
+                                    <option value="JN">전라남도</option>
+                                    <option value="GB">경상북도</option>
+                                    <option value="GN">경상남도</option>
+                                    <option value="JJ">제주특별자치도</option>
                                 </select>
-                                <select class="sido">
-                                    <option value="">시/군/구</option>
-                                    <option value="">시/군/구</option>
-                                    <option value="">시/군/구</option>
+                                <select id="sigungu" class="sido">
                                     <option value="">시/군/구</option>
                                 </select>
                             </td>

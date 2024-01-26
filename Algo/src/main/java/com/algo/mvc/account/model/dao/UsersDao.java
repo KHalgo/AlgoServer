@@ -5,7 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.algo.mvc.account.model.vo.Sigungu;
 import com.algo.mvc.account.model.vo.Users;
 
 public class UsersDao {
@@ -121,5 +124,37 @@ public class UsersDao {
 		
 		
 		return result;
+	}
+	public List<Sigungu> findSigunguById(Connection connection, String sidoId) {
+		List<Sigungu> sigungus = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM SIGUNGU WHERE SIDO_ID = ?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, sidoId);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Sigungu sigungu = new Sigungu();
+				
+				sigungu.setSidoId(rs.getString("SIDO_ID"));
+				sigungu.setSidoName(rs.getString("SIDO_NAME"));
+				sigungu.setSigunguName(rs.getString("SIGUNGU_NAME"));
+				
+				sigungus.add(sigungu);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return sigungus;
 	}
 }

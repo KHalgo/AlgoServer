@@ -1,8 +1,10 @@
 package com.algo.mvc.account.model.service;
 
 import java.sql.Connection;
+import java.util.List;
 
 import com.algo.mvc.account.model.dao.UsersDao;
+import com.algo.mvc.account.model.vo.Sigungu;
 import com.algo.mvc.account.model.vo.Users;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.*;
 
@@ -66,6 +68,17 @@ public class UsersService {
 	}
 	public Boolean isDuplicateNick(String userNick) {
 		return this.findMemberByNick(userNick) != null;
+	}
+	
+	public List<Sigungu> getSigungus(String sidoId) {
+		List<Sigungu> sigungus = null;
+		Connection connection = getConnection();
+		
+		sigungus = new UsersDao().findSigunguById(connection, sidoId);
+		
+		close(connection);
+		
+		return sigungus;
 	}
 	
 }
