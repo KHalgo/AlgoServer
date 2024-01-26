@@ -50,7 +50,7 @@
                     ${ board.postTitle }</th>
                 </tr>
                 <tr style="border-bottom: 1px solid #C0C0C0;">
-                    <td>${ board.userNick }&nbsp; &#124; &nbsp;서울시&nbsp; &gt; &nbsp;강남구&nbsp; &#124; &nbsp;${ board.postDate }</td>
+                    <td>${ board.userNick }&nbsp; &#124; &nbsp;${ board.sido }&nbsp; &gt; &nbsp;${ board.sigungu }&nbsp; &#124; &nbsp;${ board.postDate }</td>
                     <td class="write-r">
                         조회&nbsp;${ board.postViewCount }&nbsp; &#124; &nbsp;추천&nbsp;${ board.postLikeCount }&nbsp; &#124; &nbsp;<a href="#">신고</a>
                     </td>
@@ -67,11 +67,24 @@
                     </td>
                 </tr>
                 
+                <tr>
+                	<td colspan="2">
+                		<c:if test="${ empty board.postFile1 }">
+                			첨부파일 : <span>  </span>
+                		</c:if>
+                		<a href="javascript:" id="fileDown">
+	                		<c:if test="${ not empty board.postFile1 }">
+	                			첨부파일 : <span> ${ board.postFile1 } </span>
+	                		</c:if>
+                		</a>
+                	</td>
+                </tr>
+                
                 <!--  댓글 입력 -->
                 <tr style="border-bottom: 1px solid #C0C0C0;">
                 	<td colspan="2">
-                		<textarea placeholder="댓글을 입력하시오."></textarea>
-                		<button class="algo_btn3">댓글</button>
+                		<textarea name="content" placeholder="댓글을 입력하시오."></textarea>
+                		<button type="submit" id="btn-insert" class="algo_btn3">댓글</button>
                 	</td>
                 </tr>
                 
@@ -116,14 +129,39 @@
         </section>
         <!-- 3. 목록 버튼 -->
         <section class="boardList">
+        	<!-- 포스팅한 유저에게만 노출되는 수정, 삭제 버튼 -->
+        	<c:if test="${ not empty loginMember and loginMember.userId == board.writerId }">
+	  	      	<button type="button" onclick="location.href='${path}/talkBoard/update?no=${ board.postNo }'" class="algo_btn1">수정</button>
+	        	<button type="button" class="algo_btn2" id="btnDelete">삭제</button>
+        	</c:if>
             <button class="algo_btn1" onclick="location.href='${ path }/talkBoard/';">목록</button>
         </section>
 	</main>
+	
+		<script type="text/javascript">
+			$(document).ready(() => {
+				$('#btnDelete').on('click', () => {
+					if (confirm('게시글을 삭제 하시겠습니까?')) {
+						location.replace('${ path }/talkBoard/delete?no=${ board.postNo }');
+					}
+				});
+				
+				$('#replyContent').on('click', () => {
+					if(${ empty loginMember }) {
+						alert("로그인 후 이용해주세요!");
+						
+						$("#userId").focus();				
+					}
+				});
+			});
+		</script>
 	
 	<!-- 푸터 -->
    <jsp:include page="/views/common/footer.jsp" /> 
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
+	
+
 </body>
 </html>

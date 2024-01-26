@@ -55,7 +55,7 @@
             <!-- 3-1) 전체 글 count -->
             <div class="list-top">
                 <p class="total">
-                    전체 글 <span>1234</span>개 ${ listCount }
+                    전체 글 <span>100</span>개 
                 </p>
             </div>
             <!-- 3-2) 게시판 글 목록 -->
@@ -111,7 +111,17 @@
 		                            <td>${ board.rowNum }</td>
 		                            <td>
 		                                <a href="${ path }/talkBoard/talkPost?no=${board.postNo}">
-		                                	${ board.postTitle }
+		                                	<c:choose>
+		                                		<c:when test="${ board.smallCategoryId == 'TIP' }">
+		                                			<span style="color:#9C9C9C">[알바TIP]</span> ${ board.postTitle }
+		                                		</c:when>
+		                                		<c:when test="${ board.smallCategoryId == 'SSUL' }">
+		                                			<span style="color:#9C9C9C">[알바SSUL]</span> ${ board.postTitle }
+		                                		</c:when>
+		                                		<c:otherwise>
+		                                			${ board.postTitle }
+		                                		</c:otherwise>
+		                                	</c:choose>
 		                                </a>
 		                            </td>
 		                            <td>${ board.writerId }</td>

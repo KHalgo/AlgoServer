@@ -26,7 +26,10 @@ public class TalkPostServlet extends HttpServlet {
 		
 		Board board = new BoardService().BoardByNo(no);
 		
+		// ?no= 없는 번호라면 메시지 창 띄우게 하기
 		request.setAttribute("board", board);
+		
+		System.out.println(board);
     	request.getRequestDispatcher("/views/board/talkPost.jsp")
 			   .forward(request, response);
 	}

@@ -45,6 +45,7 @@ public class TalkBoardServlet extends HttpServlet {
     	list = new BoardService().getBoardList(pageinfo);
     	
     	System.out.println(list);
+    	System.out.println("listCount : " + listCount);
     	
     	
     	// 포워드 하기 전 pageinfo를 PageInfo.jsp로 전달 

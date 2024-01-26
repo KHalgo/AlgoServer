@@ -16,7 +16,6 @@
 	<link rel="stylesheet" href="${ path }/resources/css/board/qnaWrite.css">  
 </head>
 <body>
-
 	<!-- 헤더 -->
 	<jsp:include page="/views/common/header.jsp" />
 	
@@ -34,7 +33,8 @@
             </div>
         </section>
         <!-- 2. 알고Q&A 글쓰기 페이지 -->
-        <form action="${ path }/qnaBoard/qnaWrite" method="POST" enctype="multipart/form-data">
+        <form action="${ path }/qnaBoard/update" method="POST" enctype="multipart/form-data">
+        	<input type="hidden" name="no" value="${ board.postNo }">
         <section>
             <table class="writeBoard">
                 <tr>
@@ -64,18 +64,21 @@
                 <tr>
                     <th>제목</th>
                     <td colspan="3">
-                        <input type="text" name="title" id="" class="title" placeholder="제목을 입력하시오.">
+                        <input type="text" name="title" id="" class="title" placeholder="제목을 입력하시오." value="${ board.postTitle }">
                     </td>
                 </tr>
                 <tr>
                     <td class="contentBox" colspan="4">
-                        <textarea name="content" id="" class="content" placeholder="무분별한 비방 및 욕설, 유해 사이트 홍보 등은 무통보 삭제 후 사이트 이용 제한 처리됩니다."></textarea>
+                        <textarea name="content" id="" class="content" placeholder="무분별한 비방 및 욕설, 유해 사이트 홍보 등은 무통보 삭제 후 사이트 이용 제한 처리됩니다.">${ board.postContent }</textarea>
                     </td>
                 </tr>
                 <tr>
                     <th>첨부파일 1</th>
                     <td>
                         <input type="file" name="upfile1" id="">
+	                        <c:if test="${ not empty board.postFile1 }">
+	                        	<span>${ board.postFile1 }</span>
+	                        </c:if>
                     </td>
                     <th>첨부파일 2</th>
                     <td>
