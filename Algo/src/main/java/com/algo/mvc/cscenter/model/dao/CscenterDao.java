@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.algo.mvc.board.model.vo.Board;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.cscenter.model.vo.Cscenter;
 
@@ -20,7 +19,7 @@ public class CscenterDao {
 		int count = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT COUNT(*) FROM BOARD WHERE BIG_CATEGORY_ID = 'NOTICE'";
+		String query = "SELECT COUNT(*) FROM CSCENTER WHERE CSCENTER_CATEGORY = 'NOTICE'";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -41,48 +40,48 @@ public class CscenterDao {
 		return count;
 	}
 	
-	public List<Cscenter> findAll(Connection connection, PageInfo pageinfo) {
+	public List<Cscenter> findAll(Connection connection, PageInfo pageInfo) {
 		List<Cscenter> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT RNUM, POST_NO, USER_NICK, POST_TITLE, POST_DATE, POST_VIEW_COUNT, BIG_CATEGORY_ID, SMALL_CATEGORY_ID "
-		                + "FROM ( "
-		                +     "SELECT ROWNUM AS RNUM, POST_NO, USER_NICK, POST_TITLE, POST_DATE, POST_VIEW_COUNT, BIG_CATEGORY_ID, SMALL_CATEGORY_ID "
-		                +     "FROM ( "
-		                +         "SELECT POST_NO, U.USER_NICK, POST_TITLE, POST_DATE, POST_VIEW_COUNT, BIG_CATEGORY_ID, SMALL_CATEGORY_ID "
-		                +         "FROM BOARD B JOIN USERS U ON (B.WRITER_ID = U.USER_ID) "
-		                +         "WHERE BIG_CATEGORY_ID = 'NOTION'"
-		                +		  "ORDER BY POST_NO "
-		                +     ") "
-		                + ") "
-		                + "WHERE RNUM BETWEEN ? and ? "
-		                + "ORDER BY RNUM DESC";
-		
-		
+		String query = "SELECT RNUM, CSCENTER_NO, CSCENTER_CATEGORY, CSCENTER_TITLE, CSCENTER_CONTENT, CSCENTER_VIEW, USER_ID, CSCENTER_DATE "
+						+ "FROM ( "
+						+ "    SELECT ROWNUM AS RNUM, CSCENTER_NO, CSCENTER_CATEGORY, CSCENTER_TITLE, CSCENTER_CONTENT, CSCENTER_VIEW, USER_ID, CSCENTER_DATE "
+						+ "    FROM ( "
+						+ "        SELECT CSCENTER_NO, CSCENTER_CATEGORY, CSCENTER_TITLE, CSCENTER_CONTENT, CSCENTER_VIEW, USER_ID, CSCENTER_DATE "
+						+ "        FROM CSCENTER "
+						+ "        WHERE CSCENTER_CATEGORY = 'NOTICE' "
+						+ "        ORDER BY CSCENTER_NO DESC "
+						+ "    ) "
+						+ ") "
+						+ "WHERE RNUM BETWEEN ? AND ?; "
+						+ "";
 		try {
-		pstmt =	connection.prepareStatement(query);
-		
-		pstmt.setInt(1, pageinfo.getEndList());
-		pstmt.setInt(2, pageinfo.getStartList());
-		
-		System.out.println(pageinfo.getStartList() + ", "+ pageinfo.getEndList());
-		System.out.println(pageinfo.getCurrentPage());
-		
-		rs = pstmt.executeQuery();
-		while (rs.next()) {
-			Board board = new Board();
+			pstmt = connection.prepareStatement(query);
 			
-			board.setPostNo(rs.getInt("POST_NO"));
-			board.setRowNum(rs.getInt("RNUM"));
-			board.setWriterId(rs.getString("USER_NICK"));
-			board.setPostTitle(rs.getString("POST_TITLE"));
-			board.setPostDate(rs.getDate("POST_DATE"));
-			board.setPostViewCount(rs.getInt("POST_VIEW_COUNT"));
-			board.setBigCategoryId(rs.getString("BIG_CATEGORY_ID"));
-			board.setSmallCategoryId(rs.getString("SMALL_CATEGORY_ID"));
+//			pstmt.setInt(1, pageInfo.getStartList2());
+//			pstmt.setInt(2, pageInfo.getEndList2());
 			
-//			list.add(board);
-		}
+			pstmt.setInt(1, pageInfo.getStartList());
+			pstmt.setInt(2, pageInfo.getEndList());
+			
+			rs = pstmt.executeQuery();
+			Cscenter cscenter;
+			
+			while (rs.next()) {
+				cscenter = new Cscenter();
+				
+				cscenter.setRowNum(rs.getInt("RNUM"));
+				cscenter.setCsNo(rs.getInt("CSCENTER_NO"));
+				cscenter.setCsCategory(rs.getString("CSCENTER_CATEGORY"));
+				cscenter.setCsTitle(rs.getString("CSCENTER_TITLE"));
+				cscenter.setCsContent(rs.getString("CSCENTER_CONTENT"));
+				cscenter.setCsView(rs.getInt("CSCENTER_VIEW"));
+				cscenter.setCsWriterId(rs.getString("USER_ID"));
+				cscenter.setCsCreateDate(rs.getDate("CSCENTER_DATE"));
+				
+				list.add(cscenter);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -91,6 +90,38 @@ public class CscenterDao {
 		}
 		return list;
 	}
+
+	public Cscenter findBoardByNo(Connection connection, int no) {
+		Cscenter cscenter = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    String query = "SELECT CSCENTER_NO, CSCENTER_TITLE, USER_ID, CSCENTER_DATE, CSCENTER_VIEW, CSCENTER_CATEGORY, CSCENTER_CONTENT "
+	    		+ "FROM CSCENTER "
+	    		+ "WHERE CSCENTER_NO = ?; "
+	    		+ "";
+	    try {
+	        pstmt = connection.prepareStatement(query);
+	        pstmt.setInt(1, no);
+	        rs = pstmt.executeQuery();
+	        
+	        if (rs.next()) {
+	            cscenter = new Cscenter();
+	            cscenter.setCsNo(rs.getInt("CSCENTER_NO"));
+	            cscenter.setCsTitle(rs.getString("CSCENTER_TITLE"));
+	            cscenter.setCsWriterId(rs.getString("USER_ID"));
+	            cscenter.setCsCreateDate(rs.getDate("CSCENTER_DATE"));
+	            cscenter.setCsView(rs.getInt("CSCENTER_VIEW"));
+	            cscenter.setCsCategory(rs.getString("CSCENTER_CATEGORY"));
+	            cscenter.setCsContent(rs.getString("CSCENTER_CONTENT"));
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(rs);
+	        close(pstmt);
+	    }
+	    return cscenter;
+	}
+
 	
-	// 유저 아이디에 
 }

@@ -12,21 +12,22 @@ import com.algo.mvc.cscenter.model.vo.Cscenter;
 
 public class CscenterService {
 
-	public int getBoardCount() {
+	public int getCscenterCount() {
 		int count = 0;
 		Connection connection = getConnection();
 		
 		count = new CscenterDao().getCscenterCount(connection);
+		
 		close(connection);
 		
 		return count;
 	}
 
-	public List<Cscenter> getBoardList(PageInfo pageInfo) {
+	public List<Cscenter> getBoardList(PageInfo pageinfo) {
 		List<Cscenter> list = null;
 		Connection connection = getConnection();
 		
-		list = new CscenterDao().findAll(connection, pageInfo);
+		list = new CscenterDao().findAll(connection, pageinfo);
 		
 		System.out.println(list);
 		
@@ -34,7 +35,17 @@ public class CscenterService {
 		
 		return list;
 	}
-	
+
+	public Cscenter cscenterNo(int no) {
+		Cscenter cscenter = null;
+		Connection connection = getConnection();
+		
+		cscenter = new CscenterDao().findBoardByNo(connection, no);
+		
+		close(connection);
+		
+		return cscenter;
+	}
 	
 	
 }

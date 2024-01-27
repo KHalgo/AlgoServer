@@ -35,12 +35,16 @@ public class CScenterNoticeServlet extends HttpServlet {
 			page = 1;
 		}
     	
-    	listCount = new CscenterService().getBoardCount();
+    	listCount = new CscenterService().getCscenterCount();
     	pageInfo = new PageInfo(page, 5, listCount, 10);    	
     	list = new CscenterService().getBoardList(pageInfo);
     	
+//		System.out.println("list + : " + list);
+//		System.out.println("list.size() + : " + list.size());
+    	
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
+    	
     	request.getRequestDispatcher("/views/cscenter/notice.jsp")
     		   .forward(request, response);
     }

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 
 <!DOCTYPE html>
@@ -41,76 +42,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <a href="${ path }/cscenter/noticeDetail" >글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#">글 제목입니다.</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
+                            <c:if test="${ empty list }">
+	                            <tr>
+	                            <td colspan="3">
+	                           		조회된 게시글이 없습니다.
+	                            </td>
+	                            </tr>
+                            </c:if>
+                            <c:if test="${ not empty list }">
+	                            <c:forEach var="cscenter" items="${ list }">
+									<tr>
+		                               <td>
+		                                   <a href="${ path }/cscenter/noticeDetail?no=${ cscenter.csNo }" >
+		                                   		${ cscenter.csTitle }
+		                                   </a>
+		                               </td>
+		                               <td><fmt:formatDate value="${ cscenter.csCreateDate }" dateStyle="short"/></td>
+		                               <td>${ cscenter.csView }</td>
+									</tr>
+	                            </c:forEach>
+                            </c:if>
                         </tbody>
                     </table>
                     <!-- 3-3) 목록 페이지 넘버 -->
