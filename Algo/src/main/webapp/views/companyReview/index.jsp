@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>    
     
 <!DOCTYPE html>
@@ -201,84 +203,26 @@
         <section id="com-section5">
             <h5>최근 기업 리뷰</h5>
             <div class="fast-re">
-                <div class="fast-re-box">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
-                <div class="fast-re-box2">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
-                <div class="fast-re-box">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
-                <div class="fast-re-box2">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
-                <div class="fast-re-box">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
-                <div class="fast-re-box2">
-                    <a href="">
-                    <div class="fast-re-co">
-                        하얀풍차제과점 강남역
-                    </div>
-                    <div class="fast-re-date">
-                        2023.12.20
-                    </div>
-                    <div class="fast-re-txt">
-                        오늘 이 글을 읽으면서 많은 동기를 받았어요. 감사합니다.
-                    </div>
-                    </a>
-                </div>
+            	<c:if test="${ empty comlist }">
+		                   조회된 리뷰가 없습니다.
+				</c:if>
+				<c:if test="${ not empty comlist }">
+						<c:forEach var="comment" items="${ comlist }">
+							<div class="fast-re-box">
+			                    <a href="${ path }/companyReview/companyDetail?industryID=${comment.industryID}&page=${ current }">
+			                    <div class="fast-re-co">
+			                        ${ comment.industryName }
+			                    </div>
+			                    <div class="fast-re-date">
+			                    	<fmt:formatDate value ="${ comment.postDate }" pattern="yyyy.MM.dd"/>
+			                    </div>
+			                    <div class="fast-re-txt">
+			                        ${ comment.postComment }
+			                    </div>
+			                    </a>
+			                </div>
+						</c:forEach>
+                 </c:if>
             </div>
         </section>
     </main>
@@ -289,7 +233,7 @@
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
 	<script>
-		window.onload = function () {
+	document.addEventListener('DOMContentLoaded', function () {
 			<c:forEach var="company" items="${list2}">
             var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
             // 별을 표시할 공간에 별 추가
@@ -313,7 +257,7 @@
             
         	</c:forEach>
            
-		}
+		});
 	</script>
 </body>
 </html>

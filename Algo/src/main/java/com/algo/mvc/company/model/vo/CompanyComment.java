@@ -1,5 +1,7 @@
 package com.algo.mvc.company.model.vo;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +12,13 @@ import lombok.NoArgsConstructor;
 public class CompanyComment {
 	private int industryID;
 	
+	private String industryName;
+	
 	private int coRowNum;
 	
 	private int reviewNo;
+	
+	private Date postDate;
 	
 	private double baseRate;
 	

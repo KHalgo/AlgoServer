@@ -13,7 +13,7 @@
 <header>
 	<nav class="header_nav">
 		<ul class="left_nav">
-			<li><a href="${ path }/"><img
+			<li><a href="${ path }/home"><img
 					src="https://i.ibb.co/K92Q9ps/logo-1.png" alt="로고"
 					style="margin-top: -5px; width: 57px;"></a></li>
 		</ul>
@@ -21,8 +21,8 @@
 			<li style="margin-left: 70px;"><a href="${ path }/companyReview">기업
 					리뷰</a>
 				<ul>
-					<li><a href="${ path }/">기업 리뷰</a></li>
-					<li><a href="${ path }/">기업 리스트</a></li>
+					<li><a href="${ path }/companyReview">기업 리뷰</a></li>
+					<li><a href="${ path }/companyReview/list">기업 리스트</a></li>
 				</ul></li>
 			<li><a href="${ path }/talkBoard/">커뮤니티</a>
 				<ul>
