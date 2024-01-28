@@ -27,5 +27,7 @@ public class Cscenter {
 	private String csContent;
 
 	private Date csCreateDate;
+	
+	private String userId;
 
 }

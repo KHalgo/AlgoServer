@@ -19,7 +19,6 @@
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="/views/common/header.jsp" />
-	
 	<!-- 내용 넣기 -->
 	<main>
         <div class="bar-box">
@@ -29,6 +28,9 @@
                     <div class="cs-board-h">
                         <h2>공지사항</h2>
                         <form class="searching">
+                        <c:if test="${ not empty loginMember && cscenter.csWriterId == 'admin' }">
+                        	<button class="algo_btn1" id="cscenterwritter">글 쓰기</button>
+                        </c:if>
                             <input class="box2" type="search" placeholder="본문+제목 검색">
                             <input class="board_btn2" type="submit" value="검색">
                         </form>
@@ -57,7 +59,7 @@
 		                                   		${ cscenter.csTitle }
 		                                   </a>
 		                               </td>
-		                               <td><fmt:formatDate value="${ cscenter.csCreateDate }" dateStyle="short"/></td>
+		                               <td><fmt:formatDate value="${ cscenter.csCreateDate }" dateStyle="default"/></td>
 		                               <td>${ cscenter.csView }</td>
 									</tr>
 	                            </c:forEach>
@@ -66,16 +68,23 @@
                     </table>
                     <!-- 3-3) 목록 페이지 넘버 -->
                     <div class="pagging">
-                        <div class="prev_page" id="prev_page">&lt;</div>
-                        <div class="pages">
-                            <span class="active">1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
-                        </div>
-                        <div class="next_page" id="next_page">&gt;</div>
-                    </div>
+                	<!-- 이전 페이지로 -->
+	                	<button class="prev_page" onclick="location.href='${ path }/cscenter/notice?page=${ pageInfo.prevPage }'">&lt;</button>
+	                    <!-- 5개 페이지 목록 -->
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+							<c:choose>
+								<c:when test="${ current == pageInfo.currentPage }">
+									<button disabled>${ current }</button>
+								</c:when>
+								
+								<c:otherwise>
+									<button onclick="location.href='${ path }/cscenter/notice?page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+	                    <!-- 다음 페이지로 -->
+	                    <button class="next_page" onclick="location.href='${ path }/cscenter/notice?page=${ pageInfo.nextPage }'">&gt;</button>
+                	</div>
                 </div>
             </section>
 
@@ -103,6 +112,6 @@
    
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
-
+	<script type="text/javascript" src="${ path }/resources/js/cscenter/cscenter.js"></script>
 </body>
 </html>

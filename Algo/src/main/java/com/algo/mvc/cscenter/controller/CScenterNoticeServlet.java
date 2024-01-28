@@ -24,10 +24,12 @@ public class CScenterNoticeServlet extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
     	int page = 0;
     	int listCount = 0;
     	PageInfo pageInfo = null;
     	List<Cscenter> list = null;
+    	String category = "NOTICE";
     	
     	try {    		
     		page = Integer.parseInt(request.getParameter("page"));
@@ -35,22 +37,16 @@ public class CScenterNoticeServlet extends HttpServlet {
 			page = 1;
 		}
     	
-    	listCount = new CscenterService().getCscenterCount();
-    	pageInfo = new PageInfo(page, 5, listCount, 10);    	
-    	list = new CscenterService().getBoardList(pageInfo);
+    	listCount = new CscenterService().getCscenterCount(category);
+    	pageInfo = new PageInfo(page, 5, listCount, 10);
     	
-//		System.out.println("list + : " + list);
-//		System.out.println("list.size() + : " + list.size());
-    	
+    	list = new CscenterService().getCscenterCategory(pageInfo, category);
+		
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
     	
     	request.getRequestDispatcher("/views/cscenter/notice.jsp")
     		   .forward(request, response);
     }
-
-    @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
 
 }
