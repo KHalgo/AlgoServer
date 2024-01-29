@@ -43,11 +43,22 @@ public class BoardService {
 	}
 
 
-	public Board BoardByNo(int no) {
+	public Board BoardByNo(int no, boolean hasRead) {
 		Board board = null;
 		Connection connection = getConnection();
 		
 		board = new BoardDao().findBoardByNo(connection, no);
+		
+		// 게시글 조회수 증가시키는 로직
+		if(board != null && !hasRead) {
+			int result = new BoardDao().updateReadCount(connection, board);
+			
+			if(result > 0) {
+				commit(connection);
+			} else {
+				rollback(connection);
+			}
+		}
 		
 		close(connection);
 		
@@ -72,19 +83,29 @@ public class BoardService {
 		Connection connection = getConnection();
 		
 		list = new BoardDao().findAllQ(connection, pageinfo);
-		
-		
+			
 		close(connection);
 		
 		return list;
 	}
 
 
-	public Board getBoardByNoQ(int no) {
+	public Board getBoardByNoQ(int no, boolean hasRead) {
 		Board board = null;
 		Connection connection = getConnection();
 		
 		board = new BoardDao().findBoardByNoQ(connection, no);
+		
+		// 게시글 조회수 증가시키는 로직
+		if(board != null && !hasRead) {
+			int result = new BoardDao().updateReadCount(connection, board);
+			
+			if(result > 0) {
+				commit(connection);
+			} else {
+				rollback(connection);
+			}
+		}
 		
 		close(connection);
 		
@@ -191,5 +212,19 @@ public class BoardService {
 		
 		return result;
 	}
+
+
+//	public List<Board> getBoardBestList() {
+//		List<Board> list = null;
+//		
+//		Connection connection = getConnection();
+//		
+//		list = new BoardDao().findBestAll(connection);
+//		
+//		close(connection);
+//		
+//		return list;
+//	}
+
 
 }

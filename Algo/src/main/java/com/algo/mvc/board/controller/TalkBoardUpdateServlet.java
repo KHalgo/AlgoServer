@@ -32,7 +32,7 @@ public class TalkBoardUpdateServlet extends HttpServlet {
     	if (loginMember != null) {
     		System.out.println("no2 : " + request.getParameter("no"));
 			no = Integer.parseInt(request.getParameter("no"));
-			board = new BoardService().BoardByNo(no);
+			board = new BoardService().BoardByNo(no, true);
 			
 			if(board != null && loginMember.getUserId().equals(board.getWriterId())) {
 				request.setAttribute("board", board);
@@ -65,7 +65,7 @@ public class TalkBoardUpdateServlet extends HttpServlet {
     		MultipartRequest mr = new MultipartRequest(request, path, maxSize, encoding, new DefaultFileRenamePolicy());
     		
 			no = Integer.parseInt(mr.getParameter("no"));
-			board = new BoardService().BoardByNo(no);
+			board = new BoardService().BoardByNo(no, true);
 			
 			if(board != null && loginMember.getUserId().equals(board.getWriterId())) {
 				// 수정할 내용 set

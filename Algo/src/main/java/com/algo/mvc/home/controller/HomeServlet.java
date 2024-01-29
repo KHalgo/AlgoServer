@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.algo.mvc.account.model.vo.Users;
+import com.algo.mvc.board.model.service.BoardService;
+import com.algo.mvc.board.model.vo.Board;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.company.model.service.CompanyCommentService;
 import com.algo.mvc.company.model.service.CompanyService;
@@ -31,7 +33,9 @@ public class HomeServlet extends HttpServlet {
     	PageInfo pageInfo = null;
     	List<Company> list = null;
     	List<Company> list2 = null;
-    	Users loginMember = (Users)session.getAttribute("loginMember");
+    	Users loginMember = (Users)session.getAttribute("loginMember");	
+  
+//    	List<Board> list3 = null;
 		
     	try {
     		page = Integer.parseInt(request.getParameter("page"));
@@ -45,10 +49,12 @@ public class HomeServlet extends HttpServlet {
     		list = new CompanyService().getCompanyList(pageInfo);
     		list2 = new CompanyService().getLocalCompanyList(pageInfo, loginMember);
     		
-        	
+//    		list3 = new BoardService().getBoardBestList();
+    		        	
     		request.setAttribute("pageInfo", pageInfo);
     		request.setAttribute("list", list);
     		request.setAttribute("list2", list2);
+//    		request.setAttribute("list3", list3);
     		request.setAttribute("loginMember", loginMember);
     		
     		System.out.println(list2);

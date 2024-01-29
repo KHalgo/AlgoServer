@@ -23,7 +23,7 @@
 	<main>
 		<!--1. 알고TALK 배너  -->
         <section>
-            <div class="banner-navi"> <a href="${ path }">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">알고 TALK</a> </div>
+            <div class="banner-navi"> <a href="${ path }/home">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">알고 TALK</a> </div>
             <div class="banner">
                 <div class="banner-txt">
                     <h1>알고 TALK</h1>

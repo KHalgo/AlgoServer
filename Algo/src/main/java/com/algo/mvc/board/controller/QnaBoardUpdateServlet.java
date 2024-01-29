@@ -31,7 +31,7 @@ public class QnaBoardUpdateServlet extends HttpServlet {
     	
     	if (loginMember != null) {
 			no = Integer.parseInt(request.getParameter("no"));
-			board = new BoardService().getBoardByNoQ(no);
+			board = new BoardService().getBoardByNoQ(no, true);
 			
 			if(board != null && loginMember.getUserId().equals(board.getWriterId())) {
 				request.setAttribute("board", board);
@@ -66,7 +66,7 @@ public class QnaBoardUpdateServlet extends HttpServlet {
     		System.out.println("no : " + mr.getParameter("no"));
     		
 			no = Integer.parseInt(mr.getParameter("no"));
-			board = new BoardService().getBoardByNoQ(no);
+			board = new BoardService().getBoardByNoQ(no, true);
 			
 			
 			

@@ -149,7 +149,7 @@ public class BoardDao {
 				board.setPostFile3(rs.getString("POST_FILE3"));
 				board.setPostFile4(rs.getString("POST_FILE4"));
 				// 댓글 조회
-//				board.setReplies(this.getRepliesByNo(connection, no));
+				board.setReplies(this.getRepliesByNo(connection, no));
 			} 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -162,48 +162,51 @@ public class BoardDao {
 		return board;
 	}
 
-//	public List<Reply> getRepliesByNo(Connection connection, int postNo) {
-//		List<Reply> replies = new ArrayList<>();
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		String query = "SELECT C.COMMENT_NO, "
-//							+ "C.POST_NO, "
-//							+ "C.COMMENT_CONTENT, "
-//							+ "U.USER_NICK, "
-//							+ "C.COMMENT_DATE, "
-//							+ "C.COMMENT_LIKE_COUNT "
-//						+ "FROM COMMENTS "
-//						+ "JOIN USERS U ON (C.WRITER_ID = U.USER_ID)"
-//						+ "WHERE POST_NO=? "
-//						+ "ORDER BY C.COMMENT_NO DESC";
-//		
-//		try {
-//			pstmt = connection.prepareStatement(query);
-//			
-//			pstmt.setInt(1, postNo);
-//			
-//			while(rs.next()) {
-//				Reply reply = new Reply();
-//				
-//				reply.setCommentNo(rs.getInt("COMMENT_NO"));
-//				reply.setPostNo(rs.getInt("POST_NO"));
-//				reply.setCommentContent(rs.getString("COMMENT_CONTENT"));
-//				reply.setWriterId(rs.getString("USER_NICK"));
-//				reply.setCommentDate(rs.getDate("COMMENT_DATE"));
-//				reply.setCommentLikeCount(rs.getInt("COMMENT_LIKE_COUNT"));
-//				
-//			}
-//			
-//			rs = pstmt.executeQuery();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close(rs);
-//			close(pstmt);
-//		}
-//		
-//		return replies;
-//	}
+	public List<Reply> getRepliesByNo(Connection connection, int postNo) {
+		List<Reply> replies = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT C.COMMENT_NO, "
+							+ "C.POST_NO, "
+							+ "C.COMMENT_CONTENT, "
+							+ "U.USER_NICK, "
+							+ "C.COMMENT_DATE, "
+							+ "C.COMMENT_LIKE_COUNT "
+						+ "FROM COMMENTS C "
+						+ "JOIN USERS U ON (C.WRITER_ID = U.USER_ID)"
+						+ "WHERE C.POST_NO=? "
+						+ "ORDER BY C.COMMENT_NO DESC";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, postNo);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Reply reply = new Reply();
+				
+				reply.setCommentNo(rs.getInt("COMMENT_NO"));
+				reply.setPostNo(rs.getInt("POST_NO"));
+				reply.setCommentContent(rs.getString("COMMENT_CONTENT"));
+				reply.setWriterId(rs.getString("USER_NICK"));
+				reply.setCommentDate(rs.getDate("COMMENT_DATE"));
+				reply.setCommentLikeCount(rs.getInt("COMMENT_LIKE_COUNT"));
+				
+				
+				replies.add(reply);
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return replies;
+	}
 
 	public int getBoardCountQ(Connection connection) {
 		int count = 0;
@@ -335,6 +338,8 @@ public class BoardDao {
 				board.setPostFile2(rs.getString("POST_FILE2"));
 				board.setPostFile3(rs.getString("POST_FILE3"));
 				board.setPostFile4(rs.getString("POST_FILE4"));
+				// 댓글 조회
+				board.setReplies(this.getRepliesByNo(connection, no));
 			}
 			
 		} catch (SQLException e) {
@@ -522,6 +527,72 @@ public class BoardDao {
 		
 		return result;
 	}
+
+	public int updateReadCount(Connection connection, Board board) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE BOARD SET POST_VIEW_COUNT=? WHERE POST_NO=?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			board.setPostViewCount(board.getPostViewCount() + 1);
+			
+			pstmt.setInt(1, board.getPostViewCount());
+			pstmt.setInt(2, board.getPostNo());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+//	public List<Board> findBestAll(Connection connection) {
+//		List<Board> list = new ArrayList<>();
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		String query = "SELECT ROWNUM, POST_NO, WRITER_ID, BIG_CATEGORY_ID, SMALL_CATEGORY_ID, POST_VIEW_COUNT, POST_TITLE "
+//				+ "FROM "
+//				+ "SELECT POST_NO, "
+//				+ "WRITER_ID, "
+//				+ "BIG_CATEGORY_ID, "
+//				+ "SMALL_CATEGORY_ID, "
+//				+ "POST_VIEW_COUNT, "
+//				+ "U.USER_NICK, "
+//				+ "POST_TITLE "
+//				+ "FROM BOARD B "
+//				+ "JOIN USERS U ON (U.USER_ID = B.WRITER_ID) "
+//				+ "WHERE BIG_CATEGORY_ID = 'TALK' "
+//				+ "ORDER BY POST_VIEW_COUNT DESC "
+//				+ ") "
+//				+ "WHERE ROWNUM <= 5";
+//		
+//		try {
+//			pstmt = connection.prepareStatement(query);
+//			
+//			rs = pstmt.executeQuery();
+//			
+//			while(rs.next()) {
+//				Board board = new Board();
+//				
+//				board.setRowNum(rs.getInt("ROWNUM"));
+//				board.setPostNo(rs.getInt("POST_NO"));
+//				board.setWriterId(rs.getString("WRITER_ID"));
+//				
+//				list.add(board);			
+//			}
+//			
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return list;
+//	}
 
 	
 
