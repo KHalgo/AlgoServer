@@ -40,7 +40,7 @@ public class AccountLoginServlet extends HttpServlet {
 
 			session.setAttribute("loginMember", loginMember);
 			
-			response.sendRedirect(request.getContextPath() + "/");
+			response.sendRedirect(request.getContextPath() + "/home");
 		} else {
 			// 1. 공용으로 사용하는 에러 메시지를 출력할 페이지에 전달할 메시지와 메시지 출력 후 이동할 페이지를 request 객체에 저장한다.
 			request.setAttribute("msg", "아이디나 비밀번호가 일치하지 않습니다.");

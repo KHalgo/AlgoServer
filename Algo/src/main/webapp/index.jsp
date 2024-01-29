@@ -69,7 +69,7 @@
                 <div class="best_slide_my">
                     <div class="main_txt">
                         <h2>내 지역 베스트 기업</h2>
-                        <div class="more"><a href="">+ MORE</a></div>
+                        <div class="more"><a href="${ path }/companyReview">+ MORE</a></div>
                     </div>
                     <div class="best_my_box">
                    	<c:if test="${ empty list2 }">
@@ -102,7 +102,7 @@
                 <div class="best_slide_all">
                     <div class="main_txt">
                         <h2>전체 지역 베스트 기업</h2>
-                        <div class="more"><a href="">+ MORE</a></div>
+                        <div class="more"><a href="${ path }/companyReview">+ MORE</a></div>
                     </div>
                     <div class="best_my_box">
                    <c:if test="${ empty list }">
