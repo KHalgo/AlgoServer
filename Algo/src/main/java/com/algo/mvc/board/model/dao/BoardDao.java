@@ -66,8 +66,8 @@ public class BoardDao {
 			pstmt.setInt(1, pageinfo.getStartList2());
 			pstmt.setInt(2, pageinfo.getEndList2());
 			
-//			System.out.println(pageinfo.getStartList()+","+ pageinfo.getEndList());
-//			System.out.println(pageinfo.getCurrentPage());
+			System.out.println(pageinfo.getStartList2()+","+ pageinfo.getEndList2());
+			System.out.println(pageinfo.getCurrentPage());
 			
 			rs = pstmt.executeQuery();
 			
@@ -253,6 +253,9 @@ public class BoardDao {
 			pstmt.setInt(1, pageinfo.getEndList2());
 			pstmt.setInt(2, pageinfo.getStartList2());
 			
+			System.out.println(pageinfo.getStartList2()+","+ pageinfo.getEndList2());
+			System.out.println(pageinfo.getCurrentPage());
+			
 			
 			rs = pstmt.executeQuery();
 			
@@ -274,6 +277,9 @@ public class BoardDao {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
 		}
 		
 		return list;
@@ -364,6 +370,8 @@ public class BoardDao {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		
 		
@@ -461,6 +469,8 @@ public class BoardDao {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		
 		
@@ -482,6 +492,26 @@ public class BoardDao {
 			pstmt.setString(5, board.getPostFile3());
 			pstmt.setString(6, board.getPostFile4());
 			pstmt.setInt(7, board.getPostNo());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateStatusQ(Connection connection, int no) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "DELETE FROM BOARD WHERE POST_NO = ?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, no);
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
