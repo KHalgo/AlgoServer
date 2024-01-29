@@ -36,26 +36,15 @@
                         </div>
                         <table class="cs-qna-list">
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <a class="cs-a" href="#">글제목이들어갑니다글제목이들어갑니다글제목이들어갑니다글제목이들어갑니다글제목이들어갑니다글제목이들어갑니다</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">글제목입니다.</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">글제목입니다.</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">글제목입니다.</a>
-                                    </td>
-                                </tr>
+                                <c:forEach var="cscenter" items="${listQ}" varStatus="status">
+								    <c:if test="${ status.count < 5}">
+									    <tr>
+									        <td>
+									            <a href="${ path }/cscenter/qna">${ cscenter.csTitle }</a>
+									        </td>
+									    </tr>
+								    </c:if>
+								</c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -71,24 +60,16 @@
                             </div>
                             <table class="cs-notice-list">
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <a class="cs-a" href="#">글제목이들어갑니다글제목이들어갑니다</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">글제목</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">글제목</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
+                                	<c:forEach var="cscenter" items="${ listN }" varStatus="status">
+	                                    <c:if test="${status.count < 4}">
+		                                    <tr>
+		                                        <td>
+		                                            <a class="cs-a" href="${ path }/cscenter/noticeDetail?no=${ cscenter.csNo }" >${ cscenter.csTitle }</a>
+		                                        </td>
+		                                        <td>${ cscenter.csCreateDate }</td>
+		                                    </tr>
+									    </c:if>
+                                	</c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -97,7 +78,7 @@
                             <div class="cs-notice-h">
                                 <h4>나의 문의 내역</h4>
                                 <div class="more">
-                                    <a href="#">+ MORE</a>
+                                    <a href="${ path }/myPage/inquiryLog">+ MORE</a>
                                 </div>
                             </div>
                             <table class="cs-notice-list">

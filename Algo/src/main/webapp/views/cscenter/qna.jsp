@@ -28,6 +28,9 @@
                     <div class="cs-board-h">
                         <h2>자주하는 질문</h2>
                         <form class="searching">
+<%--                         <c:if test="${ not empty loginMember && cscenter.csWriterId == 'admin' }"> --%>
+<!--                         	<button class="algo_btn1" id="cscenterwritter">글 쓰기</button> -->
+<%--                         </c:if> --%>
                             <input class="box2" type="search" placeholder="본문+제목 검색">
                             <input class="board_btn2" type="submit" value="검색">
                         </form>
@@ -42,163 +45,47 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox1"></td>
-                                <td class="question">
-                                    <a href="#">글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다글제목입니다</a>
-                                </td>
-                                <td>2023.12.12</td>
-                                <td>30</td>
-                            </tr>
-                            <!-- toggle -->
-                            <tr class="answerBox" id="answerBox1">
-                                <td colspan="4">
-                                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-                                    지명하는 자를 임명한다.
-                                </td>
-                            </tr>
-                            <tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox2"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox2">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox3"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox3">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox4"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox4">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox5"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox5">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox6"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox6">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox7"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox7">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox8"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox8">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox9"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox9">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr><tr>
-                				<td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox10"></td>
-				                <td class="question">
-                    			<a href="#">글 제목입니다.</a>
-                				</td>
-                				<td>2023.12.12</td>
-                				<td>30</td>
-							</tr>
-				            <!-- toggle -->
-				            <tr class="answerBox" id="answerBox10">
-				                <td colspan="4">
-				                    연소자의 근로는 특별한 보호를 받는다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이
-				                    지명하는 자를 임명한다.
-				                </td>
-				            </tr>
+					        <c:forEach var="cscenter" items="${list}">
+					            <tr>
+					                <td><img src="https://i.ibb.co/N9HPzF3/list-arrow.png" class="toggleButton" data-target="answerBox${cscenter.csNo}"></td>
+					                <td class="question" id="qTitle${ cscenter.csNo }"><p>${cscenter.csTitle}</p></td>
+					                <td>${cscenter.csCreateDate}</td>
+					                <td>${cscenter.csView}</td>
+					            </tr>
+					            <tr class="answerBox" id="answerBox${cscenter.csNo}">
+					                <td colspan="4">
+					                	<br>
+					                    <div style="font-weight: bold">${cscenter.csTitle}</div>
+					                    <br><br>
+					                    <h4>알고지기의 답변</h4>
+					                    <br>
+					                    <div>${cscenter.csContent}</div>
+					                    <br>
+					                </td>
+					            </tr>
+					        </c:forEach>
                         </tbody>
                     </table>
-                    <!-- 3-3) 목록 페이지 넘버 -->
-                    <div class="pagging">
-                        <div class="prev_page" id="prev_page">&lt;</div>
-                        <div class="pages">
-                            <span class="active">1</span>
-                            <span>2</span>
-                            <span>3</span>
-                            <span>4</span>
-                            <span>5</span>
-                        </div>
-                        <div class="next_page" id="next_page">&gt;</div>
-                    </div>
+                <div class="pagging">
+                	<!-- 이전 페이지로 -->
+                	<button class="prev_page" onclick="location.href='${ path }/cscenter/qna?page=${ pageInfo.prevPage }'">&lt;</button>
+                    <!-- 5개 페이지 목록 -->
+					<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+						<c:choose>
+							<c:when test="${ current == pageInfo.currentPage }">
+								<button disabled>${ current }</button>
+							</c:when>
+							
+							<c:otherwise>
+								<button onclick="location.href='${ path }/cscenter/qna?page=${ current }'">${ current }</button>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+                    <!-- 다음 페이지로 -->
+                    <button class="next_page" onclick="location.href='${ path }/cscenter/qna?page=${ pageInfo.nextPage }'">&gt;</button>
                 </div>
+                
+                
             </section>
 
             <!-- 사이드바 메뉴 창 -->
