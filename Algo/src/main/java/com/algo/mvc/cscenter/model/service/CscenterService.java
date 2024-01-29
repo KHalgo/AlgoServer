@@ -23,7 +23,6 @@ public class CscenterService {
 		
 		return count;
 	}
-<<<<<<< HEAD
 
 	public List<Cscenter> getBoardList(PageInfo pageInfo) {
 		
@@ -51,7 +50,7 @@ public class CscenterService {
 //		
 //		return board;
 //	}
-=======
+
 	
 	public int getCscenterCount(String category) {
 		int count = 0;
@@ -138,5 +137,4 @@ public class CscenterService {
 		return cscenter;
 	}
 
->>>>>>> origin/HYG123
 }
