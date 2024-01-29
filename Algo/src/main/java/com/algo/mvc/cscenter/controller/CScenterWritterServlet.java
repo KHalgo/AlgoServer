@@ -60,7 +60,7 @@ public class CScenterWritterServlet extends HttpServlet {
 			// 폼 파라미터로 넘어온 값들
 			cscenter.setCsTitle(mr.getParameter("csTitle"));
 			cscenter.setCsCategory(mr.getParameter("csCategory"));
-			cscenter.setCsContent(mr.getParameter("csContent"));
+			cscenter.setCsContent(mr.getParameter("csContent").replace("\n", "<br>"));
 			
 			int result = new CscenterService().save(cscenter); 
 			

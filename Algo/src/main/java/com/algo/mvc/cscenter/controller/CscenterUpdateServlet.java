@@ -64,6 +64,10 @@ public class CscenterUpdateServlet extends HttpServlet {
     		String encoding = "UTF-8";
     		MultipartRequest mr = new MultipartRequest(request, path, maxSize, encoding, new DefaultFileRenamePolicy());
     		
+    		String content = mr.getParameter("csContent");
+    		content = content.replace("\n", "<br>"); // 사용자 입력에서 줄바꿈을 <br> 태그로 변환
+    		cscenter.setCsContent(content); // 변환된 내용을 cscenter 객체에 설정
+    		
 			no = Integer.parseInt(mr.getParameter("no"));
 			cscenter = new CscenterService().CscenterByNo(no);
 			

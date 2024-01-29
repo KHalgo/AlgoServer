@@ -1,15 +1,13 @@
 package com.algo.mvc.cscenter.model.service;
 
 import static com.algo.mvc.common.jdbc.JDBCTemplate.close;
-import static com.algo.mvc.common.jdbc.JDBCTemplate.getConnection;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.commit;
+import static com.algo.mvc.common.jdbc.JDBCTemplate.getConnection;
 import static com.algo.mvc.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 import java.util.List;
 
-import com.algo.mvc.board.model.dao.BoardDao;
-import com.algo.mvc.board.model.vo.Board;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.cscenter.model.dao.CscenterDao;
 import com.algo.mvc.cscenter.model.vo.Cscenter;

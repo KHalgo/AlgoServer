@@ -56,7 +56,7 @@
 					                <td colspan="4">
 					                	<br>
 					                    <div style="font-weight: bold">${cscenter.csTitle}</div>
-					                    <br><br>
+					                    <br>
 					                    <h4>알고지기의 답변</h4>
 					                    <br>
 					                    <div>${cscenter.csContent}</div>
