@@ -22,9 +22,9 @@ public class AccountDemoServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sidoId = request.getParameter("sidoId");
+		String sidoName = request.getParameter("sidoName");
 		
-		List<Sigungu> sigungus = new UsersService().getSigungus(sidoId);
+		List<Sigungu> sigungus = new UsersService().getSigungus(sidoName);
 		
     	response.setContentType("application/json;charset=utf-8");
     	

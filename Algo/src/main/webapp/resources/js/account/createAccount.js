@@ -32,7 +32,7 @@ function emailCheck(str) {
 
 // 비번 정규식 체크
 function strongPassword(str) {
-	return /^((?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]){8,15}$/.test(str);
+    return /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,15}$/.test(str);
 }
 
 // 비번, 비번 확인 일치여부 체크
@@ -161,21 +161,21 @@ $(document).ready(() => {
 	});
 
 	$('#address').on('change', (event) => {
-		let sidoId = $(event.target).val();
+		let sidoName = $(event.target).val();
 
 		$.ajax({
 			type: "GET",
 			url: "/Algo/sigungu",
 			dataType: "json",
 			data: {
-				sidoId, // sidoId: sidoId
+				sidoName, // sidoId: sidoId
 			},
 			success: (obj) => {
                 let result = '';
 				console.log(obj);
 				
                 obj.forEach(element => {
-                    result += `<option value="">${element.sigunguName}</option>`;
+                    result += `<option value="${element.sigunguName}">${element.sigunguName}</option>`;
                 });
 
                 $('#sigungu').empty();
@@ -188,3 +188,43 @@ $(document).ready(() => {
 	});
 });
 
+// btnActive() 호출
+$('#sigungu').on('click',(event) => {
+	btnActive();
+})
+
+// 조건에 맞게 모두 입력했는지 확인하는 코드
+function btnActive() {
+	let option1 = $('#required_option1').prop('checked') // boolean값
+	let option2 = $('#required_option2').prop('checked') // boolean값
+	let option3 = $('#required_option3').prop('checked') // boolean값
+	let userName = $('#userName').val();
+	let userId = $('#userId').val();
+	let userPw = $('#userPw').val();
+	let userPw2 = $('#userPw2').val();
+	let userNick = $('#userNick').val();
+	let userPhone = $('#userPhone').val();
+	let inputEmail = $('#inputEmail').val();
+	let address = $('#address').val();
+	let sigungu = $('#sigungu').val();
+
+	if( option1 == true && 
+		option2 == true && 
+		option3 == true && 
+		userName != null && 
+		userId != null && 
+		userPw != null && 
+		userPw2 != null && 
+		userNick != null && 
+		userPhone != null && 
+		inputEmail != null && 
+		address != null && 
+		sigungu != null
+		) {
+			$('.algo_btn100').prop('disabled', false);
+			$('.algo_btn100').css('background', '#004591');
+	} else {
+        $('.algo_btn100').prop('disabled', true);
+    };
+
+}

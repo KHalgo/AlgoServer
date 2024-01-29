@@ -126,7 +126,7 @@ th{
     height: 40px;
     padding: 7px 20px;
     border-radius: 5px;
-    background: #004591;
+    background: #0000001c;
     color:#fff;
     line-height: 1.2em;
     cursor: pointer;
@@ -144,7 +144,7 @@ span{
 .sido {
     margin-top: 8px;
     margin-left: 10px;
-    height: 30px;
+    height: 21px;
 }
 
 .hide {

@@ -24,7 +24,7 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                     <img class="createAccount_logo" src="https://i.ibb.co/K6dj7KV/logo-3.png" alt="" />
                     회원가입
                 </div>
-                <form action="${ path }/views/account/createAccount" method="POST" >
+                <form action="${ path }/views/account/createAccount" method="post" >
                 <!-- method="POST" -->
                 <div class="main_div">
                     <h3>약관 동의</h3>
@@ -97,14 +97,14 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>비밀번호<span>*</span></th>
                             <td>
-                                <input type="text" id="userPw" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="password" id="userPw" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
                                 <p class="strongPassword-message hide" style="padding-left: 12px; color: red;" >8~15자 영문, 숫자를 포함하여 입력하세요.</p>
                             </td>
                         </tr>
                         <tr>
                             <th>비밀번호 확인<span>*</span></th>
                             <td>
-                                <input type="text" id="userPw2" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
+                                <input type="password" id="userPw2" class="user_info_input_tag1" name="userPw" placeholder="8~15자 영문, 숫자 포함" />
                                 <p class="mismatch-message hide" style="padding-left: 12px; color: red;" >비밀번호가 일치하지 않습니다.</p>
                             </td>
                         </tr>
@@ -120,7 +120,7 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>휴대폰 번호<span>*</span></th>
                             <td>
-                                <input type="text" class="user_info_input_tag2" name="userPhone" placeholder="휴대폰 번호 '-' 제외하고 입력" />
+                                <input type="text" id="userPhone" class="user_info_input_tag2" name="userPhone" placeholder="휴대폰 번호 '-' 제외하고 입력" />
                             </td>
                             <td>
                                 <input type="button" class="algo_btn200" value="인증받기" />
@@ -145,27 +145,27 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                         <tr>
                             <th>주소<span>*</span></th>
                             <td>
-                                <select id="address" class="sido">
+                                <select name="sido"  id="address" class="sido">
                                     <option value="">시/도</option>
-                                    <option value="SE">서울특별시</option>
-                                    <option value="BS">부산광역시</option>
-                                    <option value="DG">대구광역시</option>
-                                    <option value="IC">인천광역시</option>
-                                    <option value="GW">광주광역시</option>
-                                    <option value="DJ">대전광역시</option>
-                                    <option value="US">울산광역시</option>
-                                    <option value="SJ">세종특별자치시</option>
-                                    <option value="GG">경기도</option>
-                                    <option value="GW">강원특별자치도</option>
-                                    <option value="CB">충청북도</option>
-                                    <option value="CN">충청남도</option>
-                                    <option value="JB">전라북도</option>
-                                    <option value="JN">전라남도</option>
-                                    <option value="GB">경상북도</option>
-                                    <option value="GN">경상남도</option>
-                                    <option value="JJ">제주특별자치도</option>
+                                    <option name="sido" value="서울특별시">서울특별시</option>
+                                    <option name="sido" value="부산광역시">부산광역시</option>
+                                    <option name="sido" value="대구광역시">대구광역시</option>
+                                    <option name="sido" value="인천광역시">인천광역시</option>
+                                    <option name="sido" value="광주광역시">광주광역시</option>
+                                    <option name="sido" value="대전광역시">대전광역시</option>
+                                    <option name="sido" value="울산광역시">울산광역시</option>
+                                    <option name="sido" value="세종특별자치시">세종특별자치시</option>
+                                    <option name="sido" value="경기도">경기도</option>
+                                    <option name="sido" value="강원특별자치도">강원특별자치도</option>
+                                    <option name="sido" value="충청북도">충청북도</option>
+                                    <option name="sido" value="충청남도">충청남도</option>
+                                    <option name="sido" value="전라북도">전라북도</option>
+                                    <option name="sido" value="전라남도">전라남도</option>
+                                    <option name="sido" value="경상북도">경상북도</option>
+                                    <option name="sido" value="경상남도">경상남도</option>
+                                    <option name="sido" value="제주특별자치도">제주특별자치도</option>
                                 </select>
-                                <select id="sigungu" class="sido">
+                                <select name="sigungu" id="sigungu" class="sigungu">
                                     <option value="">시/군/구</option>
                                 </select>
                             </td>
@@ -173,7 +173,7 @@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib uri="htt
                     </table>
                 </div>
                 <div class="signInBtn">
-                    <input type="submit" class="algo_btn100" value="회원가입" />
+                    <input type="submit" class="algo_btn100" value="회원가입" disabled />
                 </div>
                 </form>
             </section>

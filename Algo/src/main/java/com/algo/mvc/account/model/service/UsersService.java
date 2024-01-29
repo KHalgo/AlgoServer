@@ -70,15 +70,16 @@ public class UsersService {
 		return this.findMemberByNick(userNick) != null;
 	}
 	
-	public List<Sigungu> getSigungus(String sidoId) {
+	public List<Sigungu> getSigungus(String sidoName) {
 		List<Sigungu> sigungus = null;
 		Connection connection = getConnection();
 		
-		sigungus = new UsersDao().findSigunguById(connection, sidoId);
+		sigungus = new UsersDao().findSigunguById(connection, sidoName);
 		
 		close(connection);
 		
 		return sigungus;
 	}
+	
 	
 }

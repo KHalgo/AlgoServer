@@ -125,16 +125,16 @@ public class UsersDao {
 		
 		return result;
 	}
-	public List<Sigungu> findSigunguById(Connection connection, String sidoId) {
+	public List<Sigungu> findSigunguById(Connection connection, String sidoName) {
 		List<Sigungu> sigungus = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT * FROM SIGUNGU WHERE SIDO_ID = ?";
+		String query = "SELECT * FROM SIGUNGU WHERE SIDO_NAME = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setString(1, sidoId);
+			pstmt.setString(1, sidoName);
 			
 			rs = pstmt.executeQuery();
 			
@@ -157,4 +157,5 @@ public class UsersDao {
 		
 		return sigungus;
 	}
+	
 }
