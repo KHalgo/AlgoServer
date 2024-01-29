@@ -73,37 +73,39 @@
                                 </tbody>
                             </table>
                         </div>
+                        <c:if test="${ not empty loginMember }">
                         <!-- 1-3) 나의 문의 내역 -->
-                        <div class="cs-my">
-                            <div class="cs-notice-h">
-                                <h4>나의 문의 내역</h4>
-                                <div class="more">
-                                    <a href="${ path }/myPage/inquiryLog">+ MORE</a>
-                                </div>
-                            </div>
-                            <table class="cs-notice-list">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a class="cs-a" href="#">글제목이들어갑니다글제목이들어갑니다</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">글제목</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">글제목</a>
-                                        </td>
-                                        <td>2024.01.01</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+	                        <div class="cs-my">
+	                            <div class="cs-notice-h">
+	                                <h4>나의 문의 내역</h4>
+	                                <div class="more">
+	                                    <a href="${ path }/myPage/inquiryLog">+ MORE</a>
+	                                </div>
+	                            </div>
+	                            <table class="cs-notice-list">
+	                                <tbody>
+	                                    <tr>
+	                                        <td>
+	                                            <a class="cs-a" href="#">글제목이들어갑니다글제목이들어갑니다</a>
+	                                        </td>
+	                                        <td>2024.01.01</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <a href="#">글제목</a>
+	                                        </td>
+	                                        <td>2024.01.01</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <a href="#">글제목</a>
+	                                        </td>
+	                                        <td>2024.01.01</td>
+	                                    </tr>
+	                                </tbody>
+	                            </table>
+	                        </div>
+                        </c:if>
                     </div>
                 </div>
             </section>

@@ -8,6 +8,8 @@ import static com.algo.mvc.common.jdbc.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
+import com.algo.mvc.board.model.dao.BoardDao;
+import com.algo.mvc.board.model.vo.Board;
 import com.algo.mvc.common.util.PageInfo;
 import com.algo.mvc.cscenter.model.dao.CscenterDao;
 import com.algo.mvc.cscenter.model.vo.Cscenter;
@@ -24,34 +26,20 @@ public class CscenterService {
 		return count;
 	}
 
-	public List<Cscenter> getBoardList(PageInfo pageInfo) {
+	public List<Cscenter> getCsCenterList(PageInfo pageInfo) {
 		
-		return null;
+		List<Cscenter> cscenter = null;
+		Connection connection = getConnection();
+		
+		cscenter = new CscenterDao().findAll(connection, pageInfo);
+		
+		System.out.println(cscenter);
+		
+		close(connection);
+		
+		return cscenter;
 	}
 
-//	public Cscenter getCscenterByNo(int no, boolean hasRead) {
-//		Board board = null;
-//		Connection connection = getConnection();
-//		
-//		board = new BoardDao().findBoardByNo(connection, no);
-//		
-//		// 게시글 조회수를 증가시키는 로직
-//		if(board != null && !hasRead) {
-//			int result = new BoardDao().updateReadCount(connection, board);
-//			
-//			if(result > 0) {
-//				commit(connection);
-//			} else {
-//				rollback(connection);
-//			}
-//		}
-//		
-//		close(connection);
-//		
-//		return board;
-//	}
-
-	
 	public int getCscenterCount(String category) {
 		int count = 0;
 		Connection connection = getConnection();
@@ -60,16 +48,6 @@ public class CscenterService {
 		close(connection);
 		
 		return count;
-	}
-	public List<Cscenter> getCscenterList(PageInfo pageInfo) {
-		List<Cscenter> list = null;
-		Connection connection = getConnection();
-		
-		list = new CscenterDao().findAll(connection, pageInfo);
-		
-		close(connection);
-		
-		return list;
 	}
 
 	public List<Cscenter> getCscenterList(PageInfo pageinfo, String category) {
@@ -93,6 +71,7 @@ public class CscenterService {
 		return cscenter;
 	}
 	
+	
 	public int save(Cscenter cscenter) {
 		int result = 0;
 		Connection connection = getConnection();
@@ -102,7 +81,7 @@ public class CscenterService {
 			result = new CscenterDao().updateCscenter(connection, cscenter);
 		} else {
 			// insert
-			result = new CscenterDao().insertBoard(connection, cscenter);
+			result = new CscenterDao().insertCscenter(connection, cscenter);
 		}
 		
 		if (result > 0) {
@@ -110,12 +89,13 @@ public class CscenterService {
 		} else {
 			rollback(connection);
 		}	
+		close(connection);
 		
 		return result;
 	}
 	
 	//  조회수 관련
-	public Cscenter getBoardByNo(int no, boolean hasRead) {
+	public Cscenter getCountByNo(int no, boolean hasRead) {
 		
 		Cscenter cscenter = null;
 		Connection connection = getConnection();
@@ -131,6 +111,18 @@ public class CscenterService {
 				rollback(connection);
 			}
 		}
+		
+		close(connection);
+		
+		return cscenter;
+	}
+	
+	// 
+	public Cscenter CscenterByNo(int no) {
+		Cscenter cscenter = null;
+		Connection connection = getConnection();
+		
+		cscenter = new CscenterDao().findCscenterByNo(connection, no);
 		
 		close(connection);
 		

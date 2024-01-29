@@ -66,7 +66,7 @@
 	        <section>
 	            <div class="buttons">
 	                <button type="submit" class="algo_btn1">완료</button>
-	                <button type="button" class="algo_btn2" onclick="location.href='${ path }/cscenter/notice'">취소</button>
+	                <button type="button" class="algo_btn2" onclick="location.href='${ path }/cscenter'">취소</button>
 	            </div>
         	</section>   
         </form>
