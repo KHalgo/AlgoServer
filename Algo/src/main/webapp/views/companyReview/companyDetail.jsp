@@ -81,6 +81,9 @@
                     <c:if test="${ not empty bestComment.postComment }">
 	                    <div class="review-word-box">
 	                        ${ bestComment.postComment }
+	                        <button class ="review-like">
+			                    좋아요 &#40;${ bestComment.like }&#41;
+			                </button>
 	                    </div>
 	                </c:if>
                 </div>
@@ -131,6 +134,9 @@
                 	<c:forEach var="comment" items="${ list }">
 		                <div class="review-word-box">
 		                    ${ comment.postComment }
+			                <button class ="review-like">
+			                    좋아요 &#40;${ comment.like }&#41;
+			                </button>
 		                </div>
                 	</c:forEach>
                 </c:if>
