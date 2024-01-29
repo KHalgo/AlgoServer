@@ -63,8 +63,8 @@ public class BoardDao {
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setInt(1, pageinfo.getStartList2());
-			pstmt.setInt(2, pageinfo.getEndList2());
+			pstmt.setInt(1, pageinfo.getEndList2());
+			pstmt.setInt(2, pageinfo.getStartList2());
 			
 			System.out.println(pageinfo.getStartList2()+","+ pageinfo.getEndList2());
 			System.out.println(pageinfo.getCurrentPage());

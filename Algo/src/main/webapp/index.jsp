@@ -72,54 +72,30 @@
                         <div class="more"><a href="">+ MORE</a></div>
                     </div>
                     <div class="best_my_box">
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>샐러디 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>파리바게트 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다. 앞으로 더 많은 팁 기대할게요! 현재는 개발 테스트 중 입니다.</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>스타벅스 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ☆</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>에그드랍 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>베스킨라빈스 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ★</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
-                        <div class="best_my_boxess">
-                            <div class="flag"></div>
-                            <div class="best_text_box">
-                                <h3>투썸플레이스 강남점</h3>
-                                <p class="stars">★ ★ ★ ★ ☆</p>
-                                <p class="best_text_box_word">이런 디자인은 정말 귀중합니다.<br>앞으로 더 많은 팁 기대할게요!</p>
-                            </div>
-                        </div>
+                   	<c:if test="${ empty list2 }">
+					<c:forEach var="company" items="${ list }">
+							<div class="best_my_boxess">
+	                            <div class="flag"></div>
+	                            <div class="best_text_box">
+	                                <h3><a href="${ path }/companyReview/companyDetail?industryID=${company.industryID}">${ company.industryName }</a></h3>
+	                                <p class ="star_rating" id="BCstarRate${ company.inRowNum }"></p>
+	                                <p class="best_text_box_word">${ company.bestComment }</p>
+	                            </div>
+                        	</div>
+						</c:forEach>
+					</c:if>
+					<c:if test="${ not empty list2 }">
+						<c:forEach var="company" items="${ list2 }">
+							<div class="best_my_boxess">
+	                            <div class="flag"></div>
+	                            <div class="best_text_box">
+	                                <h3><a href="${ path }/companyReview/companyDetail?industryID=${company.industryID}">${ company.industryName }</a></h3>
+	                                <p class ="star_rating" id="LCstarRate${ company.inRowNum }"></p>
+	                                <p class="best_text_box_word">${ company.bestComment }</p>
+	                            </div>
+                        	</div>
+						</c:forEach>
+                    </c:if>
                     </div>
                 </div>
 
@@ -137,12 +113,11 @@
 							<div class="best_my_boxess">
 	                            <div class="flag"></div>
 	                            <div class="best_text_box">
-	                                <h3>${ company.industryName }</h3>
+	                                <h3><a href="${ path }/companyReview/companyDetail?industryID=${company.industryID}">${ company.industryName }</a></h3>
 	                                <p class ="star_rating" id="RCstarRate${company.inRowNum}"></p>
 	                                <p class="best_text_box_word">${ company.bestComment }</p>
 	                            </div>
                         	</div>
-
 						</c:forEach>
                     </c:if>
                     </div>
@@ -158,8 +133,8 @@
                 </div>
                 <div class="main_comu_box" id="main_alba">
                     <div style="position: relative;">
-                        <h4>베스트 알바 TALK</h4>
-                        <div class="more"><a href="">+ MORE</a></div>
+                        <h4>베스트 알고 TALK</h4>
+                        <div class="more"><a href="${ path }/talkBoard/">+ MORE</a></div>
                     </div>
                     <div class="main_comu_txt">
                         <div class="main_comu_txt_box">
@@ -191,8 +166,8 @@
 
                 <div class="main_comu_box" id="main_qa">
                     <div style="position: relative;">
-                        <h4>베스트 Q&A</h4>
-                        <div class="more"><a href="">+ MORE</a></div>
+                        <h4>베스트 알고 Q&A</h4>
+                        <div class="more"><a href="${ path }/qnaBoard/">+ MORE</a></div>
                     </div>
                     <div class="main_comu_txt">
                         <div class="main_comu_txt_box">
@@ -227,7 +202,7 @@
         <!-- 섹션4 -->
         <section id="section4">
             <div class="main_icon">
-                <a href="">
+                <a href="${ path }/views/alba/pricenotice.jsp">
                 <div class="main_icon_box">
                     <div class="main_icon_img">
                         <img src="${ path }/resources/img/info.svg"/>
@@ -237,7 +212,7 @@
                 </a>
             </div>
             <div class="main_icon">
-                <a href="">
+                <a href="${ path }/companyReview/list">
                 <div class="main_icon_box">
                     <div class="main_icon_img" style="left:48%;">
                         <img src="${ path }/resources/img/building.svg"/>
@@ -247,7 +222,7 @@
                 </a>
             </div>
             <div class="main_icon">
-                <a href="">
+                <a href="${ path }/talkBoard/">
                 <div class="main_icon_box">
                     <div class="main_icon_img">
                         <img src="${ path }/resources/img/chat.svg"/>
@@ -257,7 +232,7 @@
                 </a>
             </div>
             <div class="main_icon">
-                <a href="">
+                <a href="${ path }/qnaBoard/">
                 <div class="main_icon_box">
                     <div class="main_icon_img">
                         <img src="${ path }/resources/img/qna.svg"/>
@@ -273,11 +248,8 @@
    <jsp:include page="/views/common/footer.jsp" /> 
    
 	<!-- 메인 js -->  
-	<script type="text/javascript" src="${ path }/resources/js/index.js"></script>
-	<script type="text/javascript" src="${ path }/resources/slick/slick.min.js"></script>
-	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>	
 	<script>
-		window.onload = function () {
+		document.addEventListener('DOMContentLoaded', function () {
 			<c:forEach var="company" items="${list2}">
             var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
             // 별을 표시할 공간에 별 추가
@@ -296,12 +268,26 @@
                 var star = document.createElement('span');
                 star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
                 star.value = i;
+                document.getElementById('BCstarRate${company.inRowNum}').appendChild(star);
+            }
+        	</c:forEach>
+		});
+		
+    	document.addEventListener('DOMContentLoaded', function () {
+        	<c:forEach var="company" items="${list}">
+            var baseRate_${company.inRowNum} = ${company.baseRate}; // JSP에서 가져온 값
+            // 별을 표시할 공간에 별 추가
+             for (var i = 1; i <= 5; i++) {
+                var star = document.createElement('span');
+                star.className = 'star' + (i <= baseRate_${company.inRowNum} ? ' on' : '');
+                star.value = i;
                 document.getElementById('RCstarRate${company.inRowNum}').appendChild(star);
             }
-            
         	</c:forEach>
-           
-		}
+		});
 	</script>
+	<script type="text/javascript" src="${ path }/resources/js/index.js"></script>
+	<script type="text/javascript" src="${ path }/resources/slick/slick.min.js"></script>
+	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>	
 </body>
 </html>

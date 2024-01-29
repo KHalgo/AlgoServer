@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>    
     
 <!DOCTYPE html>
@@ -174,7 +176,7 @@
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
 	<script>
-		window.onload = function () {
+	document.addEventListener('DOMContentLoaded', function () {
 			 // company.baseRate 값을 가져와서 해당하는 별에 'on' 클래스 추가
 		    var baseRate = ${ company.baseRate }; // JSP에서 가져온 값
 		    // 별을 표시할 공간에 별 추가
@@ -224,7 +226,7 @@
 		        star.value = i;
 		        document.getElementById('starRate5').appendChild(star);
 		    }
-		}
+		});
 	</script>
 </body>
 </html>

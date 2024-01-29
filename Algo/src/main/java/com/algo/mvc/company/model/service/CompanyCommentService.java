@@ -46,4 +46,17 @@ public class CompanyCommentService {
 		
 		return bestComment;
 	}
+
+	public List<CompanyComment> getCompanyRecentComment() {
+		List<CompanyComment> comlist = null;
+		
+		Connection connection = getConnection();
+		
+		comlist = new CompanyCommentDao().findRecentComment(connection);
+		
+		close(connection);
+		
+		return comlist;
+	}
+
 }

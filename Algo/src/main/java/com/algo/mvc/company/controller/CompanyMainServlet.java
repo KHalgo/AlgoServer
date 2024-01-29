@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.algo.mvc.account.model.vo.Users;
 import com.algo.mvc.common.util.PageInfo;
+import com.algo.mvc.company.model.service.CompanyCommentService;
 import com.algo.mvc.company.model.service.CompanyService;
 import com.algo.mvc.company.model.vo.Company;
 import com.algo.mvc.company.model.vo.CompanyComment;
@@ -31,6 +32,7 @@ public class CompanyMainServlet extends HttpServlet {
     	PageInfo pageInfo = null;
     	List<Company> list = null;
     	List<Company> list2 = null;
+    	List<CompanyComment> comlist = null;
     	Users loginMember = (Users)session.getAttribute("loginMember");
 		
     	try {
@@ -44,11 +46,13 @@ public class CompanyMainServlet extends HttpServlet {
     		pageInfo = new PageInfo(page, 5, listCount, 5);
     		list = new CompanyService().getCompanyList(pageInfo);
     		list2 = new CompanyService().getLocalCompanyList(pageInfo, loginMember);
+    		comlist = new CompanyCommentService().getCompanyRecentComment();
         	
     		request.setAttribute("pageInfo", pageInfo);
     		request.setAttribute("list", list);
     		request.setAttribute("list2", list2);
     		request.setAttribute("loginMember", loginMember);
+    		request.setAttribute("comlist", comlist);
     		
     		System.out.println(list2);
         	
@@ -58,9 +62,11 @@ public class CompanyMainServlet extends HttpServlet {
         	listCount = new CompanyService().getCompanyCount();
     		pageInfo = new PageInfo(page, 5, listCount, 5);
     		list = new CompanyService().getCompanyList(pageInfo);
+    		comlist = new CompanyCommentService().getCompanyRecentComment();
         	
     		request.setAttribute("pageInfo", pageInfo);
     		request.setAttribute("list", list);
+    		request.setAttribute("comlist", comlist);
     		
     		request.getRequestDispatcher("/views/companyReview/index.jsp")
     		.forward(request, response);

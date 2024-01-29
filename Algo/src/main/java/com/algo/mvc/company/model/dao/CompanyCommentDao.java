@@ -130,4 +130,43 @@ public class CompanyCommentDao {
 		return bestComment;
 	}
 
+	public List<CompanyComment> findRecentComment(Connection connection) {
+		List<CompanyComment> comlist = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * FROM ( "
+				+ "    SELECT R.INDUSTRY_ID AS INDUSTRY_ID, I.INDUSTRY_NAME AS INDUSTRY_NAME, R.POST_COMMENT AS POST_COMMENT, R.POST_DATE AS POST_DATE, ROWNUM "
+				+ "    FROM INDUSTRY I "
+				+ "    JOIN INDUSTRY_REVIEW R ON I.INDUSTRY_ID = R.INDUSTRY_ID "
+				+ "    ORDER BY POST_DATE DESC "
+				+ "    ) "
+				+ "WHERE ROWNUM <= 6 ";
+
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				CompanyComment comment = new CompanyComment();
+				
+				comment.setIndustryID(rs.getInt("INDUSTRY_ID"));
+				comment.setIndustryName(rs.getString("INDUSTRY_NAME"));
+				comment.setPostComment(rs.getString("POST_COMMENT"));
+				comment.setPostDate(rs.getDate("POST_DATE"));
+				comment.setCoRowNum(rs.getInt("ROWNUM"));
+				
+				comlist.add(comment);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return comlist;
+	}
+
 }
