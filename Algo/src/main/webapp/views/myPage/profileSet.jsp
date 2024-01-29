@@ -34,38 +34,35 @@
                 <form action="" name="sidebar">
                     <div id="mySideBar"></div>
                 </form>
-                <form action="" name="content">
+                <form action="" name="content" method="POST">
                     <div class="mp_ps_box">
                         <div style="padding: 10px">
                             <h3 class="ps_h3">프로필 관리</h3>
                             <div style="margin-top: 35px">
                                 <div class="ps_imgD"><img src="" alt="" id="ps_img">
-                                    <span><p id="ps_nick">홍길동 님</p></span>
+                                    <span><p id="ps_nick">${ loginMember.userName }님</p></span>
                                 </div>
                             </div>
                         </div>
                         <table>
                             <tr class="ps_ct">
-                                <td><input type="text" var="pr_nick" class="pr_put1" placeholder="닉네임"></td>
+                                <td><input type="text" var="pr_nick" class="pr_put1" placeholder="${ loginMember.userNick }"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="중복 확인">중복확인</button></td>
-                                <td colspan="2"><input type="email" var="pr_email" class="pr_put2" placeholder="이메일"></td>
+                                <td colspan="2"><input type="email" var="pr_email" class="pr_put2" placeholder="${ loginMember.userEmail }"></td>
                             </tr>
                             <tr class="ps_ct">
-                                <td colspan="2"><input type="text" var="pr_addres" class="pr_put2" placeholder="주소"></td>
-                                <td><input type="text" var="pr_tel" class="pr_put1" placeholder="휴대폰 번호"></td>
+                                <td colspan="2"><input type="text" var="pr_addres" class="pr_put2" placeholder="${ loginMember.sido } ${ loginMember.sigungu }"></td>
+                                <td><input type="text" var="pr_tel" class="pr_put1" placeholder="${ loginMember.userPhone }"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="">인증받기</button></td>
                             </tr>
                             <tr class="ps_ct">
-                                <td colspan="2"><input type="text" var="pr_d_addres" class="pr_put2" placeholder="상세 주소"></td>
+                                <td colspan="2"><input type="text" var="pr_b_date" class="pr_put2" placeholder="${ loginMember.userBirthday }"></td>
                                 <td><input type="text" var="pr_c_number" class="pr_put1" placeholder="인증번호입력"></td>
                                 <td><button class="pr_ch_box" id="pr_nick_ch" value="인증확인">인증확인</button></td>
                             </tr>
-                            <tr class="ps_ct">
-                                <td colspan="2"><input type="text" var="pr_b_date" class="pr_put2" placeholder="생년월일"></td>
-                            </tr>
                         </table>
 
-                        <button id="ps_btn1">프로필 저장</button>
+                        <button type="submit" id="ps_btn1" >프로필 저장</button>
                     </div>
                 </form>
             </div>

@@ -37,7 +37,7 @@
                 <div class="content">
                     <div class="mp_box">
                         <!-- <h2>${"userName"}님 어서 오세요</h2> -->
-                        <h2 id="mp_h2">홍길동님 어서 오세요</h2>
+                        <h2 id="mp_h2">${ loginMember.userName }님 어서 오세요</h2>
                         <div class="prBox1">
                             <p class="pr_lText">게시글 관리</p>
                             <div class="prBox1_hr"></div>
@@ -59,8 +59,8 @@
                             <div class="more pr_more"><a href="">+ MORE</a></div>
                             <div class="mp_content_box">
                                 <div class="mp_content_text">
-                                    <p style="padding-top: 0px">현재 홍길동 님의 지역은</p>
-                                    <a href="" style="font-weight: bold">서울시 강남구</a>
+                                    <p style="padding-top: 0px">현재 ${ loginMember.userName }님의 지역은</p>
+                                    <a href="" style="font-weight: bold">${ loginMember.sido } ${ loginMember.sigungu }</a>
                                     <p>입니다.</p>
                                 </div>
                             </div>

@@ -35,6 +35,7 @@
                 <form action="" name="sidebar">
                     <div id="mySideBar"></div>
                 </form>
+
                 <form action="" name="content">
                     <div class="mp_box">
                         <div class="w_content_box cp_content_box">

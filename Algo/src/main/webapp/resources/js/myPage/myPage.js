@@ -7,3 +7,23 @@ window.onload = () => {
 	});
 }
 
+
+function isMatch(password1, password2) {
+	return password1 === password2;
+}
+    
+    let nowPass = document.querySelector(".cp_m");
+    let nowPassErrorMsg = document.querySelector(".nowPassErrorMsg");
+	let userPw = document.querySelector("${ loginMember.userPw }");
+
+    if (nowPass.value.length !== 0) {
+		if (isMatch(nowPass, userPw)) {
+			nowPassErrorMsg.classList.add("hide"); // 실패 메시지가 가려져야 함
+		} else {
+			nowPassErrorMsg.classList.remove("hide"); // 실패 메시지가 보여야 함
+		}
+	}
+	else {
+		nowPassErrorMsg.classList.add("hide");
+	}
+

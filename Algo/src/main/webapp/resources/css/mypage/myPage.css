@@ -418,13 +418,13 @@ main {
 }
 
 .cp_d1 {
-    margin-top: 18px;
+    margin-top: 35px;
 }
 
-.cp_change_border {
+/* .cp_change_border {
 	border-top: 1px solid #d9d9d9;
 	border-bottom: 1px solid #d9d9d9; 
-}
+} */
 
 .cp_btn {
     width: 207px;
@@ -555,8 +555,8 @@ main {
     padding: 5px;
     margin-left: 10px;
     color: #1F1F1F;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 
@@ -595,6 +595,7 @@ main {
     width: 200px;
     height: 50px;
     margin: 30px 300px;
+    margin-top: 70px;
     border-radius: 10px;
     background-color: #004591;
     color: #fff;
