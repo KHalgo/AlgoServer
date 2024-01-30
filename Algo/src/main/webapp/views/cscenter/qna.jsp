@@ -55,9 +55,9 @@
 					            <tr class="answerBox" id="answerBox${cscenter.csNo}">
 					                <td colspan="4">
 					                	<br>
-					                    <div style="font-weight: bold">${cscenter.csTitle}</div>
+					                    <div style="font-weight: bold; color: #004591; ">Q. ${cscenter.csTitle}</div>
 					                    <br>
-					                    <h4>알고지기의 답변</h4>
+					                    <h4>A. 알고지기의 답변</h4>
 					                    <br>
 					                    <div>${cscenter.csContent}</div>
 					                    <br>

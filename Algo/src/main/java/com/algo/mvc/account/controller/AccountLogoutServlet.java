@@ -28,7 +28,7 @@ public class AccountLogoutServlet extends HttpServlet {
 		session.invalidate();
 
 		// 3. 삭제 후 홈 화면으로 리다이렉트
-		response.sendRedirect(request.getContextPath() + "/");
+		response.sendRedirect(request.getContextPath() + "/home");
 
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

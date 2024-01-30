@@ -44,7 +44,7 @@
 					</h4>
 					<br />
 					<br /> <input class="algo_btn_blue_long" type="button"
-						value="메인페이지로 이동" onclick="location.href='${ path }'" />
+						value="메인페이지로 이동" onclick="location.href='${ path }/home'" />
 				</div>
 			</div>
 		</section>

@@ -29,7 +29,7 @@
 					<li><a href="${ path }/talkBoard/">알고 TALK</a></li>
 					<li><a href="${ path }/qnaBoard/">알고 Q&A</a></li>
 				</ul></li>
-			<li><a href="${ path }/">알바 정보</a>
+			<li><a href="${ path }/views/alba/pricenotice.jsp">알바 정보</a>
 				<ul>
 					<li><a href="${ path }/views/alba/pricenotice.jsp">최저임금</a></li>
 					<li><a href="${ path }/views/alba/4insurance.jsp">4대 사회 보험</a></li>
