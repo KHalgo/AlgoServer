@@ -80,6 +80,7 @@
     padding: 25px 40px;
     margin-top:13px;
     font-weight: 400;
+    position: relative;
 }
 
 
@@ -170,6 +171,18 @@
     background: #FFF;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.review-like{
+	position: absolute;
+	bottom: 15px;
+	right:20px;
+	font-size: 11px;
+	padding: 3px 11px;
+	color: #fff;
+	background-color: #004591;
+	cursor: pointer;
+	border:none;
 }
 
 
