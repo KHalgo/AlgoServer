@@ -24,7 +24,7 @@
 	<main>
         <!--1. 알고Q&A 배너  -->
         <section>
-            <div class="banner-navi"> <a href="${ path }">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
+            <div class="banner-navi"> <a href="${ path }/home">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
             <div class="banner">
                 <div class="banner-txt">
                     <h1>알고 Q&A</h1>

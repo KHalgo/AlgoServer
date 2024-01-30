@@ -44,6 +44,7 @@ public class QnABoardServlet extends HttpServlet {
     	
 		request.setAttribute("pageInfo", pageinfo);
 		request.setAttribute("list", list);
+		request.setAttribute("listCount", listCount);
     	request.getRequestDispatcher("/views/board/qnaBoard.jsp")
 				.forward(request, response);
 	}

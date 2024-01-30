@@ -23,7 +23,7 @@
 	<main>
         <!--1. 알고Q&A 배너  -->
         <section>
-            <div class="banner-navi"> <a href="${ path }">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
+            <div class="banner-navi"> <a href="${ path }/home">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
             <div class="banner">
                 <div class="banner-txt">
                     <h1>알고 Q&A</h1>
@@ -72,13 +72,53 @@
                 
                 <!--  댓글 입력 -->
                 <tr style="border-bottom: 1px solid #C0C0C0;">
+	                <form action="${ path }/qnaBoard/reply" method="POST">
+	                	<td colspan="2">
+	                		<input type="hidden" name="postNo" value="${ board.postNo }">
+	                		<textarea name="content" id="replyContent" placeholder="댓글을 입력하시오."></textarea>
+	                		<button type="submit" id="btn-insert" class="algo_btn3">댓글</button>
+	                	</td>
+	                </form>
+                </tr>
+                
+                <!-- 댓글 목록 -->
+                <tr style="border-bottom: 1px solid #C0C0C0;">
+                    <td colspan="2">댓글</td>
+                </tr>
+                
+                 
+                <c:if test="${ empty board.replies }">
+                	<td>등록된 댓글이 없습니다.</td>
+                </c:if>
+                
+                
+                <c:if test="${ not empty board.replies }">
+	                <c:forEach var="reply" items="${ board.replies }">
+		                <tr>
+		                    <td><b><c:out value="${ reply.writerId }"></c:out></b>&nbsp; &#124; &nbsp;<span><c:out value="${ reply.commentDate }"></c:out> </span></td>
+		                    <td class="write-r">
+		                        <button class="like">추천(0)</button>
+		                        <button class="reply">답글</button>
+		                        <button class="report">신고</button>
+		                    </td>
+		                </tr>
+		                <tr style="border-bottom: 1px solid #C0C0C0;">
+		                    <td colspan="2"><c:out value="${ reply.commentContent }"/> </td>
+		                </tr>
+	                </c:forEach>
+                </c:if>
+                
+                
+                <!-- 
+                
+                <tr style="border-bottom: 1px solid #C0C0C0;">
                 	<td colspan="2">
                 		<textarea placeholder="댓글을 입력하시오."></textarea>
                 		<button class="algo_btn3">댓글</button>
                 	</td>
                 </tr>
                 
-                <!-- 댓글 목록 -->
+                
                 <tr style="border-bottom: 1px solid #C0C0C0;">
                     <td colspan="2">댓글 <strong>3</strong>개</td>
                 </tr>
@@ -115,6 +155,9 @@
                 <tr>
                     <td colspan="2">정보 감사합니다~</td>
                 </tr>
+                -->
+                
+                
             </table>
         </section>
         <!-- 3. 목록 버튼 -->
@@ -138,7 +181,7 @@
 				
 				$('#replyContent').on('click', () => {
 					if(${ empty loginMember }) {
-						alert("로그인 후 이용해주세요!");
+						alert("로그인 후 이용해주세요.");
 						
 						$("#userId").focus();				
 					}

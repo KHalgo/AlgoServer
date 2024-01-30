@@ -23,7 +23,7 @@
 	<main>
         <!--1. 알고Q&A 배너  -->
         <section>
-            <div class="banner-navi"> <a href="${ path }">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
+            <div class="banner-navi"> <a href="${ path }/home">홈</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/talkBoard/">커뮤니티</a> &nbsp;&nbsp; &gt; &nbsp;&nbsp; <a href="${ path }/qnaBoard/">알고 Q&A</a> </div>
             <div class="banner">
                 <div class="banner-txt">
                     <h1>알고 Q&A</h1>
@@ -51,7 +51,7 @@
             <!-- 3-1) 전체 글 count -->
             <div class="list-top">
                 <p class="total">
-                    전체 글 <span>1234</span>개
+                    전체 글 <span>${ listCount }</span>개
                 </p>
             </div>
             <!-- 3-2) 게시판 글 목록 -->
@@ -76,8 +76,8 @@
                             <td class="noticeImg">
                                 <a href="#"><b>공지사항 1</b></a>
                             </td>
-                            <td><b>알고 지기</b></td>
-                            <td>2023.08.16</td>
+                            <td><b>알고지기</b></td>
+                            <td>2023-08-16</td>
                             <td>15421</td>
                             <td></td>
                         </tr>
@@ -88,8 +88,8 @@
                             <td>
                                 <a href="#"><b>공지사항 2</b></a>
                             </td>
-                            <td><b>알고 지기</b></td>
-                            <td>2023.09.22</td>
+                            <td><b>알고지기</b></td>
+                            <td>2023-09-22</td>
                             <td>16487</td>
                             <td></td>
                         </tr>

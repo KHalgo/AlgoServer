@@ -51,6 +51,7 @@ public class TalkBoardServlet extends HttpServlet {
     	// 포워드 하기 전 pageinfo를 PageInfo.jsp로 전달 
     	request.setAttribute("pageInfo", pageinfo);
     	request.setAttribute("list", list);
+    	request.setAttribute("listCount", listCount);
     	request.getRequestDispatcher("/views/board/talkBoard.jsp")
     		   .forward(request, response);
     }
