@@ -43,6 +43,7 @@ public class CScenterWritterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
     	Users loginMember = (Users) session.getAttribute("loginMember");
+    	Cscenter cscenter = null;
     	
     	if (loginMember != null) {
     		String path = getServletContext().getRealPath("/resources/upload/talkBoard");
@@ -51,15 +52,15 @@ public class CScenterWritterServlet extends HttpServlet {
     		
     		MultipartRequest mr = new MultipartRequest(request, path, maxSize, encoding, new DefaultFileRenamePolicy());
     		
-			Cscenter cscenter = new Cscenter();
+			cscenter = new Cscenter();
 			
 			// 게시글 작성자의 ID 값
 			cscenter.setCsWriterId(loginMember.getUserId());
 			
 			// 폼 파라미터로 넘어온 값들
 			cscenter.setCsTitle(mr.getParameter("csTitle"));
-			cscenter.setCsContent(mr.getParameter("csContent"));
 			cscenter.setCsCategory(mr.getParameter("csCategory"));
+			cscenter.setCsContent(mr.getParameter("csContent").replace("\n", "<br>"));
 			
 			int result = new CscenterService().save(cscenter); 
 			

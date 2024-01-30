@@ -18,6 +18,8 @@ public class Cscenter {
 	
 	private int csView;
 	
+	private String userId;
+	
 	private String csWriterId;
 	
 	private String csCategory;
@@ -28,6 +30,4 @@ public class Cscenter {
 
 	private Date csCreateDate;
 	
-	private String userId;
-
 }

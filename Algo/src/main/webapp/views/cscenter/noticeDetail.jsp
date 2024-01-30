@@ -40,6 +40,9 @@
                         </tr>
                     </table>
                     <div class="noticeList">
+                    <c:if test="${ not empty loginMember && loginMember.userId == 'admin' }">
+					    <button type="button" class="algo_btn1" id="cscenterupdate" onclick="location.href='${path}/cscenter/update'">수정</button>
+					</c:if>
                         <button class="algo_btn1" onclick="location.href='${ path }/cscenter/notice'">목록</button>
                     </div>
                 </div>

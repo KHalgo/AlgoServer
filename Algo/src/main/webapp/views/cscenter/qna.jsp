@@ -28,9 +28,9 @@
                     <div class="cs-board-h">
                         <h2>자주하는 질문</h2>
                         <form class="searching">
-<%--                         <c:if test="${ not empty loginMember && cscenter.csWriterId == 'admin' }"> --%>
-<!--                         	<button class="algo_btn1" id="cscenterwritter">글 쓰기</button> -->
-<%--                         </c:if> --%>
+	                        <c:if test="${ not empty loginMember && loginMember.userId == 'admin' }">
+							    <button type="button" class="algo_btn1" id="cscenterwritter" onclick="location.href='${ path }/cscenter/writter'">글 쓰기</button>
+							</c:if>
                             <input class="box2" type="search" placeholder="본문+제목 검색">
                             <input class="board_btn2" type="submit" value="검색">
                         </form>
@@ -40,7 +40,7 @@
                             <tr>
                                 <th width="10%"></th>
                                 <th width="50%" style="padding-left: 20px;">제목</th>
-                                <th widtd="25%">작성일</th>
+                                <th width="25%">작성일</th>
                                 <th width="15%">조회</th>
                             </tr>
                         </thead>
@@ -56,7 +56,7 @@
 					                <td colspan="4">
 					                	<br>
 					                    <div style="font-weight: bold">${cscenter.csTitle}</div>
-					                    <br><br>
+					                    <br>
 					                    <h4>알고지기의 답변</h4>
 					                    <br>
 					                    <div>${cscenter.csContent}</div>
@@ -84,6 +84,7 @@
                     <!-- 다음 페이지로 -->
                     <button class="next_page" onclick="location.href='${ path }/cscenter/qna?page=${ pageInfo.nextPage }'">&gt;</button>
                 </div>
+            </div>
                 
                 
             </section>

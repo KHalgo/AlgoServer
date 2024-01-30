@@ -28,9 +28,9 @@
                     <div class="cs-board-h">
                         <h2>공지사항</h2>
                         <form class="searching">
-                        <c:if test="${ not empty loginMember && cscenter.csWriterId == 'admin' }">
-                        	<button class="algo_btn1" id="cscenterwritter">글 쓰기</button>
-                        </c:if>
+	                        <c:if test="${ not empty loginMember && loginMember.userId == 'admin' }">
+							    <button type="button" class="algo_btn1" id="cscenterwritter" onclick="location.href='${ path }/cscenter/writter'">글 쓰기</button>
+							</c:if>
                             <input class="box2" type="search" placeholder="본문+제목 검색">
                             <input class="board_btn2" type="submit" value="검색">
                         </form>
@@ -39,7 +39,7 @@
                         <thead>
                             <tr>
                                 <th width="50%" style="padding-left: 50px;">제목</th>
-                                <th widtd="30%">작성일</th>
+                                <th width="30%">작성일</th>
                                 <th width="20%">조회</th>
                             </tr>
                         </thead>
@@ -59,7 +59,7 @@
 		                                   		${ cscenter.csTitle }
 		                                   </a>
 		                               </td>
-		                               <td><fmt:formatDate value="${ cscenter.csCreateDate }" dateStyle="default"/></td>
+		                               <td>${ cscenter.csCreateDate }</td>
 		                               <td>${ cscenter.csView }</td>
 									</tr>
 	                            </c:forEach>

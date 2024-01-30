@@ -9,34 +9,25 @@ window.onload = () => {
                 if (targetElement.style.display === "none" || targetElement.style.display === "") {
                     targetElement.style.display = "table-row";
 
-                    // 클릭한 이미지의 부모 행을 찾아서 그 안의 제목을 숨김
-                    var parentRow = this.closest('tr');
-                    if (parentRow) {
-                        var titleCell = parentRow.querySelector('.question');
-                        if (titleCell) {
-                            titleCell.style.visibility = "hidden"; // 제목을 숨김
-                        }
-                    }
-                } else {
-                    targetElement.style.display = "none";
-
                     // 클릭한 이미지의 부모 행을 찾아서 그 안의 제목을 다시 표시
                     var parentRow = this.closest('tr');
                     if (parentRow) {
                         var titleCell = parentRow.querySelector('.question');
                         if (titleCell) {
-                            titleCell.style.visibility = "visible"; // 제목을 다시 표시
+                            titleCell.style.display = "table-cell"; // 제목을 다시 표시
                         }
                     }
+                } else {
+                    targetElement.style.display = "none";
                 }
             }
         });
     });
 
-    var csWritter = document.getElementById('#cscenterwritter');
-    if (csWritter) { // csWritter가 존재하는지 확인
-        csWritter.addEventListener('click', function() {
-            window.location.href = "${ path }/cscenter/writter"; // 여기서 ${ path }는 서버사이드 코드가 제대로 처리되어야 합니다.
-        });
-    }
+//    let csWritter = document.getElementById('cscenterwritter');
+//    if (csWritter) { // csWritter가 존재하는지 확인
+//        csWritter.addEventListener('click', function() {
+//            window.location.href = "${ path }/cscenter/writter";
+//        });
+//    }
 };

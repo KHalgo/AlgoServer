@@ -65,6 +65,7 @@ public class CscenterDao {
 		return count;
 	}
 	
+	// cscenter에 대한 전체 조회 list 담기
 	public List<Cscenter> findAll(Connection connection, PageInfo pageInfo) {
 		List<Cscenter> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
@@ -109,9 +110,12 @@ public class CscenterDao {
 			close(rs);
 			close(pstmt);
 		}
+		
+		System.out.println(list);
 		return list;
 	}
 	
+	// list에 카테고리별 담기
 	public List<Cscenter> findCscenterByCategory(Connection connection, PageInfo pageInfo, String category) {
 		List<Cscenter> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
@@ -181,6 +185,7 @@ public class CscenterDao {
 	            cscenter.setCsNo(rs.getInt("CSCENTER_NO"));
 	            cscenter.setCsTitle(rs.getString("CSCENTER_TITLE"));
 	            cscenter.setCsWriterId(rs.getString("USER_ID"));
+	            cscenter.setUserId(rs.getString("USER_ID"));
 	            cscenter.setCsCreateDate(rs.getDate("CSCENTER_DATE"));
 	            cscenter.setCsView(rs.getInt("CSCENTER_VIEW"));
 	            cscenter.setCsCategory(rs.getString("CSCENTER_CATEGORY"));
@@ -196,7 +201,45 @@ public class CscenterDao {
 	    return cscenter;
 	    
 	}
-
+	// 카테고리 조건 추가
+	public Cscenter findCscenterByNo(Connection connection, int no ,String category) {
+		Cscenter cscenter = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    String query = "SELECT CSCENTER_NO, CSCENTER_TITLE, USER_ID, CSCENTER_DATE, CSCENTER_VIEW, CSCENTER_CATEGORY, CSCENTER_CONTENT "
+	    		+ "FROM CSCENTER "
+	    		+ "WHERE CSCENTER_NO = ? AND CSCENTER_CATEGORY = ?"
+	    		+ "";
+	    try {
+	        pstmt = connection.prepareStatement(query);
+	        
+	        pstmt.setInt(1, no);
+	        pstmt.setString(1, category);
+	        
+	        rs = pstmt.executeQuery();
+	        
+	        if (rs.next()) {
+	            cscenter = new Cscenter();
+	            cscenter.setCsNo(rs.getInt("CSCENTER_NO"));
+	            cscenter.setCsTitle(rs.getString("CSCENTER_TITLE"));
+	            cscenter.setCsWriterId(rs.getString("USER_ID"));
+	            cscenter.setCsCreateDate(rs.getDate("CSCENTER_DATE"));
+	            cscenter.setCsView(rs.getInt("CSCENTER_VIEW"));
+	            cscenter.setCsCategory(rs.getString("CSCENTER_CATEGORY"));
+	            cscenter.setCsContent(rs.getString("CSCENTER_CONTENT"));
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(rs);
+	        close(pstmt);
+	    }
+	    
+	    return cscenter;
+	    
+	}
+	
+	// 조회수 관련
 	public int updateReadCount(Connection connection, Cscenter cscenter) {
 		
 		int result = 0;
@@ -225,7 +268,7 @@ public class CscenterDao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		
-		String query = "UPDATE CSCENTER SET CSCENTER_TITLE=?, CSCENTER_CATEGORY=? , CSCENTER_CONTENT=?, CSCENTER_DATE= SYSDATE WHERE CSCENTER_NO = ?";
+		String query = "UPDATE CSCENTER SET CSCENTER_TITLE=?, CSCENTER_CATEGORY=?, CSCENTER_CONTENT=?, CSCENTER_DATE= SYSDATE WHERE CSCENTER_NO = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
@@ -245,7 +288,7 @@ public class CscenterDao {
 		return result;
 	}
 
-	public int insertBoard(Connection connection, Cscenter cscenter) {
+	public int insertCscenter(Connection connection, Cscenter cscenter) {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		
@@ -270,7 +313,6 @@ public class CscenterDao {
 		
 		return result;
 	}
-
 	
 	
 }

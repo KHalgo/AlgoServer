@@ -47,7 +47,7 @@ public class CScenterNoticeDetailServlet extends HttpServlet {
 			response.addCookie(cookie);
 		}
     	
-    	Cscenter cscenter = new CscenterService().getBoardByNo(no, hasRead);
+    	Cscenter cscenter = new CscenterService().getCountByNo(no, hasRead);
     	
     	request.setAttribute("cscenter", cscenter);
     	

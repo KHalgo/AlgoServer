@@ -45,7 +45,7 @@
 	                    <td colspan="2">
 	                        <select name="csCategory" id="" style="background: url(https://i.ibb.co/N9HPzF3/list-arrow.png) no-repeat right 7px center;">
 	                            <option value="QNA">자주묻는 질문</option>
-	                            <option value="NOTICE">공지 사항</option>
+	                            <option value="NOICE">공지 사항</option>
 	                        </select>
 	                    </td>
 	                </tr>
@@ -57,7 +57,7 @@
 	                </tr>
 	                <tr>
 	                    <td class="contentBox" colspan="4">
-	                        <textarea name="csContent" id="csContent" class="content" placeholder="등록할 내용을 넣어주세요"></textarea>
+	                        <textarea name="csContent" id="" class="content" placeholder="등록할 내용을 넣어주세요"></textarea>
 	                    </td>
 	                </tr>
 	            </table>
@@ -66,7 +66,7 @@
 	        <section>
 	            <div class="buttons">
 	                <button type="submit" class="algo_btn1">완료</button>
-	                <button type="button" class="algo_btn2" onclick="location.href='${ path }/cscenter/notice'">취소</button>
+	                <button type="button" class="algo_btn2" onclick="location.href='${ path }/cscenter'">취소</button>
 	            </div>
         	</section>   
         </form>
@@ -77,10 +77,5 @@
 	<!--js 추가-->
 	<script type="text/javascript" src="${ path }/resources/js/top.js"></script>
 	<script type="text/javascript" src="${ path }/resources/js/cscenter/cscenter.js"></script>
-	<script type="text/javascript">
-		window.onload() = () => {
-			document.getElementById('csContent').innerHTML = postContent.replace(/\n/g, "<br>");
-		}
-	</script>
 </body>
 </html>
