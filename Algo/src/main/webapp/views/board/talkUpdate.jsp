@@ -55,7 +55,6 @@
 	                    <th>지역 설정</th>
 	                    <td>
 	                        <select name="location" id="" style="background: url(https://i.ibb.co/N9HPzF3/list-arrow.png) no-repeat right 7px center;">
-	                            <!-- DB관련? -->
 	                            <option value="">관심지역1</option>
 	                            <option value="">관심지역2</option>
 	                            <option value="">관심지역3</option>

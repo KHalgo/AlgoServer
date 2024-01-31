@@ -115,36 +115,6 @@
 		                </tr>
 	                </c:forEach>
                 </c:if>
-                
-                
-                
-                <!-- 
-                <tr>
-                    <td><b>알바몬</b>&nbsp; &#124; &nbsp;2023.12.16 17:30</td>
-                    <td class="write-r">
-                        <button class="like">추천(0)</button>
-                        <button class="reply">답글</button>
-                        <button class="report">신고</button>
-                    </td>
-                </tr>
-                <tr style="border-bottom: 1px solid #C0C0C0;">
-                    <td colspan="2">정보 감사합니다~</td>
-                </tr>
-                <tr>
-                    <td><b>알바몬</b>&nbsp; &#124; &nbsp;2023.12.16 17:30</td>
-                    <td class="write-r">
-                        <button class="like">추천(0)</button>
-                        <button class="reply">답글</button>
-                        <button class="report">신고</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">정보 감사합니다~</td>
-                </tr>
-                -->
-                
-                
-                
             </table>
         </section>
         <!-- 3. 목록 버튼 -->
